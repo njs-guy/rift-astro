@@ -1,0 +1,46 @@
+{
+	"root": true,
+	"env": {
+		"browser": true,
+		"node": true,
+		"es2021": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"prettier",
+		"plugin:astro/recommended"
+	],
+	"overrides": [
+		{
+			"files": ["*.astro"],
+			"parser": "astro-eslint-parser",
+
+			"parserOptions": {
+				"parser": "@typescript-eslint/parser",
+				"extraFileExtensions": [".astro"]
+			}
+		}
+	],
+
+	"plugins": ["@typescript-eslint"],
+	"rules": {
+		"@typescript-eslint/naming-convention": [
+			"warn",
+			{
+				"selector": "variable",
+				"format": ["camelCase"]
+			},
+			{
+				"selector": "class",
+				"format": ["PascalCase"]
+			}
+		],
+		"curly": "error",
+		"eqeqeq": "error",
+		"no-throw-literal": "warn",
+		"prefer-const": "warn",
+		"semi": ["error", "always"],
+		"quotes": ["error", "double"]
+	}
+}
