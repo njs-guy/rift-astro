@@ -9,5 +9,5 @@ indent_style = tab
 tab_width = 4
 charset = utf-8
 
-[{*.json,tailwind.config.cjs}]
+[{*.json,tailwind.config.cjs,*.astro}]
 tab_width = 2
