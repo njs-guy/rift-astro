@@ -5,11 +5,11 @@ export function changeTheme(theme: string) {
 
 	if (theme === "auto" || theme === "light" || theme === "dark") {
 		html.setAttribute("data-theme", theme);
+		saveTheme(theme);
+	} else {
+		// Don't save obviously wrong data
+		return;
 	}
-
-	console.log("Theme: " + theme);
-
-	saveTheme(theme);
 }
 
 // Saves whether dark mode is active
@@ -19,7 +19,7 @@ export function saveTheme(theme: string) {
 
 // Loads the preferred theme on page load.
 export function loadTheme() {
-	const theme = localStorage.getItem("useDarkTheme");
+	const theme = localStorage.getItem("preferredTheme");
 
 	// Set the theme
 	changeTheme(theme);
