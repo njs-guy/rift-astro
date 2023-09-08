@@ -1,6 +1,7 @@
 ---
-import NavBar from "../components/NavBar.astro";
 import "../global.css";
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
 	title: string;
@@ -39,8 +40,11 @@ const { title } = Astro.props as Props;
 		/>
 		<title>{title}</title>
 	</head>
-	<body class="max-w-5xl mx-auto">
+	<body class="max-width mx-auto flex flex-col m-0 min-h-screen">
 		<NavBar />
 		<slot />
+		<!-- Empty space to move footer to the bottom of the page -->
+		<div class="grow h-0"></div>
+		<Footer />
 	</body>
 </html>

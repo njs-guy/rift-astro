@@ -26,6 +26,10 @@ h3 {
 	@apply text-2xl font-bold;
 }
 
+.max-width {
+	@apply max-w-5xl;
+}
+
 .icon {
 	@apply fill-base-content h-4 w-4;
 }
