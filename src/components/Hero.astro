@@ -8,8 +8,8 @@ interface Props {
 }
 
 const {
-	title = "Hey.",
-	text = "This is how we be.",
+	title = "Behold: a website",
+	text = "Truly astonishing.",
 	button = false,
 	buttonText = "Learn more",
 	buttonLink = "https://docs.astro.build/en/getting-started/",
@@ -24,6 +24,7 @@ const {
 				{text}
 			</p>
 			{
+				// Check if there should be a button.
 				button && (
 					<a
 						href={buttonLink}
