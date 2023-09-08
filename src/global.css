@@ -25,3 +25,7 @@ h2 {
 h3 {
 	@apply text-2xl font-bold;
 }
+
+.icon {
+	@apply fill-base-content h-4 w-4;
+}
