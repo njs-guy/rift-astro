@@ -1,7 +1,15 @@
 ---
+import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
+import AuthorBio from "../components/AuthorBio.astro";
 ---
 
 <Layout title="About">
-	<h1>About</h1>
+	<AuthorBio
+		name="Astro theme"
+		bio="An Astro theme that I haven't figured out a name for yet."
+		imageSrc="https://placehold.co/150x150"
+		imageWidth={150}
+		imageHeight={150}
+	/>
 </Layout>

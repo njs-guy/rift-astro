@@ -1,0 +1,22 @@
+---
+import Hero from "../components/Hero.astro";
+
+interface Props {
+	name: string;
+	bio: string;
+	imageSrc: string;
+	imageWidth?: number;
+	imageHeight?: number;
+}
+
+const { name, bio, imageSrc, imageWidth = 150, imageHeight = 150 } = Astro.props as Props;
+---
+
+<Hero
+	title={name}
+	text={bio}
+	img={true}
+	imgSrc={imageSrc}
+	imageWidth={imageWidth}
+	imageHeight={imageHeight}
+/>

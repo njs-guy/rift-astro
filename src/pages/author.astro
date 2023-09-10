@@ -1,7 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import AuthorBio from "../components/AuthorBio.astro";
+
+let barbieBio = `An American theoretical physicist and director of the Manhattan Project's Los Alamos Laboratory during World War II. She is often called the "mother of the atomic bomb."`;
 ---
 
 <Layout title="Author">
-	<h1>Author</h1>
+	<div class="grid grid-cols-2 mt-8">
+		<AuthorBio
+			name="John Fishing"
+			bio="The greatest fisherman of all known history. Known everywhere as the inventor of fishing itself and even made your phone waterproof."
+			imageSrc="https://placehold.co/150x150"
+		/>
+		<AuthorBio
+			name="Barbie Roberts"
+			bio={barbieBio}
+			imageSrc="https://placehold.co/150x150"
+		/>
+	</div>
 </Layout>

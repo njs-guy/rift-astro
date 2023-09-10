@@ -5,6 +5,10 @@ interface Props {
 	button?: boolean;
 	buttonText?: string;
 	buttonLink?: string;
+	img?: boolean;
+	imgSrc?: string;
+	imageWidth?: number;
+	imageHeight?: number;
 }
 
 const {
@@ -13,27 +17,50 @@ const {
 	button = false,
 	buttonText = "Learn more",
 	buttonLink = "https://docs.astro.build/en/getting-started/",
+	img = false,
+	imgSrc = "",
+	imageWidth = 150,
+	imageHeight = 150,
 } = Astro.props as Props;
 ---
 
-<div class="hero">
-	<div class="hero-content text-center">
-		<div class="max-w-md">
-			<h1 class="text-5xl font-bold">{title}</h1>
-			<p class="py-6">
-				{text}
-			</p>
-			{
-				// Check if there should be a button.
-				button && (
-					<a
-						href={buttonLink}
-						class="btn btn-primary"
-					>
-						{buttonText}
-					</a>
-				)
-			}
+<div>
+	{
+		// Check if there should be an image.
+		img && (
+			<img
+				src={imgSrc}
+				class="mx-auto hero-image"
+				width={imageWidth}
+				height={imageHeight}
+			/>
+		)
+	}
+	<div class="hero">
+		<div class="hero-content text-center">
+			<div class="max-w-md">
+				<h1 class="text-5xl font-bold">{title}</h1>
+				<p class="py-6">
+					{text}
+				</p>
+				{
+					// Check if there should be a button.
+					button && (
+						<a
+							href={buttonLink}
+							class="btn btn-primary"
+						>
+							{buttonText}
+						</a>
+					)
+				}
+			</div>
 		</div>
 	</div>
 </div>
+
+<style>
+	.hero-image {
+		width:;
+	}
+</style>
