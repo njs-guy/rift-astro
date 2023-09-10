@@ -12,11 +12,15 @@ interface Props {
 const { name, bio, imageSrc, imageWidth = 150, imageHeight = 150 } = Astro.props as Props;
 ---
 
-<Hero
-	title={name}
-	text={bio}
-	img={true}
-	imgSrc={imageSrc}
-	imageWidth={imageWidth}
-	imageHeight={imageHeight}
-/>
+<div>
+	<Hero
+		title={name}
+		text={bio}
+		img={true}
+		imgSrc={imageSrc}
+		imageWidth={imageWidth}
+		imageHeight={imageHeight}
+	/>
+	<!-- Social icons/links -->
+	<slot />
+</div>

@@ -33,3 +33,7 @@ h3 {
 .icon {
 	@apply fill-base-content h-4 w-4;
 }
+
+.social-icon {
+	@apply w-8 h-8 fill-base-content;
+}
