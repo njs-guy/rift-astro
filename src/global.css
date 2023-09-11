@@ -31,9 +31,17 @@ h3 {
 }
 
 .icon {
-	@apply fill-base-content h-4 w-4;
+	@apply fill-base-content;
+}
+
+.theme-icon {
+	@apply h-4 w-4;
+}
+
+.theme-icon-lg {
+	@apply h-6 w-6;
 }
 
 .social-icon {
-	@apply w-8 h-8 fill-base-content;
+	@apply w-8 h-8;
 }

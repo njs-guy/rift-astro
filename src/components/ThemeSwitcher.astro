@@ -26,19 +26,17 @@ import MoonIcon from "./icons/MoonIcon.astro";
 	function onBtnDarkClick() {
 		changeTheme("dark");
 	}
-
-	// TODO: Load preferred theme on page load.
 </script>
 
 <div class="dropdown dropdown-bottom">
 	<label
 		tabindex="0"
 		class="btn btn-ghost"
-		><AutoIcon />Theme</label
-	>
+		><MoonIcon />
+	</label>
 	<ul
 		tabindex="0"
-		class="dropdown-content z-[1] menu p-2 shadow bg-base-300 rounded-box w-32"
+		class="dropdown-content z-[1] menu shadow bg-base-300 rounded-box w-32"
 	>
 		<li id="btn-auto"><a><AutoIcon /> Auto</a></li>
 		<li id="btn-light"><a><SunIcon /> Light</a></li>
