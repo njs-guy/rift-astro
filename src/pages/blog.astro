@@ -5,31 +5,26 @@ const posts = await Astro.glob("../content/posts/*.md");
 ---
 
 <Layout title="Blog">
-	<h1>Blog</h1>
-	<section class="page-content">
-		<div class="container">
-			{
-				posts.map((post) => (
-					<div>
-						<h2>{post.frontmatter.title}</h2>
-						<p>
-							<strong>{post.frontmatter.author}</strong> -
-							{new Date(post.frontmatter.date).toLocaleDateString("en-US", {
-								timeZone: "UTC",
-							})}
-						</p>
-						<p>
-							<i>{post.frontmatter.subtitle}</i>
-						</p>
-						<a
-							class="btn btn-primary btn-sm"
-							href={`/blog/${post.frontmatter.slug}`}
-						>
-							Read more
-						</a>
-					</div>
-				))
-			}
-		</div>
-	</section>
+	<div class="flex flex-col gap-6">
+		<h1>Blog</h1>
+		<p class="badge badge-lg badge-secondary">Tags</p>
+		{
+			posts.map((post) => (
+				<div>
+					<a href={`/blog/${post.frontmatter.slug}`}>
+						<h2 class="text-primary">{post.frontmatter.title}</h2>
+					</a>
+					<p>
+						<strong>{post.frontmatter.author}</strong> -
+						{new Date(post.frontmatter.date).toLocaleDateString("en-US", {
+							timeZone: "UTC",
+						})}
+					</p>
+					<p>
+						<i>{post.frontmatter.subtitle}</i>
+					</p>
+				</div>
+			))
+		}
+	</div>
 </Layout>
