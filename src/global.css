@@ -26,6 +26,10 @@ h3 {
 	@apply text-2xl font-bold;
 }
 
+.main-content {
+	@apply max-width mx-auto flex flex-col m-0 p-0 min-h-screen;
+}
+
 .max-width {
 	@apply max-w-5xl;
 }

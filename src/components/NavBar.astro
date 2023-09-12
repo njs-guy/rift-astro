@@ -3,31 +3,29 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
 
 <div class="navbar p-0 m-0">
-	<div class="flex-1 gap-2">
+	<div class="flex-1 content-center justify-start">
 		<a
-			class="btn btn-ghost normal-case text-xl"
+			class="btn btn-ghost text-xl"
 			href="/"
 			>Rift</a
 		>
 	</div>
-	<div class="flex-none">
-		<ul class="menu menu-horizontal p-0">
-			<ThemeSwitcher />
-			<li><a href="/blog">Blog</a></li>
-			<li><a href="docs">Docs</a></li>
-			<li><a href="/about">About</a></li>
-			<li>
-				<details>
-					<summary>Other pages</summary>
-					<ul class="p-2 bg-base-300">
-						<li><a href="/author">Author</a></li>
-						<li><a href="/showcase">Showcase</a></li>
-						<li><a href="/grid">Grid layout</a></li>
-						<li><a href="/markdown">Markdown preview</a></li>
-						<li><a href="/theme-test">Theme test</a></li>
-					</ul>
-				</details>
-			</li>
-		</ul>
-	</div>
+	<ul class="menu menu-horizontal items-center">
+		<ThemeSwitcher />
+		<li><a href="/blog">Blog</a></li>
+		<li><a href="docs">Docs</a></li>
+		<li><a href="/about">About</a></li>
+		<li>
+			<details>
+				<summary>Other pages</summary>
+				<ul class="p-2 bg-base-300">
+					<li><a href="/author">Author</a></li>
+					<li><a href="/showcase">Showcase</a></li>
+					<li><a href="/grid">Grid layout</a></li>
+					<li><a href="/markdown">Markdown preview</a></li>
+					<li><a href="/theme-test">Theme test</a></li>
+				</ul>
+			</details>
+		</li>
+	</ul>
 </div>

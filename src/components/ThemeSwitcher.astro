@@ -31,7 +31,7 @@ import MoonIcon from "./icons/MoonIcon.astro";
 <div class="dropdown dropdown-bottom">
 	<label
 		tabindex="0"
-		class="btn btn-ghost"
+		class="theme-switcher btn btn-ghost h-9"
 		><MoonIcon />
 	</label>
 	<ul
@@ -43,3 +43,10 @@ import MoonIcon from "./icons/MoonIcon.astro";
 		<li id="btn-dark"><a><MoonIcon /> Dark</a></li>
 	</ul>
 </div>
+
+<style>
+	.theme-switcher {
+		/* height: 12px !important;
+		padding: 0 !important; */
+	}
+</style>
