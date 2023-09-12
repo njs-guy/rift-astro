@@ -14,16 +14,20 @@ body {
 	@apply text-lg;
 }
 
-h1 {
-	@apply text-4xl font-bold;
-}
+@layer base {
+	h1 {
+		font-size: 1.875rem !important;
+		line-height: 2.25rem !important;
+		font-weight: 700 !important;
+	}
 
-h2 {
-	@apply text-3xl font-bold;
-}
+	h2 {
+		@apply text-2xl font-bold;
+	}
 
-h3 {
-	@apply text-2xl font-bold;
+	h3 {
+		@apply text-3xl font-bold;
+	}
 }
 
 .main-content {
