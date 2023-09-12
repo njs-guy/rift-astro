@@ -1,4 +1,4 @@
-# Astro Theme
+# Rift for Astro
 
 An Astro theme built with Tailwind CSS and DaisyUI. Idk what I'm doing yet.
 
