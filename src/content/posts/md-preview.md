@@ -83,11 +83,41 @@ applications support these elements.
 
 ### Fenced Code Block
 
-```js
-function thisWorks() {
-	console.log("wow");
+```ts
+// src/scripts/changeTheme.ts
+
+// Changes the theme
+export function changeTheme(theme: string) {
+	const html = document.documentElement;
+	html.removeAttribute("data-theme"); // remove previous theme
+
+	if (theme === "auto" || theme === "light" || theme === "dark") {
+		html.setAttribute("data-theme", theme);
+		saveTheme(theme);
+	} else {
+		// Don't save obviously wrong data
+		return;
+	}
 }
+
+// Saves the theme through its name.
+export function saveTheme(theme: string) {
+	localStorage.setItem("preferredTheme", theme);
+}
+
+// Loads the preferred theme on page load.
+export function loadTheme() {
+	const theme = localStorage.getItem("preferredTheme");
+
+	// Set the theme
+	changeTheme(theme);
+}
+
 ```
+
+Astro uses Shiki under the hood for syntax highlighting.
+See [Shiki's themes](https://github.com/shikijs/shiki/tree/main/packages/shiki/themes) for a list of default themes.
+More info can be found in the [Astro Docs](https://docs.astro.build/en/guides/markdown-content/#shiki-configuration).
 
 ### Footnote
 

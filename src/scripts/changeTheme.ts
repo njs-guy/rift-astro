@@ -12,7 +12,7 @@ export function changeTheme(theme: string) {
 	}
 }
 
-// Saves whether dark mode is active
+// Saves the theme through its name.
 export function saveTheme(theme: string) {
 	localStorage.setItem("preferredTheme", theme);
 }
