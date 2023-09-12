@@ -25,3 +25,27 @@ h2 {
 h3 {
 	@apply text-2xl font-bold;
 }
+
+.main-content {
+	@apply max-width mx-auto flex flex-col m-0 p-0 min-h-screen;
+}
+
+.max-width {
+	@apply max-w-5xl;
+}
+
+.icon {
+	@apply fill-base-content;
+}
+
+.theme-icon {
+	@apply h-4 w-4;
+}
+
+.theme-icon-lg {
+	@apply h-6 w-6;
+}
+
+.social-icon {
+	@apply w-8 h-8;
+}

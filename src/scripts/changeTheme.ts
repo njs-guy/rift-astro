@@ -1,37 +1,26 @@
 // Changes the theme
-export function changeTheme(darkTheme: boolean) {
+export function changeTheme(theme: string) {
 	const html = document.documentElement;
 	html.removeAttribute("data-theme"); // remove previous theme
 
-	if (darkTheme) {
-		html.setAttribute("data-theme", "dark");
+	if (theme === "auto" || theme === "light" || theme === "dark") {
+		html.setAttribute("data-theme", theme);
+		saveTheme(theme);
 	} else {
-		html.setAttribute("data-theme", "light");
+		// Don't save obviously wrong data
+		return;
 	}
-
-	console.log("dark theme: " + darkTheme);
-
-	saveTheme(darkTheme);
 }
 
 // Saves whether dark mode is active
-export function saveTheme(useDarkTheme: boolean) {
-	localStorage.setItem("useDarkTheme", String(useDarkTheme));
+export function saveTheme(theme: string) {
+	localStorage.setItem("preferredTheme", theme);
 }
 
 // Loads the preferred theme on page load.
 export function loadTheme() {
-	const useDarkTheme = localStorage.getItem("useDarkTheme");
-	let isUsingDarkTheme = false;
-
-	// Check if useDarkTheme is true
-	// LocalStorage can only store strings, so booleans have to be converted first.
-	if (useDarkTheme === "true") {
-		isUsingDarkTheme = true;
-	}
-
-	// Else, isUsingDarkTheme is already false.
+	const theme = localStorage.getItem("preferredTheme");
 
 	// Set the theme
-	changeTheme(isUsingDarkTheme);
+	changeTheme(theme);
 }
