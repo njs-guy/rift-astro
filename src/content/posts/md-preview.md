@@ -5,14 +5,14 @@ subtitle: See how Markdown looks in Rift
 date: 2023-09-12
 author: John Astro
 ---
-Derived from [Markdown Guide.](https://www.markdownguide.org/cheat-sheet/)
+Derived from [Markdown Guide](https://www.markdownguide.org/cheat-sheet/).
 
-## Basic Syntax
+# Basic Syntax
 
 _These_ are the elements outlined in **John Gruber’s** original design document.
 All **_Markdown_** applications support these elements.
 
-### Headings
+## Headings
 
 # H1
 
@@ -28,60 +28,60 @@ All **_Markdown_** applications support these elements.
 
 TODO: Actual headings
 
-### Bold
+## Bold
 
 **Bold and brash**
 
-### Italic
+## Italic
 
 _More like belongs in the trash_
 
-### Blockquote
+## Blockquote
 
 > "Let's show 'em a thing or three!"
 
-### Ordered List
+## Ordered List
 
 1. Create a free and open source Astro theme
 2. Have everyone be impressed by your free software
 3. ???
 4. Profit
 
-### Unordered List
+## Unordered List
 
 - Pet cats
 - Pet dogs
 - Pet goldfish
 
-### Code
+## Code
 
 `let x = 8`
 
-### Horizontal Rule
+## Horizontal Rule
 
 ---
 
-### Link
+## Link
 
 [Donate to Doctor's Without Borders](https://www.doctorswithoutborders.org/)
 
-### Image
+## Image
 
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/320px-Cat_August_2010-4.jpg)
 
-## Extended Syntax
+# Extended Syntax
 
 These elements extend the basic syntax by adding additional features. Not all Markdown
 applications support these elements.
 
-### Table
+## Table
 
 | Syntax    | Description |
 | --------- | ----------- |
 | Header    | Title       |
 | Paragraph | Text        |
 
-### Fenced Code Block
+## Fenced Code Block
 
 ```ts
 // src/scripts/changeTheme.ts
@@ -119,45 +119,45 @@ Astro uses Shiki under the hood for syntax highlighting.
 See [Shiki's themes](https://github.com/shikijs/shiki/tree/main/packages/shiki/themes) for a list of default themes.
 More info can be found in the [Astro Docs](https://docs.astro.build/en/guides/markdown-content/#shiki-configuration).
 
-### Footnote
+## Footnote
 
 Here's a sentence with a footnote. [^1]
 
 [^1]: This is the footnote.
 
-### Heading ID
+## Heading ID
 
-### My Great Heading {#custom-id}
+## My Great Heading {#custom-id}
 
-### Definition List
+## Definition List
 
 term
 : definition
 
-### Strikethrough
+## Strikethrough
 
 ~~The world is flat.~~
 
-### Task List
+## Task List
 
 - [x] Take a shower
 - [ ] Learn something new
 - [ ] Actually finish something for once
 
-### Emoji
+## Emoji
 
 That is so funny! :joy:
 
 (See also [Copying and Pasting Emoji](https://www.markdownguide.org/extended-syntax/#copying-and-pasting-emoji))
 
-### Highlight
+## Highlight
 
 I need to highlight these ==very important words==.
 
-### Subscript
+## Subscript
 
 H~2~O
 
-### Superscript
+## Superscript
 
 X^2^
