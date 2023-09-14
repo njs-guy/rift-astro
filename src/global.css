@@ -40,6 +40,26 @@ h3 {
 	@apply prose prose-img:rounded-lg prose-code:rounded-lg;
 }
 
+.doc-summary {
+	font-size: 14px;
+	line-height: 2rem !important;
+
+	@apply bg-base-200 text-base-content rounded-lg p-2;
+}
+
+.doc-summary > h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 14px !important;
+}
+
+.doc-summary > ul {
+	padding-left: 8px;
+}
+
 .task-list-item {
 	list-style: none;
 }
