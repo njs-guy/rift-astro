@@ -1,0 +1,17 @@
+---
+import { getEntry } from "astro:content";
+
+interface Props {
+	collectionName?: string;
+}
+
+const { collectionName = "docs" } = Astro.props as Props;
+
+const summary = await getEntry(collectionName, "summary");
+
+const { Content } = await summary.render();
+---
+
+<div class="doc-summary">
+	<Content />
+</div>
