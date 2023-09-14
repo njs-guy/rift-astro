@@ -2,12 +2,9 @@
 import "../global.css";
 import NavBar from "../components/NavBar.astro";
 import Footer from "../components/Footer.astro";
+import DocSummary from "../components/DocSummary.astro";
 
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props as Props;
+const title = "Rift Docs"; // TODO: Actual title
 ---
 
 <script>
@@ -43,10 +40,10 @@ const { title } = Astro.props as Props;
 	<body>
 		<div class="main-content gap-2">
 			<NavBar />
-			<div class="px-8">
+			<div class="flex flex-row">
+				<DocSummary />
 				<slot />
 			</div>
-			<!-- TODO: make this a component -->
 			<!-- Empty space to move footer to the bottom of the page -->
 			<br />
 			<div class="grow h-0"></div>

@@ -3,6 +3,7 @@ import { z, defineCollection } from "astro:content";
 const blogCollection = defineCollection({
 	type: "content",
 	schema: z.object({
+		// TODO: remove slug
 		slug: z.string(),
 		title: z.string(),
 		subtitle: z.string(),
@@ -12,7 +13,10 @@ const blogCollection = defineCollection({
 	}),
 });
 
-const docsCollection = defineCollection({});
+const docsCollection = defineCollection({
+	type: "content",
+	schema: z.object({}),
+});
 
 export const collections = {
 	blog: blogCollection,
