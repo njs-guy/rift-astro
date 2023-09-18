@@ -18,6 +18,12 @@ const defaultSection: Section[] = [
 const { collectionName = "docs", summary = defaultSection } = Astro.props as Props;
 ---
 
-<div class="doc-summary">
-	{summary.map((section) => <DocSummarySection section={section} />)}
-</div>
+<ul class="menu menu-sm doc-summary">
+	{
+		summary.map((section) => (
+			<li>
+				<DocSummarySection section={section} />
+			</li>
+		))
+	}
+</ul>

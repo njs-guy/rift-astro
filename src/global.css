@@ -58,24 +58,25 @@ body {
 }
 
 .doc-summary {
-	font-size: 14px;
-	line-height: 2rem !important;
+	/* font-size: 14px !important; */
+	/* line-height: 2rem !important; */
 
 	@apply bg-base-200 text-base-content rounded-lg p-2;
+	min-width: 200px;
 }
 
-.doc-summary a:hover {
+/* .doc-summary a:hover {
 	@apply text-accent;
-}
+} */
 
 .doc-summary h1 {
 	@apply font-bold;
 }
 
-.doc-summary li {
+/* .doc-summary li {
 	@apply border-l-2 border-base-content leading-7;
 	padding-left: 10px;
-}
+} */
 
 .active-page {
 	@apply text-primary;
