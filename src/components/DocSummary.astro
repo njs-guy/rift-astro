@@ -1,5 +1,7 @@
 ---
 import { getEntry } from "astro:content";
+import { type Section, type SubSection } from "../scripts/summarySection";
+import DocSummarySection from "./DocSummarySection.astro";
 
 interface Props {
 	collectionName?: string;
@@ -9,9 +11,23 @@ const { collectionName = "docs" } = Astro.props as Props;
 
 const summary = await getEntry(collectionName, "summary");
 
-const { Content } = await summary.render();
+const sub1: SubSection = { title: "A subsection", link: "https://www.google.com/" };
+const sub2: SubSection = { title: "Another subsection", link: "https://www.google.com/" };
+const section: Section = { title: "Look at this section", subsections: [sub1, sub2] };
+
+const { Content, headings } = await summary.render();
+
+let sections: string[] = [];
+// const sections = headings.filter((h) => h.depth === 1);
+// headings.forEach((h) => {
+// 	if (h.depth === 1) {
+// 		sections.push(`<details><summary>Heading</summary></details>`);
+// 	}
+// });
 ---
 
 <div class="doc-summary">
-	<Content />
+	<!-- <Content /> -->
+	<!-- <p>{sections[1].text}</p> -->
+	<DocSummarySection section={section} />
 </div>

@@ -1,0 +1,21 @@
+---
+import { type Section, type SubSection } from "../scripts/summarySection";
+
+interface Props {
+	section: Section;
+}
+const { section } = Astro.props as Props;
+---
+
+<details open>
+	<summary>{section.title}</summary>
+	<ul>
+		{
+			section.subsections.map((sub) => (
+				<li>
+					<a href={sub.link}>{sub.title}</a>
+				</li>
+			))
+		}
+	</ul>
+</details>

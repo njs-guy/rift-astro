@@ -73,12 +73,21 @@ body {
 	font-size: 14px !important;
 }
 
+.doc-summary a:hover {
+	@apply text-accent;
+}
+
 .doc-summary h1 {
 	@apply font-bold;
 }
 
-.doc-summary h2 {
-	padding-left: 8px;
+.doc-summary li {
+	@apply border-l-2 border-base-content leading-7;
+	padding-left: 10px;
+}
+
+.active-page {
+	@apply text-primary;
 }
 
 .task-list-item {
