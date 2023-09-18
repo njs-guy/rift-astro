@@ -4,7 +4,10 @@ import { type Section, type SubSection } from "../scripts/summarySection";
 interface Props {
 	section: Section;
 }
+
 const { section } = Astro.props as Props;
+
+const pathname = new URL(Astro.request.url).pathname;
 ---
 
 <details open>
@@ -13,7 +16,12 @@ const { section } = Astro.props as Props;
 		{
 			section.subsections.map((sub) => (
 				<li>
-					<a href={sub.link}>{sub.title}</a>
+					<a
+						class={pathname === sub.link ? "doc-summary-active" : ""}
+						href={sub.link}
+					>
+						{sub.title}
+					</a>
 				</li>
 			))
 		}

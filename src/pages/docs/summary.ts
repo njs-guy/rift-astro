@@ -2,14 +2,14 @@ import { type Section } from "../../scripts/summarySection";
 
 export const summary: Section[] = [
 	{
-		title: "A section",
+		title: "Testing",
 		subsections: [
-			{ title: "A link that works", link: "https://www.google.com" },
-			{ title: "Kind of a link", link: "https://www.google.com" },
+			{ title: "Test doc", link: "/docs/test-doc" },
+			{ title: "Another test doc", link: "/docs/other-test-doc" },
 		],
 	},
 	{
-		title: "Another section",
+		title: "Not testing",
 		subsections: [
 			{ title: "Watch this not work", link: "https://www.google.com" },
 			{ title: "Amazing", link: "https://www.google.com" },

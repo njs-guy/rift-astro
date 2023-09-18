@@ -64,15 +64,6 @@ body {
 	@apply bg-base-200 text-base-content rounded-lg p-2;
 }
 
-.doc-summary h1,
-.doc-summary h2,
-.doc-summary h3,
-.doc-summary h4,
-.doc-summary h5,
-.doc-summary h6 {
-	font-size: 14px !important;
-}
-
 .doc-summary a:hover {
 	@apply text-accent;
 }
@@ -87,6 +78,10 @@ body {
 }
 
 .active-page {
+	@apply text-primary;
+}
+
+.doc-summary-active {
 	@apply text-primary;
 }
 
