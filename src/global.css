@@ -73,7 +73,11 @@ body {
 	font-size: 14px !important;
 }
 
-.doc-summary > ul {
+.doc-summary h1 {
+	@apply font-bold;
+}
+
+.doc-summary h2 {
 	padding-left: 8px;
 }
 

@@ -3,9 +3,9 @@ start-page: wow
 ---
 
 # A section
-- Wow
-- This probably works
+## [A link that works](https://www.google.com)
+## wow
 
 # Another section
-- Watch this not work
-- Amazing
+## Watch this not work
+## Amazing
