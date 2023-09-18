@@ -85,9 +85,9 @@ body {
 	list-style: none;
 }
 
-.task-list-item > input {
+/* .task-list-item > input {
 	@apply checkbox checkbox-primary;
-}
+} */
 
 .max-width {
 	@apply max-w-5xl;
