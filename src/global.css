@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	color-scheme: light dark;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
 html {
 	margin: 0;
 	padding: 0;
@@ -14,22 +22,29 @@ body {
 	@apply text-lg;
 }
 
-h1 {
-	font-size: 2.25rem !important;
-	line-height: 2.25rem !important;
-	font-weight: 700 !important;
+/* TODO: Make headings use these by default. */
+.heading1 {
+	@apply text-4xl font-bold;
 }
 
-h2 {
-	font-size: 1.75rem !important;
-	line-height: 2rem !important;
-	font-weight: 700 !important;
+.heading2 {
+	@apply text-3xl font-bold;
 }
 
-h3 {
-	font-size: 1.5rem !important;
-	line-height: 1.75rem !important;
-	font-weight: 700 !important;
+.heading3 {
+	@apply text-2xl font-bold;
+}
+
+.heading4 {
+	@apply text-xl font-bold;
+}
+
+.heading5 {
+	@apply text-lg font-bold;
+}
+
+.heading6 {
+	@apply text-base font-bold;
 }
 
 .main-content {
@@ -37,7 +52,9 @@ h3 {
 }
 
 .md-content {
-	@apply prose prose-img:rounded-lg prose-code:rounded-lg;
+	@apply prose prose-lg prose-headings:font-bold prose-img:rounded-lg prose-code:rounded-lg;
+	@apply prose-p:text-base-content prose-ul:text-base-content prose-ol:text-base-content prose-headings:text-base-content prose-table:text-base-content;
+	@apply prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-h5:text-lg prose-h6:text-base;
 }
 
 .doc-summary {
@@ -47,12 +64,12 @@ h3 {
 	@apply bg-base-200 text-base-content rounded-lg p-2;
 }
 
-.doc-summary > h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.doc-summary h1,
+.doc-summary h2,
+.doc-summary h3,
+.doc-summary h4,
+.doc-summary h5,
+.doc-summary h6 {
 	font-size: 14px !important;
 }
 

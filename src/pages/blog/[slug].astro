@@ -19,9 +19,9 @@ export async function getStaticPaths() {
 const { Content, frontmatter } = Astro.props.post;
 ---
 
-<Layout title={frontmatter.title}>
+<Layout title={frontmatter.title + " - Rift"}>
 	<div class="flex flex-col gap-4">
-		<h1>{frontmatter.title}</h1>
+		<h1 class="not-prose heading1">{frontmatter.title}</h1>
 		<p><i>{frontmatter.subtitle}</i></p>
 		<p>
 			By <strong>{frontmatter.author}</strong> on {

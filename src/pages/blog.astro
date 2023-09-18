@@ -6,13 +6,13 @@ const posts = await Astro.glob("../content/posts/*.md");
 
 <Layout title="Blog">
 	<div class="flex flex-col gap-6">
-		<h1>Blog</h1>
+		<h1 class="heading1">Blog</h1>
 		<p class="badge badge-lg badge-secondary">Tags</p>
 		{
 			posts.map((post) => (
 				<div>
 					<a href={`/blog/${post.frontmatter.slug}`}>
-						<h2 class="text-primary">{post.frontmatter.title}</h2>
+						<h2 class="text-primary heading2">{post.frontmatter.title}</h2>
 					</a>
 					<p>
 						<strong>{post.frontmatter.author}</strong> -
