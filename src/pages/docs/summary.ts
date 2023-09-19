@@ -6,6 +6,7 @@ export const summary: Section[] = [
 		subsections: [
 			{ title: "Rift for Astro", link: "/docs/rift-for-astro" },
 			{ title: "Project structure", link: "/docs/project-structure" },
+			{ title: "Tech stack", link: "/docs/tech-stack" },
 		],
 	},
 	{
