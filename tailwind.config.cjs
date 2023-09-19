@@ -1,3 +1,5 @@
+const starlightPlugin = require("@astrojs/starlight-tailwind");
+
 const fontFamily = '"Open Sans", Arial, sans-serif';
 
 /** @type {import('tailwindcss').Config} */
@@ -6,7 +8,11 @@ module.exports = {
 	theme: {
 		extend: {},
 	},
-	plugins: [require("@tailwindcss/typography"), require("daisyui")],
+	plugins: [
+		require("@tailwindcss/typography"),
+		require("daisyui"),
+		require("@astrojs/starlight-tailwind"),
+	],
 	daisyui: {
 		themes: [
 			{
