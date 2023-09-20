@@ -108,7 +108,12 @@ body {
 	margin: 0px;
 }
 
-section pre {
+.doc-content {
+	@apply w-full;
+}
+
+.doc-content section pre {
+	@apply w-full;
 	margin: 0px !important;
 }
 
