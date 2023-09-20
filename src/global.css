@@ -10,11 +10,10 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
-
-	/* Dark mode colors. */
 }
 
 /* TODO: replace these with Tailwind variables */
+/* Dark mode colors. */
 :root[data-theme="dark"],
 :root[data-theme="auto"] {
 	--sl-color-white: hsl(var(--p)); /* Tab color */
@@ -69,31 +68,21 @@ body {
 }
 
 .md-content {
-	@apply prose prose-lg prose-headings:font-bold prose-img:rounded-lg prose-code:rounded-lg;
+	@apply prose prose-headings:font-bold prose-img:rounded-lg prose-code:rounded-lg;
 	@apply prose-p:text-base-content prose-ul:text-base-content prose-ol:text-base-content prose-headings:text-base-content prose-table:text-base-content;
 	@apply prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-h5:text-lg prose-h6:text-base;
+
+	line-height: 1.6rem;
 }
 
 .doc-summary {
-	/* font-size: 14px !important; */
-	/* line-height: 2rem !important; */
-
 	@apply bg-base-200 text-base-content rounded-lg p-2;
 	min-width: 200px;
 }
 
-/* .doc-summary a:hover {
-	@apply text-accent;
-} */
-
 .doc-summary h1 {
 	@apply font-bold;
 }
-
-/* .doc-summary li {
-	@apply border-l-2 border-base-content leading-7;
-	padding-left: 10px;
-} */
 
 .active-page {
 	@apply text-primary;
@@ -109,8 +98,18 @@ body {
 
 .tablist-wrapper li {
 	list-style: none;
-	margin-left: 0px;
-	padding-left: 0px;
+	margin: 0px;
+	padding: 0px;
+	line-height: 1.6rem;
+}
+
+.tablist-wrapper ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+section pre {
+	margin: 0px !important;
 }
 
 .rift-tab {
