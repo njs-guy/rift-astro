@@ -2,10 +2,6 @@
 title: Project structure
 ---
 
-import Tabs from "../../components/Tabs.astro";
-import TabItem from "../../components/TabItem.astro";
-import TabContent from "../../components/TabContent.astro";
-
 # Project structure
 
 The
@@ -17,30 +13,3 @@ wow
 ## Look at all this stuff
 
 Maybe I'll actually write this one day.
-
-<Tabs>
-	<TabItem label="JS" />
-	<TabItem label="Python" />
-	<TabItem label="Rust" />
-</Tabs>
-
-<TabContent contentFor="JS">
-```js
-function doStuff() {
-	console.log("This is JavaScript.")
-}
-```
-</TabContent>
-<TabContent contentFor="Python">
-```py
-def do_stuff():
-	print("This is Python.")
-```
-</TabContent>
-<TabContent contentFor="Rust">
-```rs
-fn do_stuff() {
-	!println("This is Rust.");
-}
-```
-</TabContent>

@@ -16,7 +16,15 @@ const blogCollection = defineCollection({
 
 const docsCollection = defineCollection({
 	type: "content",
-	schema: docsSchema(),
+	schema: z.object({
+		title: z.string(),
+		description: z.string().optional(),
+		lastUpdated: z.string().optional(),
+		prev: z.string().optional(),
+		next: z.string().optional(),
+		editLink: z.string().optional(),
+		isDraft: z.boolean().default(false),
+	}),
 });
 
 export const collections = {

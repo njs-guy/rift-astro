@@ -1,6 +1,4 @@
-const starlightPlugin = require("@astrojs/starlight-tailwind");
-
-const fontFamily = '"Open Sans", Arial, sans-serif';
+const fontFamily = "Roboto, Arial, sans-serif";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
