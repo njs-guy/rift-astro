@@ -9,35 +9,24 @@ import { Tabs, TabItem } from "@astrojs/starlight/components";
 The mdx
 
 <Tabs>
-	<TabItem label="JS">
-	```js
-	console.log("wow");
-	console.log("wow");
-	console.log("wow");
-	console.log("wow");
-	console.log("wow");
-	console.log("wow");
+    <TabItem label="JS">
+    ```js
+    function doStuff() {
+    	console.log("This is JavaScript.")
+    }
     ```
     </TabItem>
     <TabItem label="Python">
-	```py
-	print("wow")
-	print("wow")
-	print("wow")
-	print("wow")
-	print("wow")
-	print("wow")
-
-    ///
+    ```py
+    def do_stuff():
+    	print("This is Python.")
     ```
     </TabItem>
     <TabItem label="Rust">
     ```rs
-    !println("wow");
-    !println("wow");
-    !println("wow");
-    !println("wow");
-    !println("wow");
+    fn do_stuff() {
+    	!println("This is Rust.");
+    }
     ```
     </TabItem>
 

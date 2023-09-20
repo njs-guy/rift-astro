@@ -1,20 +1,13 @@
 import { defineConfig } from "astro/config";
-// import mdx from "@astrojs/mdx";
-// import sitemap from "@astrojs/sitemap";
-import starlight from "@astrojs/starlight";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
 import remarkToc from "remark-toc";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [
-		starlight({
-			// Title can be ignored, Starlight crashes without it.
-			title: "Rift",
-		}),
-		tailwind(),
-	],
+	integrations: [tailwind(), mdx(), sitemap()],
 	output: "hybrid",
 	markdown: {
 		shikiConfig: {

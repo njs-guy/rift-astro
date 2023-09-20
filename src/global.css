@@ -12,33 +12,21 @@
 	-webkit-text-size-adjust: 100%;
 
 	/* Dark mode colors. */
-	--sl-color-accent-low: #00273d;
-	--sl-color-accent: #0071a7;
-	--sl-color-accent-high: #92d1fe;
-	--sl-color-white: #ffffff;
-	--sl-color-gray-1: #e7eff2;
-	--sl-color-gray-2: #bac4c8;
-	--sl-color-gray-3: #7b8f96;
-	--sl-color-gray-4: #495c62;
-	--sl-color-gray-5: #2a3b41;
-	--sl-color-gray-6: #182a2f;
-	--sl-color-black: #121a1c;
+}
+
+/* TODO: replace these with Tailwind variables */
+:root[data-theme="dark"],
+:root[data-theme="auto"] {
+	--sl-color-white: hsl(var(--p)); /* Tab color */
+	--sl-color-gray-3: #7b8f96; /* Unfocused text */
+	--sl-color-gray-5: #2a3b41; /* Tab underline */
 }
 
 /* Light mode colors. */
 :root[data-theme="light"] {
-	--sl-color-accent-low: #b0deff;
-	--sl-color-accent: #0073aa;
-	--sl-color-accent-high: #003653;
-	--sl-color-white: #121a1c;
-	--sl-color-gray-1: #182a2f;
-	--sl-color-gray-2: #2a3b41;
+	--sl-color-white: hsl(var(--p)); /* Tab color */
 	--sl-color-gray-3: #495c62;
-	--sl-color-gray-4: #7b8f96;
 	--sl-color-gray-5: #bac4c8;
-	--sl-color-gray-6: #e7eff2;
-	--sl-color-gray-7: #f3f7f9;
-	--sl-color-black: #ffffff;
 }
 
 html {
@@ -125,17 +113,18 @@ body {
 	padding-left: 0px;
 }
 
-starlight-tabs {
-	margin-top: 0px;
+.rift-tab {
+	@apply tab tab-bordered;
+	text-decoration: none;
 }
 
-pre .astro-code {
-	background-color: red;
+.tab-active {
+	@apply text-primary;
 }
 
-/* .task-list-item > input {
-	@apply checkbox checkbox-primary;
-} */
+.tab-content hidden {
+	visibility: hidden;
+}
 
 .max-width {
 	@apply max-w-5xl;

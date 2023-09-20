@@ -1,0 +1,14 @@
+---
+interface Props {
+	contentFor?: string;
+}
+
+const { contentFor = "Tab" } = Astro.props as Props;
+---
+
+<section
+	class="tab-content"
+	id={contentFor + "-tab-content"}
+>
+	<slot />
+</section>
