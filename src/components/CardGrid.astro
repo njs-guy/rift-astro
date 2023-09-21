@@ -1,0 +1,12 @@
+---
+interface Props {
+	columns?: number;
+}
+
+const { columns = 3 } = Astro.props as Props;
+let gridCols = "grid-cols-" + columns.toString();
+---
+
+<div class:list={["grid", gridCols, "gap-2", "w-full"]}>
+	<slot />
+</div>
