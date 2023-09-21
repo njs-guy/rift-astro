@@ -1,5 +1,4 @@
 import { z, defineCollection } from "astro:content";
-import { docsSchema } from "@astrojs/starlight/schema";
 
 const blogCollection = defineCollection({
 	type: "content",
@@ -20,8 +19,10 @@ const docsCollection = defineCollection({
 		title: z.string(),
 		description: z.string().optional(),
 		lastUpdated: z.string().optional(),
-		prev: z.string().optional(),
+		previous: z.string().optional(),
+		previousLabel: z.string().optional(),
 		next: z.string().optional(),
+		nextLabel: z.string().optional(),
 		editLink: z.string().optional(),
 		isDraft: z.boolean().default(false),
 	}),

@@ -1,0 +1,36 @@
+---
+interface Props {
+	next?: string;
+	nextLabel?: string;
+	previous?: string;
+	previousLabel?: string;
+}
+
+const {
+	next = "/",
+	nextLabel = "Next page",
+	previous = "/",
+	previousLabel = "Previous page",
+} = Astro.props as Props;
+---
+
+<div class="page-nav-container flex flex-row gap-2 w-full">
+	<a
+		href={previous}
+		class="btn btn-block shrink"
+	>
+		<div class="flex flex-col items-start w-full">
+			<span class="text-xs">Previous</span>
+			<span>{previousLabel}</span>
+		</div>
+	</a>
+	<a
+		href={next}
+		class="btn btn-block shrink"
+	>
+		<div class="flex flex-col items-end w-full">
+			<span class="text-xs">Next</span>
+			<span>{nextLabel}</span>
+		</div>
+	</a>
+</div>
