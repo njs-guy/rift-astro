@@ -15,4 +15,5 @@ export default defineConfig({
 		},
 		remarkPlugins: [remarkToc],
 	},
+	redirects: { "/docs": "/docs/rift-for-astro" },
 });
