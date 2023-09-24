@@ -8,7 +8,7 @@ import remarkToc from "remark-toc";
 // https://astro.build/config
 export default defineConfig({
 	integrations: [tailwind(), mdx(), sitemap()],
-	output: "hybrid",
+	output: "static",
 	markdown: {
 		shikiConfig: {
 			theme: "one-dark-pro",
