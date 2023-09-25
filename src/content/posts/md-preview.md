@@ -5,6 +5,7 @@ subtitle: See how Markdown looks in Rift
 date: 2023-09-12
 author: John Astro
 ---
+
 ## Table of Contents
 
 # Basic Syntax
@@ -12,12 +13,12 @@ author: John Astro
 Derived from [Markdown Guide](https://www.markdownguide.org/cheat-sheet/).
 
 To add a table of contents, add an H2 like so:
+
 ```md
 ## Table of Contents
 ```
 
 For more information, see [remark-toc](https://github.com/remarkjs/remark-toc).
-
 
 _These_ are the elements outlined in **John Gruber’s** original design document.
 All **_Markdown_** applications support these elements.
@@ -59,9 +60,9 @@ _More like belongs in the trash_
 
 ## Unordered List
 
-- Pet cats
-- Pet dogs
-- Pet goldfish
+-   Pet cats
+-   Pet dogs
+-   Pet goldfish
 
 ## Code
 
@@ -122,7 +123,6 @@ export function loadTheme() {
 	// Set the theme
 	changeTheme(theme);
 }
-
 ```
 
 Astro uses Shiki under the hood for syntax highlighting.
@@ -150,9 +150,9 @@ term
 
 ## Task List
 
-* [x] Take a shower
-* [ ] Learn something new
-* [ ] Actually finish something for once
+-   [x] Take a shower
+-   [ ] Learn something new
+-   [ ] Actually finish something for once
 
 ## Emoji
 
