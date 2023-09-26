@@ -3,6 +3,11 @@ const baseFontFamily = "Roboto, Arial, sans-serif";
 const headingFontFamily = "Roboto, Arial, sans-serif";
 const monoFontFamily = "mono";
 
+// bg 2B2E4A
+// primary E84545
+// secondary 903749
+// accent 53354A
+
 // Light colors
 const base100Light = "#e6e6e6";
 const base200Light = "#ebebeb";
@@ -13,19 +18,19 @@ const primaryLight = "#10b981";
 const secondaryLight = "#fafdff";
 const accentLight = "#14b8a6";
 const errorLight = "#e55561";
-const codeTabUnderlineLight = "black";
+const codeTabBorderLight = "black";
 
 // Dark colors
-const base100Dark = "#1e1e1e";
-const base200Dark = "#262626";
-const base300Dark = "#2e2e2e";
+const base100Dark = "#1f2329";
+const base200Dark = "#282c34";
+const base300Dark = "#30363f";
 const normalTextDark = "#e1e1e1";
-const dimTextDark = "#999999";
-const primaryDark = "#10b981";
-const secondaryDark = "#0ea5e9";
+const dimTextDark = "#7a818e";
+const primaryDark = "#48b0bd";
+const secondaryDark = "#e2b86b";
 const accentDark = "#14b8a6";
 const errorDark = "#e55561";
-const codeTabUnderlineDark = "black";
+const codeTabBorderDark = "#30363f";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -54,7 +59,7 @@ module.exports = {
 					// TODO: neutral, info, success, warning
 					"error": errorLight,
 					"--dim-text": dimTextLight,
-					"--code-tab-underline": codeTabUnderlineLight,
+					"--code-tab-border": codeTabBorderLight,
 					"--btn-text-case": "none",
 					"--animation-btn": "0",
 				},
@@ -71,7 +76,7 @@ module.exports = {
 					// TODO: neutral, info, success, warning
 					"error": errorDark,
 					"--dim-text": dimTextDark,
-					"--code-tab-underline": codeTabUnderlineDark,
+					"--code-tab-border": codeTabBorderDark,
 					"--btn-text-case": "none",
 					"--animation-btn": "0",
 				},
