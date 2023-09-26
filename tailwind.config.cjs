@@ -1,4 +1,31 @@
-const fontFamily = "Roboto, Arial, sans-serif";
+// Fonts
+const baseFontFamily = "Roboto, Arial, sans-serif";
+const headingFontFamily = "Roboto, Arial, sans-serif";
+const monoFontFamily = "mono";
+
+// Light colors
+const base100Light = "#e6e6e6";
+const base200Light = "#ebebeb";
+const base300Light = "#f0f0f0";
+const normalTextLight = "#1e1e1e";
+const dimTextLight = "#999999";
+const primaryLight = "#10b981";
+const secondaryLight = "#fafdff";
+const accentLight = "#14b8a6";
+const errorLight = "#e55561";
+const codeTabUnderlineLight = "black";
+
+// Dark colors
+const base100Dark = "#1e1e1e";
+const base200Dark = "#262626";
+const base300Dark = "#2e2e2e";
+const normalTextDark = "#e1e1e1";
+const dimTextDark = "#999999";
+const primaryDark = "#10b981";
+const secondaryDark = "#0ea5e9";
+const accentDark = "#14b8a6";
+const errorDark = "#e55561";
+const codeTabUnderlineDark = "black";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -16,31 +43,37 @@ module.exports = {
 			{
 				light: {
 					...["[data-theme=dark]"],
-					"fontFamily": fontFamily,
-					"base-100": "#E6E6E6",
-					"base-200": "#EBEBEB",
-					"base-300": "#F0F0F0",
-					"base-content": "#1e1e1e",
-					"primary": "#10b981",
-					"secondary": "#fafdff",
-					"accent": "#14b8a6",
+					"fontFamily": baseFontFamily,
+					"base-100": base100Light,
+					"base-200": base200Light,
+					"base-300": base300Light,
+					"base-content": normalTextLight,
+					"primary": primaryLight,
+					"secondary": secondaryLight,
+					"accent": accentLight,
 					// TODO: neutral, info, success, warning
-					"error": "#e55561",
+					"error": errorLight,
+					"--dim-text": dimTextLight,
+					"--code-tab-underline": codeTabUnderlineLight,
 					"--btn-text-case": "none",
+					"--animation-btn": "0",
 				},
 				dark: {
 					...["[data-theme=dark]"],
-					"fontFamily": fontFamily,
-					"base-100": "#1e1e1e",
-					"base-200": "#262626",
-					"base-300": "#2E2E2E",
-					"base-content": "#E1E1E1",
-					"primary": "#10b981",
-					"secondary": "#0ea5e9",
-					"accent": "#14b8a6",
+					"fontFamily": baseFontFamily,
+					"base-100": base100Dark,
+					"base-200": base200Dark,
+					"base-300": base300Dark,
+					"base-content": normalTextDark,
+					"primary": primaryDark,
+					"secondary": secondaryDark,
+					"accent": accentDark,
 					// TODO: neutral, info, success, warning
-					"error": "#e55561",
+					"error": errorDark,
+					"--dim-text": dimTextDark,
+					"--code-tab-underline": codeTabUnderlineDark,
 					"--btn-text-case": "none",
+					"--animation-btn": "0",
 				},
 			},
 		],

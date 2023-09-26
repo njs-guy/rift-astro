@@ -12,26 +12,25 @@
 	-webkit-text-size-adjust: 100%;
 }
 
-/* TODO: replace these with Tailwind variables */
-/* Dark mode colors. */
+/* Dark mode Starlight colors. */
 :root[data-theme="dark"] {
 	--sl-color-white: hsl(var(--p)); /* Tab color */
-	--sl-color-gray-3: #7b8f96; /* Unfocused text */
-	--sl-color-gray-5: #2a3b41; /* Tab underline */
+	--sl-color-gray-3: var(--dim-text); /* Unfocused text */
+	--sl-color-gray-5: var(--code-tab-underline); /* Tab underline */
 }
 
-/* Auto mode colors. */
+/* Auto mode Starlight colors. */
 :root[data-theme="auto"] {
 	--sl-color-white: hsl(var(--p)); /* Tab color */
-	--sl-color-gray-3: #7b8f96; /* Unfocused text */
-	--sl-color-gray-5: #2a3b41; /* Tab underline */
+	--sl-color-gray-3: var(--dim-text); /* Unfocused text */
+	--sl-color-gray-5: var(--code-tab-underline); /* Tab underline */
 }
 
-/* Light mode colors. */
+/* Light mode Starlight colors. */
 :root[data-theme="light"] {
 	--sl-color-white: hsl(var(--p)); /* Tab color */
-	--sl-color-gray-3: #495c62;
-	--sl-color-gray-5: #bac4c8;
+	--sl-color-gray-3: var(--dim-text); /* Unfocused text */
+	--sl-color-gray-5: var(--code-tab-underline); /* Tab underline */
 }
 
 html {
