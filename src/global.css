@@ -14,7 +14,13 @@
 
 /* TODO: replace these with Tailwind variables */
 /* Dark mode colors. */
-:root[data-theme="dark"],
+:root[data-theme="dark"] {
+	--sl-color-white: hsl(var(--p)); /* Tab color */
+	--sl-color-gray-3: #7b8f96; /* Unfocused text */
+	--sl-color-gray-5: #2a3b41; /* Tab underline */
+}
+
+/* Auto mode colors. */
 :root[data-theme="auto"] {
 	--sl-color-white: hsl(var(--p)); /* Tab color */
 	--sl-color-gray-3: #7b8f96; /* Unfocused text */
@@ -120,6 +126,10 @@ body {
 .rift-tab {
 	@apply tab tab-bordered;
 	text-decoration: none;
+}
+
+.rift-grid {
+	@apply grid gap-2 w-full;
 }
 
 .tab-active {
