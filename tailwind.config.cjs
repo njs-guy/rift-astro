@@ -9,24 +9,24 @@ const monoFontFamily = "mono";
 // accent 53354A
 
 // Light colors
-const base100Light = "#e6e6e6";
-const base200Light = "#ebebeb";
-const base300Light = "#f0f0f0";
-const normalTextLight = "#1e1e1e";
-const dimTextLight = "#999999";
-const primaryLight = "#10b981";
+const base100Light = "#f0f0f0";
+const base200Light = "#e6e6e6";
+const base300Light = "#dcdcdc";
+const normalTextLight = "#101012";
+const dimTextLight = "#818387";
+const primaryLight = "#4fa6ed";
 const secondaryLight = "#fafdff";
 const accentLight = "#14b8a6";
 const errorLight = "#e55561";
-const codeTabBorderLight = "black";
+const codeTabBorderLight = "#dcdcdc";
 
 // Dark colors
 const base100Dark = "#1f2329";
 const base200Dark = "#282c34";
 const base300Dark = "#30363f";
-const normalTextDark = "#e1e1e1";
+const normalTextDark = "#D6D6D6";
 const dimTextDark = "#7a818e";
-const primaryDark = "#48b0bd";
+const primaryDark = "#c678dd";
 const secondaryDark = "#e2b86b";
 const accentDark = "#14b8a6";
 const errorDark = "#e55561";
