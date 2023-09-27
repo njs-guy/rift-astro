@@ -1,7 +1,6 @@
 ---
 slug: test
 title: Test post. Please ignore.
-subtitle: Wow we did it.
 date: 2023-09-12
 author: John Astro
 ---

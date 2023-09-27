@@ -4,8 +4,9 @@ const blogCollection = defineCollection({
 	type: "content",
 	schema: z.object({
 		title: z.string(),
-		subtitle: z.string(),
 		date: z.date(),
+		lastUpdated: z.date().optional(),
+		excerpt: z.string().optional(),
 		author: z.string().default("No author"),
 		isDraft: z.boolean().default(false),
 	}),
@@ -16,7 +17,7 @@ const docsCollection = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string().optional(),
-		lastUpdated: z.string().optional(),
+		lastUpdated: z.date().optional(),
 		previous: z.string().optional(),
 		previousLabel: z.string().optional(),
 		next: z.string().optional(),

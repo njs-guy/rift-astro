@@ -113,6 +113,10 @@ body {
 	margin: 0px;
 }
 
+#table-of-contents {
+	margin-top: 0;
+}
+
 .doc-content {
 	@apply w-full;
 }
