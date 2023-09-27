@@ -35,6 +35,7 @@
 				"format": ["PascalCase"]
 			}
 		],
+		"@typescript-eslint/no-unused-vars": "warn",
 		"curly": "error",
 		"eqeqeq": "error",
 		"no-throw-literal": "warn",
