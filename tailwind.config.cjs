@@ -3,11 +3,6 @@ const baseFontFamily = "Roboto, Arial, sans-serif";
 const headingFontFamily = "Roboto, Arial, sans-serif";
 const monoFontFamily = "mono";
 
-// bg 2B2E4A
-// primary E84545
-// secondary 903749
-// accent 53354A
-
 // Light colors
 const base100Light = "#f0f0f0";
 const base200Light = "#e6e6e6";

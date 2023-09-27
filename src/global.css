@@ -94,7 +94,7 @@ body {
 }
 
 .doc-summary-active {
-	@apply text-primary;
+	@apply btn-active;
 }
 
 .task-list-item {
