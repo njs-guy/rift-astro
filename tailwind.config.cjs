@@ -1,7 +1,7 @@
 // Fonts
-const baseFontFamily = "Roboto, Arial, sans-serif";
-const headingFontFamily = "Roboto, Arial, sans-serif";
-const monoFontFamily = "mono";
+const baseFontFamily = "'Roboto', Arial, sans-serif";
+const headingFontFamily = "'Roboto', Arial, sans-serif";
+const monoFontFamily = "'JetBrains Mono', Consolas, monospace;";
 
 // Light colors
 const base100Light = "#f0f0f0";
@@ -42,7 +42,7 @@ module.exports = {
 		themes: [
 			{
 				light: {
-					...["[data-theme=dark]"],
+					...["[data-theme=light]"],
 					"fontFamily": baseFontFamily,
 					"base-100": base100Light,
 					"base-200": base200Light,
@@ -57,6 +57,8 @@ module.exports = {
 					"--code-tab-border": codeTabBorderLight,
 					"--btn-text-case": "none",
 					"--animation-btn": "0",
+					"--heading-font-family": headingFontFamily,
+					"--mono-font-family": monoFontFamily,
 				},
 				dark: {
 					...["[data-theme=dark]"],
@@ -74,6 +76,8 @@ module.exports = {
 					"--code-tab-border": codeTabBorderDark,
 					"--btn-text-case": "none",
 					"--animation-btn": "0",
+					"--heading-font-family": headingFontFamily,
+					"--mono-font-family": monoFontFamily,
 				},
 			},
 		],
