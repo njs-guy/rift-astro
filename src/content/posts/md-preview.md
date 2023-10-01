@@ -5,6 +5,7 @@ excerpt: See how Markdown looks in Rift
 date: 2023-09-12
 lastUpdated: 2023-09-25
 author: John Astro
+showTableOfContents: true
 ---
 
 # Basic Syntax

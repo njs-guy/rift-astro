@@ -9,6 +9,7 @@ const blogCollection = defineCollection({
 		excerpt: z.string().optional(),
 		author: z.string().default("No author"),
 		isDraft: z.boolean().default(false),
+		showTableOfContents: z.boolean().default(false),
 	}),
 });
 

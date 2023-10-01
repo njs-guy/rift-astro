@@ -34,7 +34,10 @@ const { Content, headings } = await post.render();
 			)
 		}
 		<div class="md-content">
-			<TableOfContents headings={headings} />
+			<TableOfContents
+				headings={headings}
+				showToc={post.data.showTableOfContents}
+			/>
 			<Content />
 		</div>
 	</div>

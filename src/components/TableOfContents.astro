@@ -5,14 +5,14 @@ interface Props {
 	headings: MarkdownHeading[];
 	depth?: number;
 	label?: string;
-	show?: boolean;
+	showToc?: boolean;
 }
 
-const { headings, depth = 2, label = "Table of Contents", show = true } = Astro.props as Props;
+const { headings, depth = 2, label = "Table of Contents", showToc = false } = Astro.props as Props;
 ---
 
 {
-	show && (
+	showToc && (
 		<ul class="menu menu-sm w-full m-0 p-0">
 			<li>
 				<details class="rift-toc">
