@@ -9,6 +9,8 @@ interface Props {
 }
 
 const { headings, depth = 2, label = "Table of Contents", showToc = false } = Astro.props as Props;
+
+const headingPadding = ["0px", "1rem", "2rem", "3rem", "4rem", "5rem"];
 ---
 
 {
@@ -19,7 +21,7 @@ const { headings, depth = 2, label = "Table of Contents", showToc = false } = As
 					<summary>{label}</summary>
 					<ul class="pl-0">
 						{headings.map((h) => (
-							<li>
+							<li style={"padding-left:" + headingPadding[h.depth - 1] + ";"}>
 								<a href={"#" + h.slug}>{h.text}</a>
 							</li>
 						))}
@@ -33,5 +35,9 @@ const { headings, depth = 2, label = "Table of Contents", showToc = false } = As
 <style>
 	a {
 		text-decoration: none;
+	}
+
+	ul::before {
+		visibility: hidden;
 	}
 </style>
