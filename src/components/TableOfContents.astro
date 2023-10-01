@@ -1,0 +1,21 @@
+---
+import type { MarkdownHeading } from "astro";
+
+interface Props {
+	headings: MarkdownHeading[];
+	depth?: number;
+	label?: string;
+	disable?: boolean;
+}
+
+const { headings, depth = 2, label = "Table of Contents", disable = false } = Astro.props as Props;
+---
+
+<div class="rift-toc">
+	<details>
+		<summary>{label}</summary>
+		<ul>
+			{headings.map((h) => <li>{h.text}</li>)}
+		</ul>
+	</details>
+</div>
