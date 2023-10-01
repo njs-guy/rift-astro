@@ -43,6 +43,11 @@ body {
 	@apply text-lg;
 }
 
+code {
+	@apply bg-base-300;
+	@apply rounded !important;
+}
+
 .heading-font {
 	font-family: var(--heading-font-family);
 }
