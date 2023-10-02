@@ -1,7 +1,48 @@
 ---
+import { Tabs, TabItem } from "@astrojs/starlight/components";
 import Layout from "../layouts/Layout.astro";
+import PageNav from "../components/PageNav.astro";
 ---
 
-<Layout title="Showcase">
-	<h1 class="heading1">Theme test</h1>
+<Layout title="Theme test">
+	<div class="md-content">
+		<h1 class="heading1">Theme test</h1>
+		<p>
+			This is the base font. The header font should be what's used for the title of this page.
+		</p>
+		<a href="/blog/md-preview"
+			>This is a link. Check out the Markdown preview to see how the markdown looks.</a
+		>
+		<p class="bg-base-100">Base 100 (the background color)</p>
+		<p class="bg-base-200">Base 200 (the card, doc page-nav, and fenced code block color)</p>
+		<p class="bg-base-300">Base 300 (the other pages drop-down and code block color)</p>
+		<div class="grid grid-cols-3">
+			<p class="dim-text bg-base-100">Dim text (base-100)</p>
+			<p class="dim-text bg-base-200">Dim text (base-200)</p>
+			<p class="dim-text bg-base-300">Dim text (base-300)</p>
+		</div>
+		<div class="grid grid-cols-4 gap-1">
+			<button class="btn btn-sm btn-primary">Primary</button>
+			<button class="btn btn-sm btn-secondary">Secondary</button>
+			<button class="btn btn-sm btn-accent">Accent</button>
+			<button class="btn btn-sm btn-neutral">Neutral</button>
+			<button class="btn btn-sm btn-info">Info</button>
+			<button class="btn btn-sm btn-success">Success</button>
+			<button class="btn btn-sm btn-warning">Warning</button>
+			<button class="btn btn-sm btn-error">Error</button>
+		</div>
+		<br />
+		<Tabs>
+			<TabItem label="Tab">People have a lot of them open.</TabItem>
+			<TabItem label="War crimes">A Geneva Convention violation.</TabItem>
+			<TabItem label="Hey guys">Did you know that Flareon is extremely huggable?</TabItem>
+		</Tabs>
+		<br />
+		<PageNav
+			previous="/"
+			previousLabel="Embarrassing memories"
+			next="/"
+			nextLabel="Existential dread"
+		/>
+	</div>
 </Layout>

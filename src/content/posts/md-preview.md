@@ -41,7 +41,7 @@ _More like belongs in the trash_
 
 ## Blockquote
 
-> "Let's show 'em a thing or three!"
+> Let's show 'em a thing or three!
 
 ## Ordered List
 

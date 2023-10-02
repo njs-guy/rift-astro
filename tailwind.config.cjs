@@ -13,7 +13,7 @@ const primaryLight = "#4fa6ed";
 const secondaryLight = "#fafdff";
 const accentLight = "#14b8a6";
 const errorLight = "#e55561";
-const codeTabBorderLight = "#dcdcdc";
+const codeTabBorderLight = base300Light;
 
 // Dark colors
 const base100Dark = "#1f2329";
@@ -25,7 +25,7 @@ const primaryDark = "#c678dd";
 const secondaryDark = "#e2b86b";
 const accentDark = "#14b8a6";
 const errorDark = "#e55561";
-const codeTabBorderDark = "#30363f";
+const codeTabBorderDark = base300Dark;
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
