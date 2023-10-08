@@ -8,8 +8,8 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"format": "prettier --write .",
-		"lint": "prettier --write . && eslint ."
+		"format": "prettier --write . --plugin=prettier-plugin-astro",
+		"lint": "prettier --write . --plugin=prettier-plugin-astro && eslint ."
 	},
 	"devDependencies": {
 		"@astrojs/mdx": "^1.1.0",
