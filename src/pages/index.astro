@@ -11,14 +11,29 @@ import Card from "../components/Card.astro";
 		<h3 class="heading3">We couldn't come up with a catchy tagline</h3>
 		<h4 class="heading4 dim-text">How unfortunate.</h4>
 		<div class="flex flex-row gap-3">
-			<a class="btn btn-primary btn-sm">Get started</a>
-			<a class="btn btn-neutral btn-sm">View on GitHub</a>
+			<a
+				href="/docs"
+				class="btn btn-primary btn-sm"
+				>Get started
+			</a>
+			<a
+				href="https://github.com/njshockey/rift-astro"
+				target="_blank"
+				class="btn btn-neutral btn-sm"
+				>View on GitHub
+			</a>
 		</div>
 		<br />
 		<div class="rift-grid grid-cols-3">
-			<Card />
-			<Card />
-			<Card />
+			<Card title="We have features!">
+				<p>Most definitely!</p>
+			</Card>
+			<Card title="We have a cat!">
+				<p>We actually don't. We're working on it.</p>
+			</Card>
+			<Card title="Placeholder">
+				<p>Hopefully no one else will see this garbage.</p>
+			</Card>
 		</div>
 	</div>
 </Layout>
