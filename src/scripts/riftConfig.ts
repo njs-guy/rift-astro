@@ -1,10 +1,21 @@
+import { defineConfig } from "../../rift-config";
+
 export interface RiftConfig {
-	title: string;
-	description: string;
-	logo: string;
-	navbar: RiftNavBarItem[];
-	blog: RiftBlog;
-	docs: RiftDocs;
+	siteTitle?: string;
+	homeHeading?: string;
+	description?: string;
+	tagline?: string;
+	buttons?: homeButton[];
+	logo?: string;
+	navbar?: RiftNavBarItem[];
+	blog?: RiftBlog;
+	docs?: RiftDocs;
+}
+
+export interface homeButton {
+	label: string;
+	link?: string;
+	primary?: false;
 }
 
 export interface RiftNavBarItem {
@@ -36,4 +47,8 @@ export interface RiftBlog {
 	hide: boolean;
 	tableOfContents: boolean;
 	hideDrafts: boolean;
+}
+
+export function getRiftConfig() {
+	return defineConfig;
 }

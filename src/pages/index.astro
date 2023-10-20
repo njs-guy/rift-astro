@@ -3,13 +3,17 @@ import Layout from "../layouts/Layout.astro";
 
 import Hero from "../components/Hero.astro";
 import Card from "../components/Card.astro";
+
+import { getRiftConfig } from "../scripts/riftConfig";
+
+const config = getRiftConfig();
 ---
 
 <Layout title="Rift for Astro">
 	<div class="flex flex-col gap-3">
-		<h1 class="heading1">Rift for Astro</h1>
-		<h3 class="heading3">We couldn't come up with a catchy tagline</h3>
-		<h4 class="heading4 dim-text">How unfortunate.</h4>
+		<h1 class="heading1">{config.homeHeading}</h1>
+		<h3 class="heading3">{config.description}</h3>
+		<h4 class="heading4 dim-text">{config.tagline}</h4>
 		<div class="flex flex-row gap-3">
 			<a
 				href="/docs"
