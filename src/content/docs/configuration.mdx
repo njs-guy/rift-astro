@@ -10,7 +10,20 @@ import { Tabs, TabItem } from "@astrojs/starlight/components";
 
 # Configuration
 
-The mdx
+Create a `rift-config.ts` at the root of the project directory and create a `defineConfig` like this.
+
+```ts
+import { type RiftConfig } from "./src/scripts/riftConfig";
+
+export const defineConfig: RiftConfig = {
+	siteTitle: "Rift",
+	homeHeading: "Rift for Astro",
+	description: "We couldn't come up with a catchy tagline",
+	tagline: "How unfortunate.",
+};
+```
+
+Ignore this. This is still there for an example.
 
 <Tabs>
     <TabItem label="JS">
