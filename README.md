@@ -18,21 +18,21 @@ Fully feature complete for 1.0 but missing documentation.
 
 ### v1.0.0
 
-- [ ] Blog
-  - [ ] Tags
-  - [ ] Categories
-  - [ ] Header pictures
-  - [ ] Table of contents
-- [ ] Docs
-  - [ ] Basic Doc theme
-  - [ ] Multiple sidebars
-  - [ ] Code groups
-  - [ ] Tip containers
-  - [ ] More info containers
-  - [ ] Tables
-- [ ] Customize most of the site through a config file.
-- [ ] Customize colors/theme through Tailwind config.
-- [ ] Search site. Possibly with either MiniSearch or FuseJS.
+-   [ ] Blog
+    -   [ ] Tags
+    -   [ ] Categories
+    -   [ ] Header pictures
+    -   [ ] Table of contents
+-   [ ] Docs
+    -   [ ] Basic Doc theme
+    -   [ ] Multiple sidebars
+    -   [ ] Code groups
+    -   [ ] Tip containers
+    -   [ ] More info containers
+    -   [ ] Tables
+-   [ ] Customize most of the site through a config file.
+-   [ ] Customize colors/theme through Tailwind config.
+-   [ ] Search site. Possibly with either MiniSearch or FuseJS.
 
 ## Special Thanks
 
