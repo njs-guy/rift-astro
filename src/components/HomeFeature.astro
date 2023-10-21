@@ -1,0 +1,10 @@
+---
+import { type HomeFeature } from "../scripts/riftConfig";
+import Card from "./Card.astro";
+
+const { title, description } = Astro.props as HomeFeature;
+---
+
+<Card title={title}>
+	<p>{description}</p>
+</Card>

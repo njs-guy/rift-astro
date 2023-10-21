@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import Card from "../components/Card.astro";
 import HomeButton from "../components/HomeButton.astro";
+import HomeFeature from "../components/HomeFeature.astro";
 
 import { getRiftConfig } from "../scripts/riftConfig";
 
@@ -29,16 +29,17 @@ const config = getRiftConfig();
 			)
 		}
 		<br />
-		<div class="rift-grid grid-cols-3">
-			<Card title="We have features!">
-				<p>Most definitely!</p>
-			</Card>
-			<Card title="We have a cat!">
-				<p>We actually don't. We're working on it.</p>
-			</Card>
-			<Card title="Placeholder">
-				<p>Hopefully no one else will see this garbage.</p>
-			</Card>
-		</div>
+		{
+			config.home.features && (
+				<div class="rift-grid grid-cols-3">
+					{config.home.features.map((feature) => (
+						<HomeFeature
+							title={feature.title}
+							description={feature.description}
+						/>
+					))}
+				</div>
+			)
+		}
 	</div>
 </Layout>

@@ -18,5 +18,19 @@ export const defineConfig: RiftConfig = {
 				targetBlank: true,
 			},
 		],
+		features: [
+			{
+				title: "We have features!",
+				description: "Most definitely!",
+			},
+			{
+				title: "We have a cat!",
+				description: "We actually don't. We're working on it.",
+			},
+			{
+				title: "Placeholder",
+				description: "Hopefully no one else will see this garbage.",
+			},
+		],
 	},
 };

@@ -4,11 +4,12 @@ import { defineConfig } from "../../rift-config";
 
 export interface RiftConfig {
 	siteTitle?: string;
-	home?: RiftHome;
-	navbar?: RiftNavBarItem[];
 	logo?: string;
+	navbar?: RiftNavBarItem[];
+	home?: RiftHome;
 	blog?: RiftBlog;
 	docs?: RiftDocs;
+	footer?: RiftFooter;
 }
 
 export interface RiftHome {
@@ -42,6 +43,13 @@ export interface RiftNavBarItem {
 	link: string;
 }
 
+export interface RiftBlog {
+	basePath?: string;
+	hide?: boolean;
+	showTableOfContents?: boolean;
+	hideDrafts?: boolean;
+}
+
 export interface RiftDocs {
 	basePath?: string;
 	hide?: boolean;
@@ -61,11 +69,17 @@ export interface DocSideBarItem {
 	link: string;
 }
 
-export interface RiftBlog {
-	basePath?: string;
-	hide?: boolean;
-	showTableOfContents?: boolean;
-	hideDrafts?: boolean;
+export interface RiftFooter {
+	copyrightName?: string;
+	yearOverride?: string;
+	items: FooterItem[];
+}
+
+export interface FooterItem {
+	text?: string;
+	icon?: string;
+	link?: string;
+	sitemap?: boolean;
 }
 
 // Functions
