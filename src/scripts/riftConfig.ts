@@ -40,7 +40,7 @@ export interface HomePosts {
 
 export interface RiftNavBar {
 	siteName?: string;
-	showThemeSwitcher?: boolean;
+	hideThemeSwitcher?: boolean;
 	items?: (RiftNavBarItem | RiftNavBarItemGroup)[];
 }
 

@@ -20,7 +20,7 @@ const config = getRiftConfig();
 		>
 	</div>
 	<ul class="menu menu-horizontal items-center">
-		<ThemeSwitcher />
+		{!config.navbar.hideThemeSwitcher && <ThemeSwitcher />}
 		{
 			config.navbar.items && (
 				<>

@@ -35,6 +35,7 @@ export const defineConfig: RiftConfig = {
 	},
 	navbar: {
 		siteName: "Rift",
+		hideThemeSwitcher: false,
 		items: [
 			{ text: "Blog", link: "/blog" },
 			{ text: "Docs", link: "/docs" },
