@@ -4,16 +4,20 @@ import { defineConfig } from "../../rift-config";
 
 export interface RiftConfig {
 	siteTitle?: string;
-	homeHeading?: string;
-	description?: string;
-	tagline?: string;
-	homeButtons?: HomeButton[];
-	logo?: string;
-	features?: HomeFeature[];
-	homePosts?: HomePosts;
+	home?: RiftHome;
 	navbar?: RiftNavBarItem[];
+	logo?: string;
 	blog?: RiftBlog;
 	docs?: RiftDocs;
+}
+
+export interface RiftHome {
+	heading?: string;
+	description?: string;
+	tagline?: string;
+	buttons?: HomeButton[];
+	features?: HomeFeature[];
+	homePosts?: HomePosts;
 }
 
 export interface HomeButton {

@@ -11,28 +11,24 @@ const config = getRiftConfig();
 
 <Layout title="Rift for Astro">
 	<div class="flex flex-col gap-3">
-		<h1 class="heading1">{config.homeHeading}</h1>
-		<h3 class="heading3">{config.description}</h3>
-		<h4 class="heading4 dim-text">{config.tagline}</h4>
+		<h1 class="heading1">{config.home.heading}</h1>
+		<h3 class="heading3">{config.home.description}</h3>
+		<h4 class="heading4 dim-text">{config.home.tagline}</h4>
 		{
-			config.homeButtons && (
-				<>
-					<>
-						<div class="flex flex-row gap-3">
-							{config.homeButtons.map((btn) => (
-								<HomeButton
-									label={btn.label}
-									link={btn.link}
-									primary={btn.primary}
-									targetBlank={btn.targetBlank}
-								/>
-							))}
-						</div>
-					</>
-					<br />
-				</>
+			config.home.buttons && (
+				<div class="flex flex-row gap-3">
+					{config.home.buttons.map((btn) => (
+						<HomeButton
+							label={btn.label}
+							link={btn.link}
+							primary={btn.primary}
+							targetBlank={btn.targetBlank}
+						/>
+					))}
+				</div>
 			)
 		}
+		<br />
 		<div class="rift-grid grid-cols-3">
 			<Card title="We have features!">
 				<p>Most definitely!</p>
