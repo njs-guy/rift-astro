@@ -1,8 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import DocLayout from "../../layouts/DocLayout.astro";
-import { summary } from "./summary";
 import PageNav from "../../components/PageNav.astro";
+
+import { getRiftConfig, getDocSidebar, type DocSideBarItem } from "../../scripts/riftConfig";
 
 export async function getStaticPaths() {
 	const docPages = await getCollection("docs");
@@ -16,11 +17,14 @@ export async function getStaticPaths() {
 		},
 	}));
 }
+
+const sidebar = getDocSidebar();
+
 const { page } = Astro.props;
 const { Content } = await page.render();
 ---
 
-<DocLayout summary={summary}>
+<DocLayout summary={sidebar}>
 	<div class="md-content doc-content">
 		<Content />
 		<br />

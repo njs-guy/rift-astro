@@ -1,16 +1,17 @@
 ---
-import { type Section, type SubSection } from "../scripts/summarySection";
+// import { type Section, type SubSection } from "../scripts/summarySection";
+import { type DocSideBarSection } from "../scripts/riftConfig";
 import DocSummarySection from "./DocSummarySection.astro";
 
 interface Props {
 	collectionName?: string;
-	summary?: Section[];
+	summary?: DocSideBarSection[];
 }
 
-const defaultSection: Section[] = [
+const defaultSection: DocSideBarSection[] = [
 	{
 		title: "A section",
-		subsections: [{ title: "This is a link", link: "https://www.google.com" }],
+		subsections: [{ text: "This is a link", link: "https://www.google.com" }],
 	},
 ];
 

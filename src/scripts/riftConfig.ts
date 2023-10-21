@@ -7,8 +7,8 @@ export interface RiftConfig {
 	logo?: string;
 	navbar?: RiftNavBar;
 	home?: RiftHome;
-	blog?: RiftBlog;
-	docs?: RiftDocs;
+	blog?: RiftBlog[];
+	docs?: RiftDocs[];
 	footer?: RiftFooter;
 }
 
@@ -71,8 +71,8 @@ export interface RiftDocs {
 }
 
 export interface DocSideBarSection {
-	text: string;
-	items: DocSideBarItem[];
+	title: string;
+	subsections: DocSideBarItem[];
 }
 
 export interface DocSideBarItem {
@@ -97,4 +97,16 @@ export interface FooterItem {
 
 export function getRiftConfig() {
 	return defineConfig;
+}
+
+export function getDocSidebar() {
+	const config = getRiftConfig();
+	const subsections: DocSideBarSection[] = [];
+
+	const sections = config.docs[0].sidebar;
+	for (let i = 0; i < sections.length; i++) {
+		subsections.push(sections[i]);
+	}
+
+	return subsections;
 }

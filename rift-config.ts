@@ -52,4 +52,30 @@ export const defineConfig: RiftConfig = {
 			},
 		],
 	},
+	docs: [
+		{
+			basePath: "/docs",
+			hide: false,
+			lastUpdated: true,
+			hideDrafts: false,
+			sidebar: [
+				{
+					title: "Overview",
+					subsections: [
+						{ text: "Rift for Astro", link: "/docs/rift-for-astro" },
+						{ text: "Project structure", link: "/docs/project-structure" },
+						{ text: "Tech stack", link: "/docs/tech-stack" },
+					],
+				},
+				{
+					title: "Getting Started",
+					subsections: [
+						{ text: "Quick start", link: "/docs/quick-start" },
+						{ text: "Configuration", link: "/docs/configuration" },
+						{ text: "Color schemes", link: "/docs/color-schemes" },
+					],
+				},
+			],
+		},
+	],
 };

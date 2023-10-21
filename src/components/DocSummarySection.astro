@@ -1,8 +1,9 @@
 ---
-import { type Section } from "../scripts/summarySection";
+// import { type Section } from "../scripts/summarySection";
+import { type DocSideBarSection } from "../scripts/riftConfig";
 
 interface Props {
-	section: Section;
+	section: DocSideBarSection;
 }
 
 const { section } = Astro.props as Props;
@@ -20,7 +21,7 @@ const pathname = new URL(Astro.request.url).pathname;
 						class={pathname === sub.link ? "doc-summary-active" : ""}
 						href={sub.link}
 					>
-						{sub.title}
+						{sub.text}
 					</a>
 				</li>
 			))
