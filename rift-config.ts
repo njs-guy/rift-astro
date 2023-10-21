@@ -33,4 +33,22 @@ export const defineConfig: RiftConfig = {
 			},
 		],
 	},
+	navbar: {
+		siteName: "Rift",
+		items: [
+			{ text: "Blog", link: "/blog" },
+			{ text: "Docs", link: "/docs" },
+			{ text: "About", link: "/about" },
+			{
+				text: "Other pages",
+				children: [
+					{ text: "Author", link: "/author" },
+					{ text: "Showcase", link: "/showcase" },
+					{ text: "Grid layout", link: "/grid" },
+					{ text: "Markdown preview", link: "/blog/md-preview" },
+					{ text: "Theme test", link: "/theme-test" },
+				],
+			},
+		],
+	},
 };

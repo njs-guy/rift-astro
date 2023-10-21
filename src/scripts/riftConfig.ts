@@ -5,7 +5,7 @@ import { defineConfig } from "../../rift-config";
 export interface RiftConfig {
 	siteTitle?: string;
 	logo?: string;
-	navbar?: RiftNavBarItem[];
+	navbar?: RiftNavBar;
 	home?: RiftHome;
 	blog?: RiftBlog;
 	docs?: RiftDocs;
@@ -36,6 +36,17 @@ export interface HomeFeature {
 export interface HomePosts {
 	mostRecent?: boolean;
 	postLinks: string[];
+}
+
+export interface RiftNavBar {
+	siteName?: string;
+	showThemeSwitcher?: boolean;
+	items?: (RiftNavBarItem | RiftNavBarItemGroup)[];
+}
+
+export interface RiftNavBarItemGroup {
+	text: string;
+	children: RiftNavBarItem[];
 }
 
 export interface RiftNavBarItem {

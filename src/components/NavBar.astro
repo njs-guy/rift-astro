@@ -1,5 +1,14 @@
 ---
 import ThemeSwitcher from "./ThemeSwitcher.astro";
+import {
+	getRiftConfig,
+	type RiftNavBarItem,
+	type RiftNavBarItemGroup,
+} from "../scripts/riftConfig";
+
+const config = getRiftConfig();
+
+// TODO: Fix these non-errors
 ---
 
 <div class="navbar p-0 m-0">
@@ -7,25 +16,40 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
 		<a
 			class="btn btn-ghost text-2xl"
 			href="/"
-			>Rift</a
+			>{config.siteTitle}</a
 		>
 	</div>
 	<ul class="menu menu-horizontal items-center">
 		<ThemeSwitcher />
-		<li><a href="/blog">Blog</a></li>
-		<li><a href="/docs">Docs</a></li>
-		<li><a href="/about">About</a></li>
-		<li>
-			<details>
-				<summary>Other pages</summary>
-				<ul class="p-2 bg-base-300 z-50">
-					<li><a href="/author">Author</a></li>
-					<li><a href="/showcase">Showcase</a></li>
-					<li><a href="/grid">Grid layout</a></li>
-					<li><a href="/blog/md-preview">Markdown preview</a></li>
-					<li><a href="/theme-test">Theme test</a></li>
-				</ul>
-			</details>
-		</li>
+		{
+			config.navbar.items && (
+				<>
+					{config.navbar.items.map((item) => {
+						if (item.link) {
+							return (
+								<li>
+									<a href={item.link}>{item.text}</a>
+								</li>
+							);
+						} else {
+							return (
+								<li>
+									<details>
+										<summary>{item.text}</summary>
+										<ul class="p-2 bg-base-300 z-50">
+											{item.children.map((child: RiftNavBarItem) => (
+												<li>
+													<a href={child.link}>{child.text}</a>
+												</li>
+											))}
+										</ul>
+									</details>
+								</li>
+							);
+						}
+					})}
+				</>
+			)
+		}
 	</ul>
 </div>

@@ -9,7 +9,7 @@ import { getRiftConfig } from "../scripts/riftConfig";
 const config = getRiftConfig();
 ---
 
-<Layout title="Rift for Astro">
+<Layout title={config.siteTitle}>
 	<div class="flex flex-col gap-3">
 		<h1 class="heading1">{config.home.heading}</h1>
 		<h3 class="heading3">{config.home.description}</h3>
