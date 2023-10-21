@@ -5,4 +5,16 @@ export const defineConfig: RiftConfig = {
 	homeHeading: "Rift for Astro",
 	description: "We couldn't come up with a catchy tagline",
 	tagline: "How unfortunate.",
+	homeButtons: [
+		{
+			label: "Get Started",
+			link: "/docs",
+			primary: true,
+		},
+		{
+			label: "View on GitHub",
+			link: "https://github.com/njshockey/rift-astro",
+			targetBlank: true,
+		},
+	],
 };

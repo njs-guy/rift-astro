@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import Hero from "../components/Hero.astro";
 import Card from "../components/Card.astro";
+import HomeButton from "../components/HomeButton.astro";
 
 import { getRiftConfig } from "../scripts/riftConfig";
 
@@ -14,20 +14,25 @@ const config = getRiftConfig();
 		<h1 class="heading1">{config.homeHeading}</h1>
 		<h3 class="heading3">{config.description}</h3>
 		<h4 class="heading4 dim-text">{config.tagline}</h4>
-		<div class="flex flex-row gap-3">
-			<a
-				href="/docs"
-				class="btn btn-primary btn-sm"
-				>Get started
-			</a>
-			<a
-				href="https://github.com/njshockey/rift-astro"
-				target="_blank"
-				class="btn btn-neutral btn-sm"
-				>View on GitHub
-			</a>
-		</div>
-		<br />
+		{
+			config.homeButtons && (
+				<>
+					<>
+						<div class="flex flex-row gap-3">
+							{config.homeButtons.map((btn) => (
+								<HomeButton
+									label={btn.label}
+									link={btn.link}
+									primary={btn.primary}
+									targetBlank={btn.targetBlank}
+								/>
+							))}
+						</div>
+					</>
+					<br />
+				</>
+			)
+		}
 		<div class="rift-grid grid-cols-3">
 			<Card title="We have features!">
 				<p>Most definitely!</p>

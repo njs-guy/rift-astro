@@ -1,21 +1,36 @@
 import { defineConfig } from "../../rift-config";
 
+// Config
+
 export interface RiftConfig {
 	siteTitle?: string;
 	homeHeading?: string;
 	description?: string;
 	tagline?: string;
-	buttons?: homeButton[];
+	homeButtons?: HomeButton[];
 	logo?: string;
+	features?: HomeFeature[];
+	homePosts?: HomePosts;
 	navbar?: RiftNavBarItem[];
 	blog?: RiftBlog;
 	docs?: RiftDocs;
 }
 
-export interface homeButton {
+export interface HomeButton {
 	label: string;
 	link?: string;
-	primary?: false;
+	primary?: boolean;
+	targetBlank?: boolean;
+}
+
+export interface HomeFeature {
+	title: string;
+	description: string;
+}
+
+export interface HomePosts {
+	mostRecent?: boolean;
+	postLinks: string[];
 }
 
 export interface RiftNavBarItem {
@@ -24,12 +39,12 @@ export interface RiftNavBarItem {
 }
 
 export interface RiftDocs {
-	basePath: string;
-	hide: boolean;
-	editLink: string;
-	lastUpdated: boolean;
-	hideDrafts: true;
-	sidebar: DocSideBarSection[];
+	basePath?: string;
+	hide?: boolean;
+	editLink?: string;
+	lastUpdated?: boolean;
+	hideDrafts?: boolean;
+	sidebar?: DocSideBarSection[];
 }
 
 export interface DocSideBarSection {
@@ -43,11 +58,13 @@ export interface DocSideBarItem {
 }
 
 export interface RiftBlog {
-	basePath: string;
-	hide: boolean;
-	tableOfContents: boolean;
-	hideDrafts: boolean;
+	basePath?: string;
+	hide?: boolean;
+	showTableOfContents?: boolean;
+	hideDrafts?: boolean;
 }
+
+// Functions
 
 export function getRiftConfig() {
 	return defineConfig;
