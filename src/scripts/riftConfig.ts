@@ -101,11 +101,24 @@ export function getRiftConfig() {
 
 export function getDocSidebar() {
 	const config = getRiftConfig();
-	const subsections: DocSideBarSection[] = [];
+	const sidebar: DocSideBarSection[] = [];
 
 	const sections = config.docs[0].sidebar;
 	for (let i = 0; i < sections.length; i++) {
-		subsections.push(sections[i]);
+		sidebar.push(sections[i]);
+	}
+
+	return sidebar;
+}
+
+export function getDocSidebarSubsections() {
+	const sidebar = getDocSidebar();
+	const subsections: DocSideBarItem[] = [];
+
+	for (let i = 0; i < sidebar.length; i++) {
+		for (let j = 0; j < sidebar[i].subsections.length; j++) {
+			subsections.push(sidebar[i].subsections[j]);
+		}
 	}
 
 	return subsections;
