@@ -259,6 +259,8 @@ export function getDocSidebar() {
 	const config = getRiftConfig();
 	const sidebar: DocSideBarSection[] = [];
 
+	// BUG: Site crashes if there is no doc config
+
 	const sections = config.docs[0].sidebar;
 	for (let i = 0; i < sections.length; i++) {
 		sidebar.push(sections[i]);

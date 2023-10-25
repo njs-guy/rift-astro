@@ -72,6 +72,7 @@ export const defineConfig: RiftConfig = {
 					subsections: [
 						{ text: "Quick start", link: "/docs/quick-start" },
 						{ text: "Configuration", link: "/docs/configuration" },
+						{ text: "Documentation", link: "/docs/documentation" },
 						{ text: "Color schemes", link: "/docs/color-schemes" },
 					],
 				},
