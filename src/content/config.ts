@@ -2,6 +2,8 @@ import { z, defineCollection } from "astro:content";
 
 // TODO: Have last updated use git timestamp. Can be overwritten manually.
 
+// TODO: Update schema. Title is optional.
+
 const blogCollection = defineCollection({
 	type: "content",
 	schema: z.object({
