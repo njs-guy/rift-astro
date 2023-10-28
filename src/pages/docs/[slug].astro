@@ -7,6 +7,7 @@ import {
 	getDocSidebar,
 	getDocSidebarSubsections,
 	type DocSideBarItem,
+	getRiftConfig,
 } from "../../scripts/riftConfig";
 
 export async function getStaticPaths() {
@@ -32,6 +33,7 @@ function getCurrentSidebarIndex(subsections: DocSideBarItem[], relativeUrl: stri
 	return -1; // Return -1 if it wasn't found.
 }
 
+const config = getRiftConfig().docs[0];
 const sidebar = getDocSidebar();
 const sidebarSubsections = getDocSidebarSubsections();
 let relativeUrl = new URL(Astro.url).pathname;
@@ -68,6 +70,28 @@ const { Content } = await page.render();
 	<div class="md-content doc-content">
 		<Content />
 		<br />
+		<div class="grid grid-cols-2">
+			{
+				config.lastUpdated ? (
+					<p class="dim-text justify-self-start">Last updated: tomorrow</p>
+				) : (
+					<div />
+				)
+			}
+			{
+				config.editLink ? (
+					<a
+						href={config.editLink}
+						target="_blank"
+						class="text-primary justify-self-end font-bold"
+					>
+						{config.editLinkLabel ? config.editLinkLabel : "Edit this page"}
+					</a>
+				) : (
+					<div />
+				)
+			}
+		</div>
 		<PageNav
 			previous={previous}
 			previousLabel={previousLabel}

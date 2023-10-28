@@ -58,6 +58,7 @@ export const defineConfig: RiftConfig = {
 			hide: false,
 			lastUpdated: true,
 			hideDrafts: false,
+			editLink: "https://github.com/njs-guy/rift-astro",
 			sidebar: [
 				{
 					title: "Overview",

@@ -183,6 +183,10 @@ export interface RiftDocs {
 	// TODO: editLink interface
 	editLink?: string;
 	/**
+	 * Label for the "Edit this page" button.
+	 */
+	editLinkLabel?: string;
+	/**
 	 * If false, hide the last updated timestamp.
 	 * @default true
 	 */
