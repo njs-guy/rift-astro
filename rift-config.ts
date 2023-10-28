@@ -56,7 +56,9 @@ export const defineConfig: RiftConfig = {
 		basePath: "/docs",
 		hide: false,
 		hideDrafts: false,
-		editLink: "https://github.com/njs-guy/rift-astro",
+		editLink: {
+			pattern: "https://github.com/njs-guy/rift-astro",
+		},
 		sidebar: [
 			{
 				title: "Overview",

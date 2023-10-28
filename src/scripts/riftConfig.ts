@@ -180,12 +180,10 @@ export interface RiftDocs {
 	 * @default false
 	 */
 	hide?: boolean;
-	// TODO: editLink interface
-	editLink?: string;
 	/**
-	 * Label for the "Edit this page" button.
+	 * The link for the "Edit this page" button.
 	 */
-	editLinkLabel?: string;
+	editLink?: EditLink;
 	/**
 	 * If false, hide the last updated timestamp.
 	 * @default true
@@ -228,6 +226,22 @@ export interface DocSideBarItem {
 	 * The link to the page.
 	 */
 	link: string;
+}
+
+export interface EditLink {
+	/**
+	 * The link pattern to use.
+	 * Appending ":path" to the end of the link will
+	 * build the link based on the file path.
+	 * @example pattern: "https://github.com/njs-guy/rift-astro/blob/main/:path",
+	 */
+	pattern?: string;
+	/**
+	 * The label for the edit link.
+	 *
+	 * @default "Edit this page"
+	 */
+	text?: string;
 }
 
 export interface RiftFooter {

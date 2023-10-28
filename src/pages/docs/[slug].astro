@@ -66,6 +66,7 @@ const { page } = Astro.props;
 const { Content } = await page.render();
 
 // TODO: Use git timestamp for last updated
+// TODO: Create EditLink pattern
 ---
 
 <DocLayout summary={sidebar}>
@@ -83,12 +84,12 @@ const { Content } = await page.render();
 			{
 				config.editLink ? (
 					<a
-						class="no-underline justify-self-end"
-						href={config.editLink}
+						class="no-underline hover:underline hover:text-primary justify-self-end"
+						href={config.editLink.pattern}
 						target="_blank"
 					>
 						<p class="text-primary font-bold">
-							{config.editLinkLabel ? config.editLinkLabel : "Edit this page"}
+							{config.editLink.text ? config.editLink.text : "Edit this page"}
 						</p>
 					</a>
 				) : (
