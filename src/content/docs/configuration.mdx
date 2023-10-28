@@ -1,9 +1,3 @@
----
-title: Configuration
----
-
-import { Tabs, TabItem } from "@astrojs/starlight/components";
-
 # Configuration
 
 Create a `rift-config.ts` at the root of the project directory and create a `defineConfig` like this.
@@ -21,35 +15,3 @@ export const defineConfig: RiftConfig = {
 	footer: {},
 };
 ```
-
-Ignore this. This is still there for an example.
-
-<Tabs>
-    <TabItem label="JS">
-
-    ```js
-    function doStuff() {
-    	console.log("This is JavaScript.")
-    }
-    ```
-
-    </TabItem>
-    <TabItem label="Python">
-
-    ```py
-    def do_stuff():
-    	print("This is Python.")
-    ```
-
-    </TabItem>
-    <TabItem label="Rust">
-
-    ```rs
-    fn do_stuff() {
-    	!println("This is Rust.");
-    }
-    ```
-
-    </TabItem>
-
-</Tabs>

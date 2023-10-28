@@ -2,12 +2,10 @@ import { z, defineCollection } from "astro:content";
 
 // TODO: Have last updated use git timestamp. Can be overwritten manually.
 
-// TODO: Update schema. Title is optional.
-
 const blogCollection = defineCollection({
 	type: "content",
 	schema: z.object({
-		title: z.string(),
+		title: z.string().optional(),
 		date: z.date(),
 		lastUpdated: z.date().optional(),
 		excerpt: z.string().optional(),
@@ -20,7 +18,7 @@ const blogCollection = defineCollection({
 const docsCollection = defineCollection({
 	type: "content",
 	schema: z.object({
-		title: z.string(),
+		title: z.string().optional(),
 		description: z.string().optional(),
 		lastUpdated: z.date().optional(),
 		editLink: z.string().optional(),
