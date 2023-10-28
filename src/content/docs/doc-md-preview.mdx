@@ -1,0 +1,97 @@
+---
+title: Docs Markdown preview
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+# Docs Markdown preview
+
+Here is how the Markdown looks for the documentation section. The title of this page is an `h1`.
+
+## Heading 2
+
+According to all known laws of aviation, a bee should not be able to fly.
+
+### Heading 3
+
+Somebody once told me the world was gonna roll me.
+
+#### Heading 4
+
+The best code is code that does not exist.
+
+##### Heading 5
+
+Every 60 seconds in Africa, a minute passes.
+
+##### Heading 6
+
+You will likely never use this heading size.
+
+## Code groups
+
+Note: this requires mdx.
+
+````mdx
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+<Tabs>
+    <TabItem label="JS">
+
+    ```js
+    function doStuff() {
+    	console.log("This is JavaScript.")
+    }
+    ```
+
+    </TabItem>
+    <TabItem label="Python">
+
+    ```py
+    def do_stuff():
+    	print("This is Python.")
+    ```
+
+    </TabItem>
+    <TabItem label="Rust">
+
+    ```rs
+    fn do_stuff() {
+    	!println("This is Rust.");
+    }
+    ```
+    </TabItem>
+
+</Tabs>
+````
+
+Output:
+
+<Tabs>
+    <TabItem label="JS">
+
+    ```js
+    function doStuff() {
+    	console.log("This is JavaScript.")
+    }
+    ```
+
+    </TabItem>
+    <TabItem label="Python">
+
+    ```py
+    def do_stuff():
+    	print("This is Python.")
+    ```
+
+    </TabItem>
+    <TabItem label="Rust">
+
+    ```rs
+    fn do_stuff() {
+    	!println("This is Rust.");
+    }
+    ```
+    </TabItem>
+
+</Tabs>

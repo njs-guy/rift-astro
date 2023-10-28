@@ -74,6 +74,7 @@ export const defineConfig: RiftConfig = {
 						{ text: "Configuration", link: "/docs/configuration" },
 						{ text: "Documentation", link: "/docs/documentation" },
 						{ text: "Color schemes", link: "/docs/color-schemes" },
+						{ text: "Doc Markdown preview", link: "/docs/doc-md-preview" },
 					],
 				},
 			],

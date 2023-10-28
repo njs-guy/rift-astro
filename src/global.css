@@ -139,6 +139,14 @@ h6 {
 	@apply w-full;
 }
 
+.doc-content h2, .doc-content h3, .doc-content h4, .doc-content p {
+	margin-top: 0;
+}
+
+.doc-content h2 {
+	margin-bottom: 1.25rem;
+}
+
 .doc-content section pre {
 	@apply w-full;
 	margin: 0px !important;
