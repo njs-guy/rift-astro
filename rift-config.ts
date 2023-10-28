@@ -52,33 +52,30 @@ export const defineConfig: RiftConfig = {
 			},
 		],
 	},
-	docs: [
-		{
-			basePath: "/docs",
-			hide: false,
-			lastUpdated: true,
-			hideDrafts: false,
-			editLink: "https://github.com/njs-guy/rift-astro",
-			sidebar: [
-				{
-					title: "Overview",
-					subsections: [
-						{ text: "Rift for Astro", link: "/docs/rift-for-astro" },
-						{ text: "Project structure", link: "/docs/project-structure" },
-						{ text: "Tech stack", link: "/docs/tech-stack" },
-					],
-				},
-				{
-					title: "Getting Started",
-					subsections: [
-						{ text: "Quick start", link: "/docs/quick-start" },
-						{ text: "Configuration", link: "/docs/configuration" },
-						{ text: "Documentation", link: "/docs/documentation" },
-						{ text: "Color schemes", link: "/docs/color-schemes" },
-						{ text: "Doc Markdown preview", link: "/docs/doc-md-preview" },
-					],
-				},
-			],
-		},
-	],
+	docs: {
+		basePath: "/docs",
+		hide: false,
+		hideDrafts: false,
+		editLink: "https://github.com/njs-guy/rift-astro",
+		sidebar: [
+			{
+				title: "Overview",
+				subsections: [
+					{ text: "Rift for Astro", link: "/docs/rift-for-astro" },
+					{ text: "Project structure", link: "/docs/project-structure" },
+					{ text: "Tech stack", link: "/docs/tech-stack" },
+				],
+			},
+			{
+				title: "Getting Started",
+				subsections: [
+					{ text: "Quick start", link: "/docs/quick-start" },
+					{ text: "Configuration", link: "/docs/configuration" },
+					{ text: "Documentation", link: "/docs/documentation" },
+					{ text: "Color schemes", link: "/docs/color-schemes" },
+					{ text: "Doc Markdown preview", link: "/docs/doc-md-preview" },
+				],
+			},
+		],
+	},
 };

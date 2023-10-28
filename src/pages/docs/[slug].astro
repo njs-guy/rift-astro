@@ -33,7 +33,7 @@ function getCurrentSidebarIndex(subsections: DocSideBarItem[], relativeUrl: stri
 	return -1; // Return -1 if it wasn't found.
 }
 
-const config = getRiftConfig().docs[0];
+const config = getRiftConfig().docs;
 const sidebar = getDocSidebar();
 const sidebarSubsections = getDocSidebarSubsections();
 let relativeUrl = new URL(Astro.url).pathname;
@@ -64,6 +64,8 @@ if (currentSidebarIndex > -1) {
 
 const { page } = Astro.props;
 const { Content } = await page.render();
+
+// TODO: Use git timestamp for last updated
 ---
 
 <DocLayout summary={sidebar}>
@@ -72,7 +74,7 @@ const { Content } = await page.render();
 		<br />
 		<div class="grid grid-cols-2">
 			{
-				config.lastUpdated ? (
+				config.lastUpdated !== false ? (
 					<p class="dim-text justify-self-start">Last updated: tomorrow</p>
 				) : (
 					<div />
@@ -81,11 +83,13 @@ const { Content } = await page.render();
 			{
 				config.editLink ? (
 					<a
+						class="no-underline justify-self-end"
 						href={config.editLink}
 						target="_blank"
-						class="text-primary justify-self-end font-bold"
 					>
-						{config.editLinkLabel ? config.editLinkLabel : "Edit this page"}
+						<p class="text-primary font-bold">
+							{config.editLinkLabel ? config.editLinkLabel : "Edit this page"}
+						</p>
 					</a>
 				) : (
 					<div />

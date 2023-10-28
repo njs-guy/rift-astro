@@ -25,11 +25,11 @@ export interface RiftConfig {
 	/**
 	 * Blog options
 	 */
-	blog?: RiftBlog[];
+	blog?: RiftBlog;
 	/**
 	 * Documentation options
 	 */
-	docs?: RiftDocs[];
+	docs?: RiftDocs;
 	/**
 	 * Footer options.
 	 */
@@ -265,7 +265,7 @@ export function getDocSidebar() {
 
 	// BUG: Site crashes if there is no doc config
 
-	const sections = config.docs[0].sidebar;
+	const sections = config.docs.sidebar;
 	for (let i = 0; i < sections.length; i++) {
 		sidebar.push(sections[i]);
 	}
