@@ -30,7 +30,8 @@ export async function getFileTimestamp(filePath: string): Promise<string> {
 async function fileStats(filePath: string) {
 	const stats = await fs.promises.stat(filePath);
 	const lastModified = stats.mtime;
-	return lastModified.toDateString();
+	const outputDate = lastModified.toLocaleString();
+	return outputDate;
 }
 
 export function getGitTimestamp() {
