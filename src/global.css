@@ -139,7 +139,10 @@ h6 {
 	@apply w-full;
 }
 
-.doc-content h2, .doc-content h3, .doc-content h4, .doc-content p {
+.doc-content h2,
+.doc-content h3,
+.doc-content h4,
+.doc-content p {
 	margin-top: 0;
 }
 

@@ -51,6 +51,5 @@ export const defineConfig: RiftConfig = {
 			],
 		},
 	],
-}
-
+};
 ```
