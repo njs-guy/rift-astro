@@ -35,6 +35,7 @@ function getCurrentSidebarIndex(subsections: DocSideBarItem[], relativeUrl: stri
 	return -1; // Return -1 if it wasn't found.
 }
 
+// Config values
 const config = getRiftConfig().docs;
 const sidebar = getDocSidebar();
 const sidebarSubsections = getDocSidebarSubsections();
@@ -68,14 +69,27 @@ if (currentSidebarIndex > -1) {
 // Last updated values
 const filePath = path.relative(".", "src/content" + relativeUrl);
 let editDate: string = await getFileTimestamp(path.resolve(filePath));
+let editLink: string = config.editLink.pattern;
+let editLinkText: string = config.editLink.text;
 
 const { page } = Astro.props;
 const { Content } = await page.render();
 
+// Front matter overrides
 const frontMatterEditDate: string = page.data.lastUpdated;
+const frontMatterEditLink: string = page.data.editLink;
+const frontMatterEditLinkText: string = page.data.editLinkText;
 
 if (frontMatterEditDate) {
 	editDate = frontMatterEditDate;
+}
+
+if (frontMatterEditLink) {
+	editLink = frontMatterEditLink;
+}
+
+if (frontMatterEditLinkText) {
+	editLinkText = frontMatterEditLinkText;
 }
 
 // TODO: Use git timestamp for last updated
@@ -95,14 +109,14 @@ if (frontMatterEditDate) {
 				)
 			}
 			{
-				config.editLink ? (
+				editLink ? (
 					<a
 						class="no-underline hover:underline hover:text-primary justify-self-end"
-						href={config.editLink.pattern}
+						href={editLink}
 						target="_blank"
 					>
 						<p class="text-primary font-bold">
-							{config.editLink.text ? config.editLink.text : "Edit this page"}
+							{editLinkText ? editLinkText : "Edit this page"}
 						</p>
 					</a>
 				) : (
