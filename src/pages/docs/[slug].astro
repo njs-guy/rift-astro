@@ -10,7 +10,7 @@ import {
 	type DocSideBarItem,
 	getRiftConfig,
 } from "../../scripts/riftConfig";
-import { getFileTimestamp } from "../../scripts/getFileTimestamp";
+import { getPageTimestamp } from "../../scripts/getPageTimestamp";
 
 export async function getStaticPaths() {
 	const docPages = await getCollection("docs");
@@ -68,7 +68,7 @@ if (currentSidebarIndex > -1) {
 
 // Last updated values
 const filePath = path.relative(".", "src/content" + relativeUrl);
-let editDate: string = await getFileTimestamp(path.resolve(filePath));
+let editDate: string = await getPageTimestamp(path.resolve(filePath));
 let editLink: string = config.editLink.pattern;
 let editLinkText: string = config.editLink.text;
 
@@ -94,6 +94,10 @@ if (frontMatterEditLinkText) {
 
 // TODO: Use git timestamp for last updated
 // TODO: Create EditLink pattern
+
+// BUG: Several parts of the page don't work on build.
+// PagNav is completely missing, Edit this page is not styled right,
+// and the sidebar doesn't show the active page.
 ---
 
 <DocLayout summary={sidebar}>
