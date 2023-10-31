@@ -20,7 +20,7 @@ const docsCollection = defineCollection({
 	schema: z.object({
 		title: z.string().optional(),
 		description: z.string().optional(),
-		lastUpdated: z.date().optional(),
+		lastUpdated: z.string().optional(),
 		editLink: z.string().optional(),
 		isDraft: z.boolean().default(false),
 	}),

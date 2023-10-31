@@ -67,10 +67,16 @@ if (currentSidebarIndex > -1) {
 
 // Last updated values
 const filePath = path.relative(".", "src/content" + relativeUrl);
-const editDate = await getFileTimestamp(path.resolve(filePath));
+let editDate: string = await getFileTimestamp(path.resolve(filePath));
 
 const { page } = Astro.props;
 const { Content } = await page.render();
+
+const frontMatterEditDate: string = page.data.lastUpdated;
+
+if (frontMatterEditDate) {
+	editDate = frontMatterEditDate;
+}
 
 // TODO: Use git timestamp for last updated
 // TODO: Create EditLink pattern
