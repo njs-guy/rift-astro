@@ -24,8 +24,7 @@ Fully feature complete for 1.0 but missing documentation.
     -   [ ] Header pictures
     -   [ ] Table of contents
 -   [ ] Docs
-    -   [ ] Basic Doc theme
-    -   [ ] Multiple sidebars
+    -   [x] Basic Doc theme
     -   [ ] Code groups
     -   [ ] Tip containers
     -   [ ] More info containers
