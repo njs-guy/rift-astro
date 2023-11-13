@@ -1,6 +1,7 @@
 // Gets the last modified timestamp for use in the docs.
 
 import * as fs from "fs";
+import { spawn } from "cross-spawn";
 
 export async function getPageTimestamp(filePath: string): Promise<string> {
 	// try to get the git timestamp.
@@ -46,10 +47,28 @@ export async function getFileTimestamp(filePath: string): Promise<string> {
 async function fileStats(filePath: string): Promise<string> {
 	const stats = await fs.promises.stat(filePath);
 	const lastModified = stats.mtime;
-	const outputDate = lastModified.toLocaleString();
+	const outputDate = formatDate(lastModified);
 	return outputDate;
 }
 
-export function getGitTimestamp() {
-	console.log("git timestamp");
+function formatDate(date: Date): string {
+	return date.toLocaleString();
+}
+
+export async function getGitTimestamp(filePath: string): Promise<string> {
+	return new Promise((resolve, reject) => {
+		const child = spawn("git", ["log", "-1", "--pretty='%ai'"]);
+
+		let output = "";
+		child.stdout.on("data", (data) => {
+			output += String(data);
+		});
+
+		child.on("close", (code) => {
+			if (code === 0) {
+				const timestampDate = new Date(output.trim());
+				resolve(formatDate(timestampDate));
+			}
+		});
+	});
 }
