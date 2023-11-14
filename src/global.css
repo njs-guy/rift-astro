@@ -99,7 +99,7 @@ h6 {
 }
 
 .doc-summary {
-	@apply bg-base-200 text-base-content rounded-lg p-2;
+	@apply text-base-content rounded-lg p-2;
 	min-width: 200px;
 }
 
@@ -112,7 +112,7 @@ h6 {
 }
 
 .doc-summary-active {
-	@apply btn-active;
+	@apply text-primary font-bold;
 }
 
 .task-list-item {
