@@ -7,7 +7,29 @@ export async function getPageTimestamp(filePath: string): Promise<string> {
 	// try to get the git timestamp.
 	// if it doesn't exist, fallback to file metadata.
 
-	return getFileTimestamp(filePath);
+	let output = "";
+
+	try {
+		output = await getGitTimestamp(filePath);
+	} catch (err) {
+		const e = new Error(`Error running git log: ${err}`);
+		console.error(e.message);
+		throw e;
+	}
+
+	// If git log is successful but does not return a date,
+	// fallback to file metadata
+	if (output === "Invalid Date") {
+		try {
+			output = await getFileTimestamp(filePath);
+		} catch (err) {
+			const e = new Error(`Error getting file timestamp: ${err}`);
+			console.error(e.message);
+			throw e;
+		}
+	}
+
+	return output;
 }
 
 /**
@@ -56,17 +78,42 @@ function formatDate(date: Date): string {
 }
 
 export async function getGitTimestamp(filePath: string): Promise<string> {
-	return new Promise((resolve, reject) => {
-		const child = spawn("git", ["log", "-1", "--pretty='%ai'"]);
+	const mdFilePath = filePath + ".md";
+	const mdxFilePath = filePath + ".mdx";
 
-		let output = "";
+	let output = "";
+
+	try {
+		output = await tryGitLog(mdFilePath);
+	} catch {
+		try {
+			output = await tryGitLog(mdxFilePath);
+		} catch (err) {
+			const e = new Error(`Error getting git log: ${err}`);
+			console.error(e.message);
+			throw e;
+		}
+	}
+
+	return output;
+}
+
+export async function tryGitLog(filePath: string): Promise<string> {
+	return new Promise((resolve, reject) => {
+		const child = spawn("git", ["log", "-1", "--format=%cd", filePath]);
+
+		let result = "";
 		child.stdout.on("data", (data) => {
-			output += String(data);
+			result += String(data);
+		});
+
+		child.stderr.on("data", (data) => {
+			reject(data.toString());
 		});
 
 		child.on("close", (code) => {
 			if (code === 0) {
-				const timestampDate = new Date(output.trim());
+				const timestampDate = new Date(result.trim());
 				resolve(formatDate(timestampDate));
 			}
 		});

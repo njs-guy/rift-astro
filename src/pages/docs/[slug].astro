@@ -92,7 +92,7 @@ if (frontMatterEditLinkText) {
 	editLinkText = frontMatterEditLinkText;
 }
 
-const gitTime = await getGitTimestamp(path.resolve(filePath));
+// const gitTime = await getGitTimestamp(path.resolve(filePath));
 
 // TODO: Use git timestamp for last updated
 // TODO: Create EditLink pattern
@@ -105,6 +105,7 @@ const gitTime = await getGitTimestamp(path.resolve(filePath));
 <DocLayout summary={sidebar}>
 	<div class="md-content doc-content">
 		<!-- <p>{gitTime}</p> -->
+		<!-- <p>{path.resolve(filePath)}</p> -->
 		<Content />
 		<br />
 		<div class="grid grid-cols-2">
