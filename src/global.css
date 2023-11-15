@@ -166,18 +166,32 @@ h6 {
 	@apply mono-font;
 }
 
-.rift-tab {
-	/* @apply tab tab-bordered; */
-	@apply tab;
-	text-decoration: none;
-}
-
 .rift-code-group {
 	@apply tabs tabs-bordered;
 }
 
 .rift-grid {
 	@apply grid gap-2 w-full;
+}
+
+.rift-info-box {
+	@apply rounded-lg;
+}
+
+.rift-info-box p,
+.rift-info-box ul,
+.rift-info-box li,
+.rift-info-box h1,
+.rift-info-box h2,
+.rift-info-box h3,
+.rift-info-box h4,
+.rift-info-box h5,
+.rift-info-box h6 {
+	@apply mb-0;
+}
+
+.rift-info-box-bg {
+	@apply bg-base-200;
 }
 
 .tab-active {

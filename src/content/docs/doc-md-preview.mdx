@@ -1,5 +1,6 @@
 import CodeGroup from "../../components/CodeGroup.astro";
 import CodeGroupItem from "../../components/CodeGroupItem.astro";
+import InfoBox from "../../components/InfoBox.astro";
 
 # Docs Markdown preview
 
@@ -25,9 +26,30 @@ Every 60 seconds in Africa, a minute passes.
 
 You will likely never use this heading size.
 
+## Info boxes
+
+<InfoBox title="Note">
+<p>This requires mdx. For example, this page is in a file called `doc-md-preview.mdx`.</p>
+</InfoBox>
+
+```mdx
+import InfoBox from "../../components/InfoBox.astro";
+
+<InfoBox title="Info">
+<p>There is an imposter among us.</p>
+</InfoBox>
+```
+Output:
+
+<InfoBox title="Info">
+<p>There is an imposter among us.</p>
+</InfoBox>
+
 ## Code groups
 
-Note: this requires mdx. For example, this page is in a file called `doc-md-preview.mdx`.
+<InfoBox title="Note">
+<p>This requires mdx. For example, this page is in a file called `doc-md-preview.mdx`.</p>
+</InfoBox>
 
 ````mdx
 import CodeGroup from "../../components/CodeGroup.astro";
@@ -42,7 +64,7 @@ import CodeGroupItem from "../../components/CodeGroupItem.astro";
 
 	```js
     function doStuff() {
-    	console.log("This is JavaScript.")
+    	console.log("This is JavaScript.");
     }
     ```
 
@@ -78,7 +100,7 @@ Output:
 
 	```js
     function doStuff() {
-    	console.log("This is JavaScript.")
+    	console.log("This is JavaScript.");
     }
     ```
 

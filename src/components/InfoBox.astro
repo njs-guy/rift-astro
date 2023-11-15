@@ -1,0 +1,15 @@
+---
+interface Props {
+	title?: string;
+	infoType?: string;
+}
+
+const { title, infoType } = Astro.props as Props;
+
+// BUG: There are bottom margins when it's the last element in a section.
+---
+
+<div class="rift-info-box rift-info-box-bg flex flex-col gap-2 p-3">
+	<p class="font-bold">{title}</p>
+	<slot />
+</div>
