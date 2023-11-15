@@ -1,4 +1,5 @@
-import { Tabs, TabItem } from "@astrojs/starlight/components";
+import CodeGroup from "../../components/CodeGroup.astro";
+import CodeGroupItem from "../../components/CodeGroupItem.astro";
 
 # Docs Markdown preview
 
@@ -26,68 +27,77 @@ You will likely never use this heading size.
 
 ## Code groups
 
-Note: this requires mdx.
+Note: this requires mdx. For example, this page is in a file called `doc-md-preview.mdx`.
 
 ````mdx
-import { Tabs, TabItem } from "@astrojs/starlight/components";
+import CodeGroup from "../../components/CodeGroup.astro";
+import CodeGroupItem from "../../components/CodeGroupItem.astro";
 
-<Tabs>
-    <TabItem label="JS">
+<CodeGroup>
+	<CodeGroupItem
+	label="JS"
+	groupName="Group"
+	defaultTab="true"
+	>
 
-    ```js
+	```js
     function doStuff() {
     	console.log("This is JavaScript.")
     }
     ```
 
-    </TabItem>
-    <TabItem label="Python">
+	</CodeGroupItem>
+	<CodeGroupItem label="Python" groupName="Group">
 
-    ```py
+	```py
     def do_stuff():
     	print("This is Python.")
     ```
 
-    </TabItem>
-    <TabItem label="Rust">
+	</CodeGroupItem>
+	<CodeGroupItem label="Rust" groupName="Group">
 
-    ```rs
+	```rs
     fn do_stuff() {
     	!println("This is Rust.");
     }
     ```
-    </TabItem>
 
-</Tabs>
+	</CodeGroupItem>
+</CodeGroup>
 ````
 
 Output:
 
-<Tabs>
-    <TabItem label="JS">
+<CodeGroup>
+	<CodeGroupItem
+	label="JS"
+	groupName="Group"
+	defaultTab="true"
+	>
 
-    ```js
+	```js
     function doStuff() {
     	console.log("This is JavaScript.")
     }
     ```
 
-    </TabItem>
-    <TabItem label="Python">
+	</CodeGroupItem>
+	<CodeGroupItem label="Python" groupName="Group">
 
-    ```py
+	```py
     def do_stuff():
     	print("This is Python.")
     ```
 
-    </TabItem>
-    <TabItem label="Rust">
+	</CodeGroupItem>
+	<CodeGroupItem label="Rust" groupName="Group">
 
-    ```rs
+	```rs
     fn do_stuff() {
     	!println("This is Rust.");
     }
     ```
-    </TabItem>
 
-</Tabs>
+	</CodeGroupItem>
+</CodeGroup>

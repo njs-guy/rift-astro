@@ -172,6 +172,10 @@ h6 {
 	text-decoration: none;
 }
 
+.rift-code-group {
+	@apply tabs tabs-bordered;
+}
+
 .rift-grid {
 	@apply grid gap-2 w-full;
 }

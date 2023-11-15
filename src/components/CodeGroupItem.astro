@@ -1,0 +1,20 @@
+---
+interface Props {
+	label?: string;
+	groupName?: string;
+	defaultTab?: boolean;
+}
+
+const { label, groupName, defaultTab } = Astro.props as Props;
+---
+
+<input
+	type="radio"
+	name={groupName}
+	class="tab"
+	aria-label={label}
+	checked={defaultTab}
+/>
+<div class="tab-content">
+	<slot />
+</div>
