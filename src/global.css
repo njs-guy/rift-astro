@@ -167,7 +167,8 @@ h6 {
 }
 
 .rift-tab {
-	@apply tab tab-bordered;
+	/* @apply tab tab-bordered; */
+	@apply tab;
 	text-decoration: none;
 }
 

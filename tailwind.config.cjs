@@ -29,7 +29,7 @@ const codeTabBorderDark = base300Dark;
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx}"],
 	theme: {
 		extend: {},
 	},
@@ -39,47 +39,45 @@ module.exports = {
 		require("@astrojs/starlight-tailwind"),
 	],
 	daisyui: {
-		themes: [
-			{
-				light: {
-					...["[data-theme=light]"],
-					"fontFamily": baseFontFamily,
-					"base-100": base100Light,
-					"base-200": base200Light,
-					"base-300": base300Light,
-					"base-content": normalTextLight,
-					"primary": primaryLight,
-					"secondary": secondaryLight,
-					"accent": accentLight,
-					// TODO: neutral, info, success, warning
-					"error": errorLight,
-					"--dim-text": dimTextLight,
-					"--code-tab-border": codeTabBorderLight,
-					"--btn-text-case": "none",
-					"--animation-btn": "0",
-					"--heading-font-family": headingFontFamily,
-					"--mono-font-family": monoFontFamily,
-				},
-				dark: {
-					...["[data-theme=dark]"],
-					"fontFamily": baseFontFamily,
-					"base-100": base100Dark,
-					"base-200": base200Dark,
-					"base-300": base300Dark,
-					"base-content": normalTextDark,
-					"primary": primaryDark,
-					"secondary": secondaryDark,
-					"accent": accentDark,
-					// TODO: neutral, info, success, warning
-					"error": errorDark,
-					"--dim-text": dimTextDark,
-					"--code-tab-border": codeTabBorderDark,
-					"--btn-text-case": "none",
-					"--animation-btn": "0",
-					"--heading-font-family": headingFontFamily,
-					"--mono-font-family": monoFontFamily,
-				},
-			},
+		themes: [ "light", "dark"
+			// {
+			// 	light: {
+			// 		...["[data-theme=light]"],
+			// 		"fontFamily": baseFontFamily,
+			// 		"base-100": base100Light,
+			// 		"base-200": base200Light,
+			// 		"base-300": base300Light,
+			// 		"base-content": normalTextLight,
+			// 		"primary": primaryLight,
+			// 		"secondary": secondaryLight,
+			// 		"accent": accentLight,
+			// 		// TODO: neutral, info, success, warning
+			// 		"error": errorLight,
+			// 		"--dim-text": dimTextLight,
+			// 		"--code-tab-border": codeTabBorderLight,
+			// 		"--animation-btn": "0",
+			// 		"--heading-font-family": headingFontFamily,
+			// 		"--mono-font-family": monoFontFamily,
+			// 	},
+			// 	dark: {
+			// 		...["[data-theme=dark]"],
+			// 		"fontFamily": baseFontFamily,
+			// 		"base-100": base100Dark,
+			// 		"base-200": base200Dark,
+			// 		"base-300": base300Dark,
+			// 		"base-content": normalTextDark,
+			// 		"primary": primaryDark,
+			// 		"secondary": secondaryDark,
+			// 		"accent": accentDark,
+			// 		// TODO: neutral, info, success, warning
+			// 		"error": errorDark,
+			// 		"--dim-text": dimTextDark,
+			// 		"--code-tab-border": codeTabBorderDark,
+			// 		"--animation-btn": "0",
+			// 		"--heading-font-family": headingFontFamily,
+			// 		"--mono-font-family": monoFontFamily,
+			// 	},
+			// },
 		],
 		darkTheme: "dark",
 	},
