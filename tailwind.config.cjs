@@ -39,7 +39,9 @@ module.exports = {
 		require("@astrojs/starlight-tailwind"),
 	],
 	daisyui: {
-		themes: [ "light", "dark"
+		themes: [
+			"light",
+			"dark",
 			// {
 			// 	light: {
 			// 		...["[data-theme=light]"],
