@@ -12,7 +12,11 @@ const dimTextLight = "#818387";
 const primaryLight = "#4fa6ed";
 const secondaryLight = "#fafdff";
 const accentLight = "#14b8a6";
-const errorLight = "#e55561";
+const neutralLight = "#7a818e";
+const infoLight = "#4fa6ed";
+const successLight = "#8ebd6b";
+const warningLight = "#9a6b16";
+const errorLight = "#e45649";
 const codeTabBorderLight = base300Light;
 
 // Dark colors
@@ -24,7 +28,11 @@ const dimTextDark = "#7a818e";
 const primaryDark = "#c678dd";
 const secondaryDark = "#e2b86b";
 const accentDark = "#14b8a6";
-const errorDark = "#e55561";
+const neutralDark = "#7a818e";
+const infoDark = "#4fa6ed";
+const successDark = "#8ebd6b";
+const warningDark = "#9a6b16";
+const errorDark = "#993939";
 const codeTabBorderDark = base300Dark;
 
 /** @type {import('tailwindcss').Config} */
@@ -51,7 +59,10 @@ module.exports = {
 					"primary": primaryLight,
 					"secondary": secondaryLight,
 					"accent": accentLight,
-					// TODO: neutral, info, success, warning
+					"neutral": neutralLight,
+					"info": infoLight,
+					"success": successLight,
+					"warning": warningLight,
 					"error": errorLight,
 					"--dim-text": dimTextLight,
 					"--code-tab-border": codeTabBorderLight,
@@ -69,7 +80,10 @@ module.exports = {
 					"primary": primaryDark,
 					"secondary": secondaryDark,
 					"accent": accentDark,
-					// TODO: neutral, info, success, warning
+					"neutral": neutralDark,
+					"info": infoDark,
+					"success": successDark,
+					"warning": warningDark,
 					"error": errorDark,
 					"--dim-text": dimTextDark,
 					"--code-tab-border": codeTabBorderDark,
