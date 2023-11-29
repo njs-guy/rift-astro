@@ -12,7 +12,7 @@ const dimTextLight = "#818387";
 const primaryLight = "#4fa6ed";
 const secondaryLight = "#fafdff";
 const accentLight = "#14b8a6";
-const neutralLight = "#7a818e";
+const neutralLight = base300Light;
 const infoLight = "#4fa6ed";
 const successLight = "#8ebd6b";
 const warningLight = "#9a6b16";
@@ -28,7 +28,7 @@ const dimTextDark = "#7a818e";
 const primaryDark = "#c678dd";
 const secondaryDark = "#e2b86b";
 const accentDark = "#14b8a6";
-const neutralDark = "#7a818e";
+const neutralDark = base300Dark;
 const infoDark = "#4fa6ed";
 const successDark = "#8ebd6b";
 const warningDark = "#9a6b16";
@@ -60,6 +60,7 @@ module.exports = {
 					"secondary": secondaryLight,
 					"accent": accentLight,
 					"neutral": neutralLight,
+					"neutral-content": normalTextLight,
 					"info": infoLight,
 					"success": successLight,
 					"warning": warningLight,
@@ -81,6 +82,7 @@ module.exports = {
 					"secondary": secondaryDark,
 					"accent": accentDark,
 					"neutral": neutralDark,
+					"neutral-content": normalTextDark,
 					"info": infoDark,
 					"success": successDark,
 					"warning": warningDark,
