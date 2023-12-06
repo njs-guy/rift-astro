@@ -22,7 +22,7 @@ const {
 		previous ? (
 			<a
 				href={previous}
-				class="btn btn-block no-animation shrink"
+				class="btn btn-block no-animation shrink no-underline-important"
 			>
 				<div class="flex flex-row w-full gap-2">
 					<ArrowIconLeft />
@@ -40,7 +40,7 @@ const {
 		next ? (
 			<a
 				href={next}
-				class="btn btn-block no-animation shrink"
+				class="btn btn-block no-animation shrink no-underline-important"
 			>
 				<div class="flex flex-row w-full gap-2">
 					<div class="flex flex-col items-end w-full">
@@ -55,3 +55,9 @@ const {
 		)
 	}
 </div>
+
+<style>
+	.no-underline-important {
+		@apply no-underline !important;
+	}
+</style>

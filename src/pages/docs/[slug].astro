@@ -92,13 +92,10 @@ if (frontMatterEditLinkText) {
 	editLinkText = frontMatterEditLinkText;
 }
 
-// const gitTime = await getGitTimestamp(path.resolve(filePath));
-
-// TODO: Use git timestamp for last updated
 // TODO: Create EditLink pattern
 
 // BUG: Several parts of the page don't work on build.
-// PagNav is completely missing, Edit this page is not styled right,
+// PagNav is completely missing
 // and the sidebar doesn't show the active page.
 ---
 
@@ -119,13 +116,11 @@ if (frontMatterEditLinkText) {
 			{
 				editLink ? (
 					<a
-						class="no-underline hover:underline hover:text-primary justify-self-end"
+						class="justify-self-end edit-link"
 						href={editLink}
 						target="_blank"
 					>
-						<p class="text-primary font-bold">
-							{editLinkText ? editLinkText : "Edit this page"}
-						</p>
+						<p class="edit-link">{editLinkText ? editLinkText : "Edit this page"}</p>
 					</a>
 				) : (
 					<div />
@@ -140,3 +135,9 @@ if (frontMatterEditLinkText) {
 		/>
 	</div>
 </DocLayout>
+
+<style>
+	.edit-link {
+		@apply no-underline text-primary font-bold hover:underline;
+	}
+</style>
