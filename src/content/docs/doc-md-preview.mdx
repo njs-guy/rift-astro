@@ -29,50 +29,69 @@ You will likely never use this heading size.
 ## Info boxes
 
 <InfoBox title="Note">
-<p>This requires mdx. For example, this page is in a file called `doc-md-preview.mdx`.</p>
+	<p>This requires mdx. For example, this page is in a file called `doc-md-preview.mdx`.</p>
 </InfoBox>
 
 ```mdx
 import InfoBox from "../../components/InfoBox.astro";
 
 <InfoBox title="Info">
-<p>There is an imposter among us.</p>
+	<p>There is an imposter among us.</p>
 </InfoBox>
 
-<InfoBox title="Tip" infoType ="tip">
-<p>There is an imposter among us.</p>
+<InfoBox
+	title="Tip"
+	infoType="tip"
+>
+	<p>There is an imposter among us.</p>
 </InfoBox>
 
-<InfoBox title="Warning" infoType ="warning">
-<p>There is an imposter among us.</p>
+<InfoBox
+	title="Warning"
+	infoType="warning"
+>
+	<p>There is an imposter among us.</p>
 </InfoBox>
 
-<InfoBox title="Danger" infoType ="danger">
-<p>There is an imposter among us.</p>
+<InfoBox
+	title="Danger"
+	infoType="danger"
+>
+	<p>There is an imposter among us.</p>
 </InfoBox>
 ```
+
 Output:
 
 <InfoBox title="Info">
-<p>There is an imposter among us.</p>
+	<p>There is an imposter among us.</p>
 </InfoBox>
 
-<InfoBox title="Tip" infoType ="tip">
-<p>There is an imposter among us.</p>
+<InfoBox
+	title="Tip"
+	infoType="tip"
+>
+	<p>There is an imposter among us.</p>
 </InfoBox>
 
-<InfoBox title="Warning" infoType ="warning">
-<p>There is an imposter among us.</p>
+<InfoBox
+	title="Warning"
+	infoType="warning"
+>
+	<p>There is an imposter among us.</p>
 </InfoBox>
 
-<InfoBox title="Danger" infoType ="danger">
-<p>There is an imposter among us.</p>
+<InfoBox
+	title="Danger"
+	infoType="danger"
+>
+	<p>There is an imposter among us.</p>
 </InfoBox>
 
 ## Code groups
 
 <InfoBox title="Note">
-<p>This requires mdx. For example, this page is in a file called `doc-md-preview.mdx`.</p>
+	<p>This requires mdx. For example, this page is in a file called `doc-md-preview.mdx`.</p>
 </InfoBox>
 
 ````mdx
@@ -86,30 +105,31 @@ import CodeGroupItem from "../../components/CodeGroupItem.astro";
 	defaultTab="true"
 	>
 
-	```js
+    ```js
     function doStuff() {
     	console.log("This is JavaScript.");
     }
     ```
 
-	</CodeGroupItem>
-	<CodeGroupItem label="Python" groupName="Group">
+    </CodeGroupItem>
+    <CodeGroupItem label="Python" groupName="Group">
 
-	```py
+    ```py
     def do_stuff():
     	print("This is Python.")
     ```
 
-	</CodeGroupItem>
-	<CodeGroupItem label="Rust" groupName="Group">
+    </CodeGroupItem>
+    <CodeGroupItem label="Rust" groupName="Group">
 
-	```rs
+    ```rs
     fn do_stuff() {
     	!println("This is Rust.");
     }
     ```
 
-	</CodeGroupItem>
+    </CodeGroupItem>
+
 </CodeGroup>
 ````
 
@@ -122,28 +142,29 @@ Output:
 	defaultTab="true"
 	>
 
-	```js
+    ```js
     function doStuff() {
     	console.log("This is JavaScript.");
     }
     ```
 
-	</CodeGroupItem>
-	<CodeGroupItem label="Python" groupName="Group">
+    </CodeGroupItem>
+    <CodeGroupItem label="Python" groupName="Group">
 
-	```py
+    ```py
     def do_stuff():
     	print("This is Python.")
     ```
 
-	</CodeGroupItem>
-	<CodeGroupItem label="Rust" groupName="Group">
+    </CodeGroupItem>
+    <CodeGroupItem label="Rust" groupName="Group">
 
-	```rs
+    ```rs
     fn do_stuff() {
     	!println("This is Rust.");
     }
     ```
 
-	</CodeGroupItem>
+    </CodeGroupItem>
+
 </CodeGroup>
