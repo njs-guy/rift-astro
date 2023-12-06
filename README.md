@@ -1,6 +1,6 @@
 # Rift for Astro
 
-An Astro theme built with Tailwind CSS and DaisyUI. Haven't come up with a catchy tagline yet.
+An Astro theme built with Tailwind CSS and DaisyUI. We couldn't come up with a catchy tagline.
 
 ## Roadmap
 
@@ -25,8 +25,8 @@ Fully feature complete for 1.0 but missing documentation.
     -   [ ] Table of contents
 -   [ ] Docs
     -   [x] Basic Doc theme
-    -   [ ] Code groups
-    -   [ ] Tip containers
+    -   [x] Code groups
+    -   [x] Tip containers
     -   [ ] More info containers
     -   [ ] Tables
 -   [ ] Customize most of the site through a config file.
