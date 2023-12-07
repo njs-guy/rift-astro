@@ -7,29 +7,56 @@ interface Props {
 const { title, infoType } = Astro.props as Props;
 
 let bgColorClass = "";
+let moreInfo = false;
 
-// Default
-if (!infoType || infoType === "none" || infoType === "neutral") {
-	bgColorClass = "rift-info-box-bg";
+switch (infoType) {
+	// Default
+	case "none":
+	case "neutral":
+	default:
+		bgColorClass = "rift-info-box-bg";
+		break;
+
+	// Info
+	case "info":
+	case "tip":
+		bgColorClass = "bg-info";
+		break;
+
+	// Warning
+	case "warning":
+	case "caution":
+		bgColorClass = "bg-warning";
+		break;
+
+	// Danger
+	case "danger":
+	case "error":
+		bgColorClass = "bg-error";
+		break;
+
+	// More info
+	case "more":
+	case "more-info":
+		bgColorClass = "rift-info-box-bg";
+		moreInfo = true;
+		break;
 }
 
-// Info
-if (infoType === "tip" || infoType === "info") {
-	bgColorClass = "bg-info";
-}
-
-// Warning
-if (infoType === "warning" || infoType === "caution") {
-	bgColorClass = "bg-warning";
-}
-
-// Danger
-if (infoType === "danger" || infoType === "error") {
-	bgColorClass = "bg-error";
-}
+// BUG: If you don't specify a <p> tag in the default info box, it makes a #text instead of a <p>.
+// The other info boxes don't seem to do this.
 ---
 
-<div class:list={["rift-info-box", bgColorClass, "flex", "flex-col", "gap-2", "p-3"]}>
-	<p class="font-bold">{title}</p>
-	<slot />
-</div>
+{
+	moreInfo ? (
+		<details class:list={["rift-info-box", bgColorClass, "flex", "flex-col", "gap-2", "p-3"]}>
+			<summary class="font-bold text-base-content">{title}</summary>
+			<slot />
+		</details>
+	) : (
+		<div class:list={["rift-info-box", bgColorClass, "flex", "flex-col", "gap-2", "p-3"]}>
+			<p class="font-bold">{title}</p>
+			<slot />
+		</div>
+	)
+}
