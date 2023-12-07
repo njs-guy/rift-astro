@@ -175,7 +175,7 @@ h6 {
 }
 
 .rift-info-box {
-	@apply rounded-lg;
+	@apply rounded-lg mb-5;
 }
 
 .rift-info-box p,
