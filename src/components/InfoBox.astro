@@ -43,11 +43,22 @@ switch (infoType) {
 		break;
 }
 
-// BUG: If you don't specify a <p> tag in the default info box, it makes a #text instead of a <p>.
-// The other info boxes don't seem to do this.
+// BUG: If the InfoBox tag is on one line in the markdown, the text will be inside a #text instead of a <p> tag.
+
+// BAD
+// <InfoBox title="Info">There is an imposter among us.</InfoBox>
+
+// GOOD
+// <InfoBox title="Info">
+// There is an imposter among us.
+// </InfoBox>
+
+// Who knows why this happens
 ---
 
 {
+	// TOP: More info box
+	// BOTTOM: Normal info box
 	moreInfo ? (
 		<details class:list={["rift-info-box", bgColorClass, "flex", "flex-col", "gap-2", "p-3"]}>
 			<summary class="font-bold text-base-content">{title}</summary>
