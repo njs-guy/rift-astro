@@ -4,13 +4,13 @@ import { getCollection } from "astro:content";
 import DocLayout from "../../layouts/DocLayout.astro";
 import PageNav from "../../components/PageNav.astro";
 
+import { getPageTimestamp } from "../../scripts/getPageTimestamp";
 import {
 	getDocSidebar,
 	getDocSidebarSubsections,
 	type DocSideBarItem,
 	getRiftConfig,
 } from "../../scripts/riftConfig";
-import { getPageTimestamp, getGitTimestamp } from "../../scripts/getPageTimestamp";
 
 export async function getStaticPaths() {
 	const docPages = await getCollection("docs");

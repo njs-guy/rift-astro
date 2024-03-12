@@ -21,13 +21,15 @@ Fully feature complete for 1.0 but missing documentation.
 -   [ ] Blog
     -   [ ] Tags
     -   [ ] Categories
+    -   [x] Thumbnails
     -   [ ] Header pictures
     -   [ ] Table of contents
 -   [ ] Docs
     -   [x] Basic Doc theme
     -   [x] Code groups
     -   [x] Tip containers
-    -   [ ] More info containers
+    -   [x] More info containers
+    -   [ ] Link cards
     -   [ ] Tables
 -   [ ] Customize most of the site through a config file.
 -   [ ] Customize colors/theme through Tailwind config.
