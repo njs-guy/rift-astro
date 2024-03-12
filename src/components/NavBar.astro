@@ -7,8 +7,6 @@ import {
 } from "../scripts/riftConfig";
 
 const config = getRiftConfig();
-
-// TODO: Fix these non-errors
 ---
 
 <div class="navbar p-0 m-0">
@@ -25,13 +23,15 @@ const config = getRiftConfig();
 			config.navbar.items && (
 				<>
 					{config.navbar.items.map((item) => {
-						if (item.link) {
+						if ("link" in item) {
 							return (
 								<li>
 									<a href={item.link}>{item.text}</a>
 								</li>
 							);
-						} else {
+						}
+
+						if ("children" in item) {
 							return (
 								<li>
 									<details>
