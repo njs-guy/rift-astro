@@ -1,8 +1,11 @@
 ---
 slug: test
-title: Test post. Please ignore.
+title: "Test post. Please ignore. Seriously. Ignore this. I'm begging you. Seek help if you click on this."
+excerpt: Just some random garbage.
 date: 2023-09-12
 author: John Astro
+thumbnail: "https://images.pexels.com/photos/1670187/pexels-photo-1670187.jpeg"
+thumbnailAlt: "Thumbnail"
 ---
 
 Behold: a blog post. How incredible.

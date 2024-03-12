@@ -12,6 +12,8 @@ const blogCollection = defineCollection({
 		author: z.string().default("No author"),
 		isDraft: z.boolean().default(false),
 		showTableOfContents: z.boolean().default(false),
+		thumbnail: z.string().optional(),
+		thumbnailAlt: z.string().optional(),
 	}),
 });
 
