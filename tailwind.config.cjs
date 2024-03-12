@@ -1,6 +1,6 @@
 // Fonts
-const baseFontFamily = "'Roboto', Arial, sans-serif";
-const headingFontFamily = "'Roboto', Arial, sans-serif";
+const baseFontFamily = "'Inter', Arial, sans-serif";
+const headingFontFamily = "'Cabin', Arial, sans-serif";
 const monoFontFamily = "'JetBrains Mono', Consolas, monospace;";
 
 // Light colors
