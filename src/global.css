@@ -194,6 +194,10 @@ h6 {
 	@apply bg-base-200;
 }
 
+.rift-link-box {
+	@apply rift-info-box-bg;
+}
+
 .tab-active {
 	@apply text-primary;
 }

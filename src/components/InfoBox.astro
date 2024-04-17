@@ -2,9 +2,10 @@
 interface Props {
 	title?: string;
 	infoType?: string;
+	link?: string;
 }
 
-const { title, infoType } = Astro.props as Props;
+const { title, infoType, link } = Astro.props as Props;
 
 let bgColorClass = "";
 let moreInfo = false;
@@ -58,12 +59,27 @@ switch (infoType) {
 
 {
 	// TOP: More info box
+
+	// MIDDLE: Link box
+	// Link box ignores bgColorClass
+
 	// BOTTOM: Normal info box
 	moreInfo ? (
 		<details class:list={["rift-info-box", bgColorClass, "flex", "flex-col", "gap-2", "p-3"]}>
 			<summary class="font-bold text-base-content">{title}</summary>
 			<slot />
 		</details>
+	) : link ? (
+		<a
+			href={link}
+			target="_blank"
+			style="text-decoration: none;"
+		>
+			<div class="rift-info-box rift-link-box flex flex-col gap-2 p-3 hover:outline hover:outline-2 hover:outline-base-content">
+				<p class="font-bold">{title}</p>
+				<slot />
+			</div>
+		</a>
 	) : (
 		<div class:list={["rift-info-box", bgColorClass, "flex", "flex-col", "gap-2", "p-3"]}>
 			<p class="font-bold">{title}</p>

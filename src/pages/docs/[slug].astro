@@ -54,13 +54,13 @@ if (currentSidebarIndex > -1) {
 	const nextIndex = currentSidebarIndex + 1;
 
 	// Show previous label if this is not the first subsection
-	if (currentSidebarIndex > 0) {
+	if (sidebarSubsections[previousIndex] !== undefined) {
 		previous = sidebarSubsections[previousIndex].link;
 		previousLabel = sidebarSubsections[previousIndex].text;
 	}
 
 	// Show next label if this is not the last subsection
-	if (currentSidebarIndex < sidebarSubsections.length - 1) {
+	if (sidebarSubsections[nextIndex] !== undefined) {
 		next = sidebarSubsections[nextIndex].link;
 		nextLabel = sidebarSubsections[nextIndex].text;
 	}
