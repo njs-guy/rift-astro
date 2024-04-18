@@ -3,7 +3,7 @@ slug: md-preview
 title: Markdown preview
 excerpt: See how Markdown looks in Rift
 date: 2023-09-12
-lastUpdated: 2023-09-25
+lastUpdated: 2024-04-18
 author: John Astro
 showTableOfContents: true
 ---
@@ -118,7 +118,7 @@ export function loadTheme() {
 ```
 
 Astro uses Shiki under the hood for syntax highlighting.
-See [Shiki's themes](https://github.com/shikijs/shiki/tree/main/packages/shiki/themes) for a list of default themes.
+See [Shiki's themes](https://shiki.style/themes) for a list of default themes.
 More info can be found in the [Astro Docs](https://docs.astro.build/en/guides/markdown-content/#shiki-configuration).
 
 ## Footnote
