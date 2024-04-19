@@ -213,10 +213,18 @@ h6 {
 	@apply w-8 h-8;
 }
 
-/* TODO: Broken auto theme */
-
+/* Dark mode code filter */
 [data-theme="dark"] .astro-code,
 [data-theme="dark"] .astro-code span {
 	color: var(--shiki-dark) !important;
 	background-color: var(--shiki-dark-bg) !important;
+}
+
+/* Fixes auto theme when the user prefers a dark color scheme. */
+@media (prefers-color-scheme: dark) {
+	[data-theme="auto"] .astro-code,
+	[data-theme="auto"] .astro-code span {
+		color: var(--shiki-dark) !important;
+		background-color: var(--shiki-dark-bg) !important;
+	}
 }
