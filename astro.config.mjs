@@ -11,7 +11,11 @@ export default defineConfig({
 	output: "static",
 	markdown: {
 		shikiConfig: {
-			theme: "one-dark-pro",
+			// TODO: One Light theme
+			themes: {
+				light: "material-theme-lighter",
+				dark: "one-dark-pro",
+			},
 		},
 		remarkPlugins: [remarkToc],
 	},

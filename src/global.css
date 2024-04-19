@@ -12,27 +12,6 @@
 	-webkit-text-size-adjust: 100%;
 }
 
-/* Dark mode Starlight colors. */
-:root[data-theme="dark"] {
-	--sl-color-white: hsl(var(--p)); /* Tab color */
-	--sl-color-gray-3: var(--dim-text); /* Unfocused text */
-	--sl-color-gray-5: var(--code-tab-border); /* Tab underline */
-}
-
-/* Auto mode Starlight colors. */
-:root[data-theme="auto"] {
-	--sl-color-white: hsl(var(--p)); /* Tab color */
-	--sl-color-gray-3: var(--dim-text); /* Unfocused text */
-	--sl-color-gray-5: var(--code-tab-border); /* Tab underline */
-}
-
-/* Light mode Starlight colors. */
-:root[data-theme="light"] {
-	--sl-color-white: hsl(var(--p)); /* Tab color */
-	--sl-color-gray-3: var(--dim-text); /* Unfocused text */
-	--sl-color-gray-5: var(--code-tab-border); /* Tab underline */
-}
-
 html {
 	margin: 0;
 	padding: 0;
@@ -232,4 +211,12 @@ h6 {
 
 .social-icon {
 	@apply w-8 h-8;
+}
+
+/* TODO: Broken auto theme */
+
+[data-theme="dark"] .astro-code,
+[data-theme="dark"] .astro-code span {
+	color: var(--shiki-dark) !important;
+	background-color: var(--shiki-dark-bg) !important;
 }
