@@ -29,8 +29,11 @@ Fully feature complete for 1.0 but missing documentation.
     -   [x] Code groups
     -   [x] Tip containers
     -   [x] More info containers
-    -   [ ] Link cards
+    -   [ ] Link cards (wip)
     -   [ ] Tables
+    -   [ ] On this page
+-   [ ] Custom 404 page
+-   [ ] Mobile layout
 -   [ ] Customize most of the site through a config file.
 -   [ ] Customize colors/theme through Tailwind config.
 -   [ ] Search site. Possibly with either MiniSearch or FuseJS.

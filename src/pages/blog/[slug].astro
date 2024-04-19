@@ -21,6 +21,8 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content, headings } = await post.render();
+
+// TODO: Get last updated from Git like in the docs. Can be overridden manually.
 ---
 
 <Layout title={post.data.title + " - Rift"}>
