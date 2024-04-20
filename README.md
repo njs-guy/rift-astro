@@ -28,7 +28,7 @@ Fully feature complete for 1.0 but missing documentation.
     -   [x] Basic Doc theme
     -   [x] Code groups
     -   [x] Tip containers
-    -   [x] More info containers
+    -   [ ] More info containers (wip)
     -   [ ] Link cards (wip)
     -   [ ] Tables
     -   [ ] On this page

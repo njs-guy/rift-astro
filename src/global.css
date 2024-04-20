@@ -29,10 +29,6 @@ code {
 	@apply rounded !important;
 }
 
-.heading-font {
-	font-family: var(--heading-font-family);
-}
-
 h1,
 h2,
 h3,
@@ -40,6 +36,14 @@ h4,
 h5,
 h6 {
 	@apply heading-font;
+}
+
+.heading-font {
+	font-family: var(--heading-font-family);
+}
+
+.heading-title {
+	@apply text-6xl font-bold;
 }
 
 /* TODO: Make headings use these by default. */
