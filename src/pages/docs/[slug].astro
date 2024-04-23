@@ -27,6 +27,14 @@ export async function getStaticPaths() {
 
 function getCurrentSidebarIndex(subsections: DocSideBarItem[], relativeUrl: string) {
 	for (let i = 0; i < subsections.length; i++) {
+		if (relativeUrl.endsWith("/")) {
+			// Remove the trailing /
+			let cleanedURL = relativeUrl.replace(/\/$/, "");
+
+			if (cleanedURL === subsections[i].link) {
+				return i;
+			}
+		}
 		if (relativeUrl === subsections[i].link) {
 			return i;
 		}
@@ -49,20 +57,21 @@ let previousLabel = "";
 let next = "";
 let nextLabel = "";
 
+// If there is a current sidebar index
 if (currentSidebarIndex > -1) {
-	const previousIndex = currentSidebarIndex - 1;
-	const nextIndex = currentSidebarIndex + 1;
+	const previousIndex = sidebarSubsections[currentSidebarIndex - 1];
+	const nextIndex = sidebarSubsections[currentSidebarIndex + 1];
 
 	// Show previous label if this is not the first subsection
-	if (sidebarSubsections[previousIndex] !== undefined) {
-		previous = sidebarSubsections[previousIndex].link;
-		previousLabel = sidebarSubsections[previousIndex].text;
+	if (previousIndex !== undefined) {
+		previous = previousIndex.link;
+		previousLabel = previousIndex.text;
 	}
 
 	// Show next label if this is not the last subsection
-	if (sidebarSubsections[nextIndex] !== undefined) {
-		next = sidebarSubsections[nextIndex].link;
-		nextLabel = sidebarSubsections[nextIndex].text;
+	if (nextIndex !== undefined) {
+		next = nextIndex.link;
+		nextLabel = nextIndex.text;
 	}
 }
 
@@ -94,9 +103,7 @@ if (frontMatterEditLinkText) {
 
 // TODO: Create EditLink pattern
 
-// BUG: Several parts of the page don't work on build.
-// PagNav is completely missing
-// and the sidebar doesn't show the active page.
+// BUG: Sidebar doesn't show the active page on build.
 ---
 
 <DocLayout summary={sidebar}>
