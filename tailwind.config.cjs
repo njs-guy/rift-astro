@@ -89,6 +89,10 @@ module.exports = {
 					"--heading-font-family": headingFontFamily,
 					"--mono-font-family": monoFontFamily,
 				},
+				// Alt DaisyUI themes for testing.
+				// dark: {
+				// 	...require("daisyui/src/theming/themes")["forest"],
+				// },
 			},
 		],
 		darkTheme: "dark",

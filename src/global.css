@@ -151,6 +151,18 @@ h6 {
 	@apply mono-font;
 }
 
+.md-content code,
+.doc-content code {
+	@apply bg-base-200 text-base-content;
+}
+
+/* Removes the background from above in fenced code blocks. */
+/* Code in fenced blocks shouldn't have a bg color
+because it should use the color theme from Shiki.  */
+.astro-code code {
+	background-color: transparent !important;
+}
+
 .rift-code-group {
 	@apply tabs tabs-bordered;
 }
@@ -183,6 +195,22 @@ h6 {
 	@apply rift-info-box-bg;
 }
 
+.rift-info-box.bg-neutral > p {
+	@apply text-neutral-content;
+}
+
+.rift-info-box.bg-info > p {
+	@apply text-info-content;
+}
+
+.rift-info-box.bg-warning > p {
+	@apply text-warning-content;
+}
+
+.rift-info-box.bg-error > p {
+	@apply text-error-content;
+}
+
 .tab-active {
 	@apply text-primary;
 }
@@ -196,7 +224,9 @@ h6 {
 }
 
 .dim-text {
-	color: var(--dim-text);
+	/* color: var(--dim-text); */
+	/* TODO: Override using the variable, but default to this. */
+	@apply opacity-60;
 }
 
 .icon {
