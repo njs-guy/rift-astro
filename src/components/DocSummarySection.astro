@@ -6,9 +6,20 @@ interface Props {
 	section: DocSideBarSection;
 }
 
+// Removes the trailing "/" from the input relative url.
+function cleanRelativeUrl(relativeUrl: string) {
+	if (relativeUrl.endsWith("/")) {
+		// Remove the trailing /
+		return relativeUrl.replace(/\/$/, "");
+	}
+
+	// Do nothing if it doesn't end with "/".
+	return relativeUrl;
+}
+
 const { section } = Astro.props as Props;
 
-const pathname = new URL(Astro.request.url).pathname;
+const relativeUrl = new URL(Astro.url).pathname;
 ---
 
 <details open>
@@ -18,7 +29,11 @@ const pathname = new URL(Astro.request.url).pathname;
 			section.subsections.map((sub) => (
 				<li>
 					<a
-						class={pathname === sub.link ? "doc-summary-active" : ""}
+						class={
+							cleanRelativeUrl(relativeUrl) === cleanRelativeUrl(sub.link)
+								? "doc-summary-active"
+								: ""
+						}
 						href={sub.link}
 					>
 						{sub.text}
