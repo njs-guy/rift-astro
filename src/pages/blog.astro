@@ -26,7 +26,7 @@ const posts = await Astro.glob("../content/posts/*.md");
 							<p>{post.frontmatter.excerpt}</p>
 							{post.frontmatter.thumbnail && (
 								<img
-									class="w-96 object-cover aspect-video rounded-lg"
+									class="w-96 object-cover aspect-video rounded-box"
 									src={post.frontmatter.thumbnail}
 									alt={post.frontmatter.thumbnailAlt}
 								/>

@@ -31,7 +31,7 @@ const { Content, headings } = await post.render();
 			post.data.thumbnail && (
 				<div class="header-container grid grid-cols-1 justify-center items-center overflow-hidden aspect-video">
 					<img
-						class="w-fit object-cover aspect-video rounded-lg"
+						class="w-fit object-cover aspect-video rounded-box"
 						src={post.data.thumbnail}
 						alt={post.data.thumbnailAlt}
 					/>

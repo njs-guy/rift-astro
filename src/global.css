@@ -26,7 +26,7 @@ body {
 
 code {
 	@apply bg-base-300;
-	@apply rounded !important;
+	@apply rounded-box !important;
 }
 
 h1,
@@ -76,7 +76,7 @@ h6 {
 }
 
 .md-content {
-	@apply prose prose-headings:font-bold prose-img:rounded-lg prose-code:rounded-lg;
+	@apply prose prose-headings:font-bold prose-img:rounded-box prose-code:rounded-box;
 	@apply prose-p:text-base-content prose-ul:text-base-content prose-ol:text-base-content prose-headings:text-base-content prose-table:text-base-content;
 	@apply prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-h5:text-lg prose-h6:text-base;
 
@@ -84,7 +84,7 @@ h6 {
 }
 
 .doc-summary {
-	@apply text-base-content rounded-lg p-2;
+	@apply text-base-content rounded-box p-2;
 	min-width: 200px;
 }
 
@@ -148,7 +148,7 @@ h6 {
 .md-content .astro-code,
 .md-content code,
 .doc-content code {
-	@apply mono-font;
+	@apply mono-font rounded-box;
 }
 
 .md-content code,
@@ -172,7 +172,7 @@ because it should use the color theme from Shiki.  */
 }
 
 .rift-info-box {
-	@apply rounded-lg mb-5;
+	@apply rounded-box mb-5;
 }
 
 .rift-info-box p,
