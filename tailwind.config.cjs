@@ -17,7 +17,6 @@ const infoLight = "#4fa6ed";
 const successLight = "#8ebd6b";
 const warningLight = "#9a6b16";
 const errorLight = "#e45649";
-const codeTabBorderLight = base300Light;
 
 // Dark colors
 const base100Dark = "#1f2329";
@@ -33,7 +32,6 @@ const infoDark = "#1479CC";
 const successDark = "#8ebd6b";
 const warningDark = "#9a6b16";
 const errorDark = "#993939";
-const codeTabBorderDark = base300Dark;
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -63,7 +61,6 @@ module.exports = {
 					"error": errorLight,
 					"--rounded-box": "0.5rem",
 					"--dim-text": dimTextLight,
-					"--code-tab-border": codeTabBorderLight,
 					"--animation-btn": "0",
 					"--heading-font-family": headingFontFamily,
 					"--mono-font-family": monoFontFamily,
@@ -86,7 +83,6 @@ module.exports = {
 					"error": errorDark,
 					"--rounded-box": "0.5rem",
 					"--dim-text": dimTextDark,
-					"--code-tab-border": codeTabBorderDark,
 					"--animation-btn": "0",
 					"--heading-font-family": headingFontFamily,
 					"--mono-font-family": monoFontFamily,

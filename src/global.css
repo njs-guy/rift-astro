@@ -249,6 +249,16 @@ because it should use the color theme from Shiki.  */
 	@apply w-8 h-8;
 }
 
+/* Inactive tab */
+.tab:not(input:checked) {
+	@apply dim-text;
+}
+
+/* Active tab */
+.tab:is(input:checked) {
+	@apply border-primary;
+}
+
 /* Dark mode code filter */
 [data-theme="dark"] .astro-code,
 [data-theme="dark"] .astro-code span {
