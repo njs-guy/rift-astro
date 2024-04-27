@@ -23,7 +23,7 @@ Fully feature complete for 1.0 but missing documentation.
     -   [ ] Categories
     -   [x] Thumbnails
     -   [ ] Header pictures
-    -   [ ] Table of contents
+    -   [ ] Table of contents (wip)
 -   [ ] Docs
     -   [x] Basic Doc theme
     -   [x] Code groups
