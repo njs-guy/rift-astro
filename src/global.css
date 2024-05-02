@@ -259,6 +259,10 @@ because it should use the color theme from Shiki.  */
 	@apply border-primary;
 }
 
+.rift-info-box-summary-content > p {
+	@apply pt-2;
+}
+
 /* Dark mode code filter */
 [data-theme="dark"] .astro-code,
 [data-theme="dark"] .astro-code span {

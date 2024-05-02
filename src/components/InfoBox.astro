@@ -41,6 +41,7 @@ switch (infoType) {
 	// More info
 	case "more":
 	case "more-info":
+	case "details":
 		bgColorClass = "rift-info-box-bg";
 		moreInfo = true;
 		break;
@@ -67,9 +68,11 @@ switch (infoType) {
 
 	// BOTTOM: Normal info box
 	moreInfo ? (
-		<details class:list={["rift-info-box", bgColorClass, "flex", "flex-col", "gap-2", "p-3"]}>
-			<summary class="font-bold text-neutral-content">{title}</summary>
-			<slot />
+		<details class="rift-info-box rift-info-box-bg p-3">
+			<summary class=" font-bold text-neutral-content  p-0 min-h-0">{title}</summary>
+			<div class="rift-info-box-summary-content">
+				<slot />
+			</div>
 		</details>
 	) : link ? (
 		<a
