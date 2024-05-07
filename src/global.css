@@ -195,19 +195,23 @@ because it should use the color theme from Shiki.  */
 	@apply rift-info-box-bg;
 }
 
-.rift-info-box.bg-neutral > p {
+.rift-info-box.bg-neutral p {
 	@apply text-neutral-content;
 }
 
-.rift-info-box.bg-info > p {
-	@apply text-info-content;
+.rift-info-box.bg-info p,
+.rift-info-box.bg-info .theme-icon {
+	@apply text-info-content fill-info-content;
+	/* @apply text-red-500; */
 }
 
-.rift-info-box.bg-warning > p {
+.rift-info-box.bg-warning p,
+.rift-info-box.bg-warning .theme-icon {
 	@apply text-warning-content;
 }
 
-.rift-info-box.bg-error > p {
+.rift-info-box.bg-error p,
+.rift-info-box.bg-error .theme-icon {
 	@apply text-error-content;
 }
 

@@ -1,5 +1,6 @@
 ---
-import ArrowIconRight from "./icons/ArrowIconRight.astro";
+import LinkIcon from "./icons/LinkIcon.astro";
+import InfoIcon from "./icons/InfoIcon.astro";
 
 interface Props {
 	title?: string;
@@ -20,8 +21,7 @@ switch (infoType) {
 		bgColorClass = "rift-info-box-bg";
 		break;
 
-	// Info
-	case "info":
+	// Tip
 	case "tip":
 		bgColorClass = "bg-info";
 		break;
@@ -81,13 +81,19 @@ switch (infoType) {
 			style="text-decoration: none;"
 		>
 			<div class="rift-info-box rift-link-box flex flex-col gap-2 p-3 hover:outline hover:outline-2 hover:outline-primary">
-				<p class="font-bold">{title}</p>
+				<div class="flex flex-row gap-2 items-center">
+					<LinkIcon />
+					<p class="font-bold">{title}</p>
+				</div>
 				<slot />
 			</div>
 		</a>
 	) : (
 		<div class:list={["rift-info-box", bgColorClass, "flex", "flex-col", "gap-2", "p-3"]}>
-			<p class="font-bold">{title}</p>
+			<div class="flex flex-row gap-2 items-center">
+				<InfoIcon />
+				<p class="font-bold">{title}</p>
+			</div>
 			<slot />
 		</div>
 	)
