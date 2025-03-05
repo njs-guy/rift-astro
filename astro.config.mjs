@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
 import remarkToc from "remark-toc";
 
@@ -9,7 +9,7 @@ import OneLight from "./shiki-themes/OneLight.json";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [tailwind(), mdx(), sitemap()],
+	integrations: [mdx(), sitemap()],
 	output: "static",
 	markdown: {
 		shikiConfig: {
@@ -24,4 +24,7 @@ export default defineConfig({
 		remarkPlugins: [remarkToc],
 	},
 	redirects: { "/docs": "/docs/rift-for-astro" },
+	vite: {
+		plugins: [tailwindcss()],
+	},
 });
