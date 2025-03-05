@@ -1,0 +1,69 @@
+---
+// The page for the blog posts. Not the homepage.
+
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import AuthorAndDate from "../../components/AuthorAndDate.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("posts");
+
+	return posts.map((post) => ({
+		params: {
+			slug: post.slug,
+		},
+		props: {
+			post,
+		},
+	}));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await post.render();
+
+// TODO: Get last updated from Git like in the docs. Can be overridden manually.
+---
+
+<Layout title={post.data.title + " - Rift"}>
+	<div class="flex flex-col gap-4">
+		{
+			post.data.thumbnail && (
+				<div class="header-container grid grid-cols-1 justify-center items-center overflow-hidden aspect-video">
+					<img
+						class="w-fit object-cover aspect-video rounded-box"
+						src={post.data.thumbnail}
+						alt={post.data.thumbnailAlt}
+					/>
+				</div>
+			)
+		}
+		<h1 class="not-prose heading1">{post.data.title}</h1>
+		{
+			(
+				<AuthorAndDate
+					author={post.data.author}
+					date={post.data.date}
+					lastUpdated={post.data.lastUpdated}
+				/>
+			)
+		}
+		<div class="md-content">
+			<TableOfContents
+				headings={headings}
+				showToc={post.data.showTableOfContents}
+			/>
+			<Content />
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.header-container {
+		width: 100%;
+	}
+
+	.header-image {
+		width: fit-content;
+	}
+</style>

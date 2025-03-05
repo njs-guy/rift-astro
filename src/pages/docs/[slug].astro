@@ -1,0 +1,146 @@
+---
+import * as path from "path";
+import { getCollection } from "astro:content";
+import DocLayout from "../../layouts/DocLayout.astro";
+import PageNav from "../../components/PageNav.astro";
+
+import { getPageTimestamp } from "../../scripts/getPageTimestamp";
+import {
+	getDocSidebar,
+	getDocSidebarSubsections,
+	type DocSideBarItem,
+	getRiftConfig,
+} from "../../scripts/riftConfig";
+
+export async function getStaticPaths() {
+	const docPages = await getCollection("docs");
+
+	return docPages.map((page) => ({
+		params: {
+			slug: page.slug,
+		},
+		props: {
+			page,
+		},
+	}));
+}
+
+function getCurrentSidebarIndex(subsections: DocSideBarItem[], relativeUrl: string) {
+	for (let i = 0; i < subsections.length; i++) {
+		if (relativeUrl.endsWith("/")) {
+			// Remove the trailing /
+			let cleanedURL = relativeUrl.replace(/\/$/, "");
+
+			if (cleanedURL === subsections[i].link) {
+				return i;
+			}
+		}
+		if (relativeUrl === subsections[i].link) {
+			return i;
+		}
+	}
+
+	return -1; // Return -1 if it wasn't found.
+}
+
+// Config values
+const config = getRiftConfig().docs;
+const sidebar = getDocSidebar();
+const sidebarSubsections = getDocSidebarSubsections();
+
+const relativeUrl = new URL(Astro.url).pathname;
+const currentSidebarIndex = getCurrentSidebarIndex(sidebarSubsections, relativeUrl);
+
+// PageNav values
+let previous = "";
+let previousLabel = "";
+let next = "";
+let nextLabel = "";
+
+// If there is a current sidebar index
+if (currentSidebarIndex > -1) {
+	const previousIndex = sidebarSubsections[currentSidebarIndex - 1];
+	const nextIndex = sidebarSubsections[currentSidebarIndex + 1];
+
+	// Show previous label if this is not the first subsection
+	if (previousIndex !== undefined) {
+		previous = previousIndex.link;
+		previousLabel = previousIndex.text;
+	}
+
+	// Show next label if this is not the last subsection
+	if (nextIndex !== undefined) {
+		next = nextIndex.link;
+		nextLabel = nextIndex.text;
+	}
+}
+
+// Last updated values
+const filePath = path.relative(".", "src/content" + relativeUrl);
+let editDate: string = await getPageTimestamp(path.resolve(filePath));
+let editLink: string = config.editLink.pattern;
+let editLinkText: string = config.editLink.text;
+
+const { page } = Astro.props;
+const { Content } = await page.render();
+
+// Front matter overrides
+const frontMatterEditDate: string = page.data.lastUpdated;
+const frontMatterEditLink: string = page.data.editLink;
+const frontMatterEditLinkText: string = page.data.editLinkText;
+
+if (frontMatterEditDate) {
+	editDate = frontMatterEditDate;
+}
+
+if (frontMatterEditLink) {
+	editLink = frontMatterEditLink;
+}
+
+if (frontMatterEditLinkText) {
+	editLinkText = frontMatterEditLinkText;
+}
+
+// TODO: Create EditLink pattern
+---
+
+<DocLayout summary={sidebar}>
+	<div class="md-content doc-content">
+		<Content />
+		<br />
+		<div class="grid grid-cols-2">
+			{
+				config.lastUpdated !== false ? (
+					<p class="dim-text justify-self-start">Last updated: {editDate}</p>
+				) : (
+					<div />
+				)
+			}
+			{
+				editLink ? (
+					<a
+						class="justify-self-end edit-link"
+						href={editLink}
+						target="_blank"
+					>
+						<p class="edit-link">{editLinkText ? editLinkText : "Edit this page"}</p>
+					</a>
+				) : (
+					<div />
+				)
+			}
+		</div>
+		<PageNav
+			previous={previous}
+			previousLabel={previousLabel}
+			next={next}
+			nextLabel={nextLabel}
+		/>
+	</div>
+</DocLayout>
+
+<style>
+	.edit-link {
+		@apply no-underline text-primary font-bold hover:underline;
+	}
+</style>

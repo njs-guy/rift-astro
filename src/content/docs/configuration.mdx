@@ -1,0 +1,23 @@
+---
+lastUpdated: "10/10/2000, 9:57 am"
+editLink: "https://www.google.com/"
+editLinkText: "Vandalize this page"
+---
+
+# Configuration
+
+Create a `rift-config.ts` at the root of the project directory and create a `defineConfig` like this.
+
+```ts
+import { type RiftConfig } from "./src/scripts/riftConfig";
+
+export const defineConfig: RiftConfig = {
+	siteTitle: "Rift",
+	logo: "/logo.png",
+	home: {},
+	navbar: {},
+	blog: {},
+	docs: {},
+	footer: {},
+};
+```

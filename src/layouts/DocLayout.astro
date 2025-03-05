@@ -1,0 +1,61 @@
+---
+import "../global.css";
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+import DocSummary from "../components/DocSummary.astro";
+import { type DocSideBarSection } from "../scripts/riftConfig";
+
+// TODO: Actual title
+
+interface Props {
+	title?: string;
+	summary?: DocSideBarSection[];
+}
+
+const { title = "Rift Docs", summary } = Astro.props as Props;
+---
+
+<script>
+	import { loadTheme } from "../scripts/changeTheme";
+	loadTheme();
+</script>
+
+<html
+	lang="en"
+	data-theme="auto"
+>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="description"
+			content="Astro description"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width"
+		/>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="main-content gap-2">
+			<NavBar />
+			<div class="flex flex-row gap-8 w-auto">
+				<DocSummary summary={summary} />
+				<slot />
+			</div>
+			<!-- Empty space to move footer to the bottom of the page -->
+			<br />
+			<div class="grow h-0"></div>
+			<Footer />
+		</div>
+	</body>
+</html>

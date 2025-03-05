@@ -1,0 +1,28 @@
+---
+import { type HomeButton } from "../scripts/riftConfig";
+
+const { label, link, primary = false, targetBlank = false } = Astro.props as HomeButton;
+
+let target = "";
+if (targetBlank === true) {
+	target = "_blank";
+}
+---
+
+<a
+	target={target}
+	class={primary === true ? "primary-btn" : "neutral-btn"}
+	href={link}
+>
+	{label}
+</a>
+
+<style scoped>
+	.primary-btn {
+		@apply btn btn-primary;
+	}
+
+	.neutral-btn {
+		@apply btn btn-neutral;
+	}
+</style>

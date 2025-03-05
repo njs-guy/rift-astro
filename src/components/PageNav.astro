@@ -1,0 +1,63 @@
+---
+import ArrowIconRight from "./icons/ArrowIconRight.astro";
+import ArrowIconLeft from "./icons/ArrowIconLeft.astro";
+
+interface Props {
+	next?: string;
+	nextLabel?: string;
+	previous?: string;
+	previousLabel?: string;
+}
+
+const {
+	next,
+	nextLabel = "Next page",
+	previous,
+	previousLabel = "Previous page",
+} = Astro.props as Props;
+---
+
+<div class="page-nav-container grid grid-cols-2 gap-2 w-full">
+	{
+		previous ? (
+			<a
+				href={previous}
+				class="btn btn-block no-animation shrink no-underline-important"
+			>
+				<div class="flex flex-row w-full gap-2">
+					<ArrowIconLeft />
+					<div class="flex flex-col items-start w-full">
+						<span class="text-xs dim-text">Previous</span>
+						<span class="text-sm">{previousLabel}</span>
+					</div>
+				</div>
+			</a>
+		) : (
+			<div />
+		)
+	}
+	{
+		next ? (
+			<a
+				href={next}
+				class="btn btn-block no-animation shrink no-underline-important"
+			>
+				<div class="flex flex-row w-full gap-2">
+					<div class="flex flex-col items-end w-full">
+						<span class="text-xs dim-text">Next</span>
+						<span class="text-sm">{nextLabel}</span>
+					</div>
+					<ArrowIconRight />
+				</div>
+			</a>
+		) : (
+			<div />
+		)
+	}
+</div>
+
+<style>
+	.no-underline-important {
+		@apply no-underline !important;
+	}
+</style>

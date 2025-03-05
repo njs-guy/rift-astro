@@ -41,12 +41,14 @@ const { title } = Astro.props as Props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="main-content">
+		<div class="main-content gap-2">
 			<NavBar />
 			<div class="px-8">
 				<slot />
 			</div>
+			<!-- TODO: make this a component -->
 			<!-- Empty space to move footer to the bottom of the page -->
+			<br />
 			<div class="grow h-0"></div>
 			<Footer />
 		</div>

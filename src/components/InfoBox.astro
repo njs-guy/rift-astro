@@ -1,0 +1,100 @@
+---
+import LinkIcon from "./icons/LinkIcon.astro";
+import InfoIcon from "./icons/InfoIcon.astro";
+
+interface Props {
+	title?: string;
+	infoType?: string;
+	link?: string;
+}
+
+const { title, infoType, link } = Astro.props as Props;
+
+let bgColorClass = "";
+let moreInfo = false;
+
+switch (infoType) {
+	// Default
+	case "none":
+	case "neutral":
+	default:
+		bgColorClass = "rift-info-box-bg";
+		break;
+
+	// Tip
+	case "tip":
+		bgColorClass = "bg-info";
+		break;
+
+	// Warning
+	case "warning":
+	case "caution":
+		bgColorClass = "bg-warning";
+		break;
+
+	// Danger
+	case "danger":
+	case "error":
+		bgColorClass = "bg-error";
+		break;
+
+	// More info
+	case "more":
+	case "more-info":
+	case "details":
+		bgColorClass = "rift-info-box-bg";
+		moreInfo = true;
+		break;
+}
+
+// BUG: If the InfoBox tag is on one line in the markdown, the text will be inside a #text instead of a <p> tag.
+
+// BAD
+// <InfoBox title="Info">There is an imposter among us.</InfoBox>
+
+// GOOD
+// <InfoBox title="Info">
+// There is an imposter among us.
+// </InfoBox>
+
+// Who knows why this happens
+---
+
+{
+	// TOP: More info box
+
+	// MIDDLE: Link box
+	// Link box ignores bgColorClass
+
+	// BOTTOM: Normal info box
+	moreInfo ? (
+		<details class="rift-info-box rift-info-box-bg p-3">
+			<summary class=" font-bold text-neutral-content  p-0 min-h-0">{title}</summary>
+			<div class="rift-info-box-summary-content">
+				<slot />
+			</div>
+		</details>
+	) : link ? (
+		<a
+			href={link}
+			target="_blank"
+			style="text-decoration: none;"
+		>
+			<div class="rift-info-box rift-link-box flex flex-col gap-2 p-3 hover:outline hover:outline-2 hover:outline-primary">
+				<div class="flex flex-row gap-2 items-center">
+					<LinkIcon />
+					<p class="font-bold">{title}</p>
+				</div>
+				<slot />
+			</div>
+		</a>
+	) : (
+		<div class:list={["rift-info-box", bgColorClass, "flex", "flex-col", "gap-2", "p-3"]}>
+			<div class="flex flex-row gap-2 items-center">
+				<InfoIcon />
+				<p class="font-bold">{title}</p>
+			</div>
+			<slot />
+		</div>
+	)
+}

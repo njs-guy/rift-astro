@@ -1,31 +1,55 @@
 ---
 import ThemeSwitcher from "./ThemeSwitcher.astro";
+import {
+	getRiftConfig,
+	type RiftNavBarItem,
+	type RiftNavBarItemGroup,
+} from "../scripts/riftConfig";
+
+const config = getRiftConfig();
 ---
 
 <div class="navbar p-0 m-0">
 	<div class="flex-1 content-center justify-start">
 		<a
-			class="btn btn-ghost text-xl"
+			class="btn btn-ghost text-2xl"
 			href="/"
-			>Rift</a
+			>{config.siteTitle}</a
 		>
 	</div>
 	<ul class="menu menu-horizontal items-center">
-		<ThemeSwitcher />
-		<li><a href="/blog">Blog</a></li>
-		<li><a href="docs">Docs</a></li>
-		<li><a href="/about">About</a></li>
-		<li>
-			<details>
-				<summary>Other pages</summary>
-				<ul class="p-2 bg-base-300">
-					<li><a href="/author">Author</a></li>
-					<li><a href="/showcase">Showcase</a></li>
-					<li><a href="/grid">Grid layout</a></li>
-					<li><a href="/markdown">Markdown preview</a></li>
-					<li><a href="/theme-test">Theme test</a></li>
-				</ul>
-			</details>
-		</li>
+		{!config.navbar.hideThemeSwitcher && <ThemeSwitcher />}
+		{
+			config.navbar.items && (
+				<>
+					{config.navbar.items.map((item) => {
+						if ("link" in item) {
+							return (
+								<li>
+									<a href={item.link}>{item.text}</a>
+								</li>
+							);
+						}
+
+						if ("children" in item) {
+							return (
+								<li>
+									<details>
+										<summary>{item.text}</summary>
+										<ul class="p-2 bg-base-300 z-50">
+											{item.children.map((child: RiftNavBarItem) => (
+												<li>
+													<a href={child.link}>{child.text}</a>
+												</li>
+											))}
+										</ul>
+									</details>
+								</li>
+							);
+						}
+					})}
+				</>
+			)
+		}
 	</ul>
 </div>

@@ -1,0 +1,29 @@
+---
+// import { type Section, type SubSection } from "../scripts/summarySection";
+import { type DocSideBarSection } from "../scripts/riftConfig";
+import DocSummarySection from "./DocSummarySection.astro";
+
+interface Props {
+	collectionName?: string;
+	summary?: DocSideBarSection[];
+}
+
+const defaultSection: DocSideBarSection[] = [
+	{
+		title: "A section",
+		subsections: [{ text: "This is a link", link: "https://www.google.com" }],
+	},
+];
+
+const { collectionName = "docs", summary = defaultSection } = Astro.props as Props;
+---
+
+<ul class="menu menu-sm doc-summary h-full">
+	{
+		summary.map((section) => (
+			<li>
+				<DocSummarySection section={section} />
+			</li>
+		))
+	}
+</ul>

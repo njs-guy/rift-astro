@@ -1,7 +1,40 @@
 ---
+// The homepage for the blog. Not the posts themselves.
+
 import Layout from "../layouts/Layout.astro";
+
+const posts = await Astro.glob("../content/posts/*.md");
 ---
 
 <Layout title="Blog">
-	<h1>Blog</h1>
+	<div class="flex flex-col gap-6">
+		<h1 class="heading1">Blog</h1>
+		<p class="badge badge-lg badge-primary">Tags</p>
+		<div class="flex flex-col gap-6">
+			{
+				posts.map((post) => (
+					<a href={`/blog/${post.frontmatter.slug}`}>
+						<div>
+							<h2 class="heading2">{post.frontmatter.title}</h2>
+
+							<p class="dim-text">
+								<strong>{post.frontmatter.author}</strong> -
+								{new Date(post.frontmatter.date).toLocaleDateString("en-US", {
+									timeZone: "UTC",
+								})}
+							</p>
+							<p>{post.frontmatter.excerpt}</p>
+							{post.frontmatter.thumbnail && (
+								<img
+									class="w-96 object-cover aspect-video rounded-box"
+									src={post.frontmatter.thumbnail}
+									alt={post.frontmatter.thumbnailAlt}
+								/>
+							)}
+						</div>
+					</a>
+				))
+			}
+		</div>
+	</div>
 </Layout>

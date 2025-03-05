@@ -1,0 +1,191 @@
+import CodeGroup from "../../components/CodeGroup.astro";
+import CodeGroupItem from "../../components/CodeGroupItem.astro";
+import InfoBox from "../../components/InfoBox.astro";
+
+# Docs Markdown preview
+
+Here is how the Markdown looks for the documentation section. The title of this page is an `h1`.
+
+## Heading 2
+
+According to all known laws of aviation, a bee should not be able to fly.
+
+### Heading 3
+
+Somebody once told me the world was gonna roll me.
+
+#### Heading 4
+
+The best code is code that does not exist.
+
+##### Heading 5
+
+Every 60 seconds in Africa, a minute passes.
+
+##### Heading 6
+
+You will likely never use this heading size.
+
+## Info boxes
+
+<InfoBox title="Note">
+	<p>This requires mdx. For example, this page is in a file called `doc-md-preview.mdx`.</p>
+</InfoBox>
+
+```mdx
+import InfoBox from "../../components/InfoBox.astro";
+
+<InfoBox title="Info">
+There is an imposter among us.
+</InfoBox>
+
+<InfoBox
+	title="Tip"
+	infoType="tip"
+>
+	There is an imposter among us.
+</InfoBox>
+
+<InfoBox
+	title="Warning"
+	infoType="warning"
+>
+	There is an imposter among us.
+</InfoBox>
+
+<InfoBox
+	title="Danger"
+	infoType="danger"
+>
+	There is an imposter among us.
+</InfoBox>
+
+<InfoBox
+	title="More info"
+	infoType="more"
+>
+	Amazing
+</InfoBox>
+```
+
+Output:
+
+<InfoBox title="Info">
+There is an imposter among us.
+</InfoBox>
+
+<InfoBox
+	title="Tip"
+	infoType="tip"
+>
+	There is an imposter among us.
+</InfoBox>
+
+<InfoBox
+	title="Warning"
+	infoType="warning"
+>
+	There is an imposter among us.
+</InfoBox>
+
+<InfoBox
+	title="Danger"
+	infoType="danger"
+>
+	There is an imposter among us.
+</InfoBox>
+
+<InfoBox
+	title="More info"
+	infoType="more"
+>
+	Amazing
+</InfoBox>
+
+<InfoBox
+	title="Link"
+	link="https://www.google.com"
+>
+	There is an imposter among us.
+</InfoBox>
+
+## Code groups
+
+<InfoBox title="Note">
+	<p>This requires mdx. For example, this page is in a file called `doc-md-preview.mdx`.</p>
+</InfoBox>
+
+````mdx
+import CodeGroup from "../../components/CodeGroup.astro";
+import CodeGroupItem from "../../components/CodeGroupItem.astro";
+
+<CodeGroup>
+	<CodeGroupItem
+	label="JS"
+	groupName="Group"
+	defaultTab="true"
+	>
+
+    ```js
+    function doStuff() {
+    	console.log("This is JavaScript.");
+    }
+    ```
+
+    </CodeGroupItem>
+    <CodeGroupItem label="Python" groupName="Group">
+
+    ```py
+    def do_stuff():
+    	print("This is Python.")
+    ```
+
+    </CodeGroupItem>
+    <CodeGroupItem label="Rust" groupName="Group">
+
+    ```rs
+    fn do_stuff() {
+    	!println("This is Rust.");
+    }
+    ```
+
+    </CodeGroupItem>
+
+</CodeGroup>
+````
+
+Output:
+
+<CodeGroup>
+	<CodeGroupItem
+	label="JS"
+	groupName="Group"
+	defaultTab="true"
+	>
+
+    ```js
+    function doStuff() {
+    	console.log("This is JavaScript.");
+    }
+    ```
+
+    </CodeGroupItem>
+    <CodeGroupItem label="Python" groupName="Group">
+
+    ```py
+    def do_stuff():
+    	print("This is Python.")
+    ```
+
+    </CodeGroupItem>
+    <CodeGroupItem label="Rust" groupName="Group">
+
+    ```rs
+    fn do_stuff() {
+    	!println("This is Rust.");
+    }
+    ```
+
+    </CodeGroupItem>
+
+</CodeGroup>

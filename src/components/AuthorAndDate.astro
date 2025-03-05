@@ -1,0 +1,28 @@
+---
+interface Props {
+	author: string;
+	date: Date;
+	lastUpdated?: string;
+}
+
+const { author, date, lastUpdated } = Astro.props as Props;
+---
+
+<p>
+	By <strong>{author}</strong> on{" "}
+	{
+		new Date(date).toLocaleDateString("en-US", {
+			timeZone: "UTC",
+		})
+	}
+	{
+		lastUpdated && (
+			<p>
+				Last updated:{" "}
+				{new Date(lastUpdated).toLocaleDateString("en-US", {
+					timeZone: "UTC",
+				})}
+			</p>
+		)
+	}
+</p>

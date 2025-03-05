@@ -1,8 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+/* TODO: Self-host fonts */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	color-scheme: light dark;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
 
 html {
 	margin: 0;
@@ -14,24 +24,213 @@ body {
 	@apply text-lg;
 }
 
-h1 {
+code {
+	@apply bg-base-300;
+	@apply rounded-box !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply heading-font;
+}
+
+.heading-font {
+	font-family: var(--heading-font-family);
+}
+
+.heading-title {
+	@apply text-6xl font-bold;
+}
+
+/* TODO: Make headings use these by default. */
+.heading1 {
 	@apply text-4xl font-bold;
 }
 
-h2 {
+.heading2 {
 	@apply text-3xl font-bold;
 }
 
-h3 {
+.heading3 {
 	@apply text-2xl font-bold;
+}
+
+.heading4 {
+	@apply text-xl font-bold;
+}
+
+.heading5 {
+	@apply text-lg font-bold;
+}
+
+.heading6 {
+	@apply text-base font-bold;
 }
 
 .main-content {
 	@apply max-width mx-auto flex flex-col m-0 p-0 min-h-screen;
 }
 
+.md-content {
+	@apply prose prose-headings:font-bold prose-img:rounded-box prose-code:rounded-box;
+	@apply prose-p:text-base-content prose-ul:text-base-content prose-ol:text-base-content prose-headings:text-base-content prose-table:text-base-content;
+	@apply prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-h5:text-lg prose-h6:text-base;
+
+	line-height: 1.6rem;
+}
+
+.doc-summary {
+	@apply text-base-content rounded-box p-2;
+	min-width: 200px;
+}
+
+.doc-summary h1 {
+	@apply font-bold;
+}
+
+.active-page {
+	@apply text-primary;
+}
+
+.doc-summary-active {
+	@apply text-primary font-bold;
+}
+
+.task-list-item {
+	list-style: none;
+}
+
+.tablist-wrapper li {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	line-height: 1.6rem;
+}
+
+.tablist-wrapper ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+#table-of-contents {
+	margin-top: 0;
+}
+
+.doc-content {
+	@apply w-full;
+}
+
+.doc-content h2,
+.doc-content h3,
+.doc-content h4,
+.doc-content p {
+	margin-top: 0;
+}
+
+.doc-content h2 {
+	margin-bottom: 1.25rem;
+}
+
+.doc-content section pre {
+	@apply w-full;
+	margin: 0px !important;
+}
+
+.mono-font {
+	font-family: var(--mono-font-family);
+}
+
+.doc-content section pre,
+.md-content .astro-code,
+.md-content code,
+.doc-content code {
+	@apply mono-font rounded-box;
+}
+
+.md-content code,
+.doc-content code {
+	@apply bg-base-200 text-base-content;
+}
+
+/* Removes the background from above in fenced code blocks. */
+/* Code in fenced blocks shouldn't have a bg color
+because it should use the color theme from Shiki.  */
+.astro-code code {
+	background-color: transparent !important;
+}
+
+.rift-code-group {
+	@apply tabs tabs-bordered;
+}
+
+.rift-grid {
+	@apply grid gap-2 w-full;
+}
+
+.rift-info-box {
+	@apply rounded-box mb-5;
+}
+
+.rift-info-box p,
+.rift-info-box ul,
+.rift-info-box li,
+.rift-info-box h1,
+.rift-info-box h2,
+.rift-info-box h3,
+.rift-info-box h4,
+.rift-info-box h5,
+.rift-info-box h6 {
+	@apply mb-0;
+}
+
+.rift-info-box-bg {
+	@apply bg-neutral;
+}
+
+.rift-link-box {
+	@apply rift-info-box-bg;
+}
+
+.rift-info-box.bg-neutral p {
+	@apply text-neutral-content;
+}
+
+.rift-info-box.bg-info p,
+.rift-info-box.bg-info .theme-icon {
+	@apply text-info-content fill-info-content;
+	/* @apply text-red-500; */
+}
+
+.rift-info-box.bg-warning p,
+.rift-info-box.bg-warning .theme-icon {
+	@apply text-warning-content;
+}
+
+.rift-info-box.bg-error p,
+.rift-info-box.bg-error .theme-icon {
+	@apply text-error-content;
+}
+
+.tab-active {
+	@apply text-primary;
+}
+
+.tab-content hidden {
+	visibility: hidden;
+}
+
 .max-width {
 	@apply max-w-5xl;
+}
+
+.dim-text {
+	/* color: var(--dim-text); */
+	/* TODO: Override using the variable, but default to this. */
+	@apply opacity-60;
 }
 
 .icon {
@@ -42,10 +241,44 @@ h3 {
 	@apply h-4 w-4;
 }
 
+.page-nav-icon {
+	@apply h-8;
+}
+
 .theme-icon-lg {
 	@apply h-6 w-6;
 }
 
 .social-icon {
 	@apply w-8 h-8;
+}
+
+/* Inactive tab */
+.tab:not(input:checked) {
+	@apply dim-text;
+}
+
+/* Active tab */
+.tab:is(input:checked) {
+	@apply border-primary;
+}
+
+.rift-info-box-summary-content > p {
+	@apply pt-2;
+}
+
+/* Dark mode code filter */
+[data-theme="dark"] .astro-code,
+[data-theme="dark"] .astro-code span {
+	color: var(--shiki-dark) !important;
+	background-color: var(--shiki-dark-bg) !important;
+}
+
+/* Fixes auto theme when the user prefers a dark color scheme. */
+@media (prefers-color-scheme: dark) {
+	[data-theme="auto"] .astro-code,
+	[data-theme="auto"] .astro-code span {
+		color: var(--shiki-dark) !important;
+		background-color: var(--shiki-dark-bg) !important;
+	}
 }

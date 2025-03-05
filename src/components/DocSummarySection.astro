@@ -1,0 +1,45 @@
+---
+// import { type Section } from "../scripts/summarySection";
+import { type DocSideBarSection } from "../scripts/riftConfig";
+
+interface Props {
+	section: DocSideBarSection;
+}
+
+// Removes the trailing "/" from the input relative url.
+function cleanRelativeUrl(relativeUrl: string) {
+	if (relativeUrl.endsWith("/")) {
+		// Remove the trailing /
+		return relativeUrl.replace(/\/$/, "");
+	}
+
+	// Do nothing if it doesn't end with "/".
+	return relativeUrl;
+}
+
+const { section } = Astro.props as Props;
+
+const relativeUrl = new URL(Astro.url).pathname;
+---
+
+<details open>
+	<summary>{section.title}</summary>
+	<ul>
+		{
+			section.subsections.map((sub) => (
+				<li>
+					<a
+						class={
+							cleanRelativeUrl(relativeUrl) === cleanRelativeUrl(sub.link)
+								? "doc-summary-active"
+								: ""
+						}
+						href={sub.link}
+					>
+						{sub.text}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</details>

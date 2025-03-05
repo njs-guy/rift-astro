@@ -31,22 +31,15 @@ import MoonIcon from "./icons/MoonIcon.astro";
 <div class="dropdown dropdown-bottom">
 	<label
 		tabindex="0"
-		class="theme-switcher btn btn-ghost h-9"
+		class="theme-switcher btn btn-ghost btn-sm h-9"
 		><MoonIcon />
 	</label>
 	<ul
 		tabindex="0"
 		class="dropdown-content z-[1] menu shadow bg-base-300 rounded-box w-32"
 	>
-		<li id="btn-auto"><a><AutoIcon /> Auto</a></li>
-		<li id="btn-light"><a><SunIcon /> Light</a></li>
-		<li id="btn-dark"><a><MoonIcon /> Dark</a></li>
+		<li id="btn-auto"><a><AutoIcon />Auto</a></li>
+		<li id="btn-light"><a><SunIcon />Light</a></li>
+		<li id="btn-dark"><a><MoonIcon />Dark</a></li>
 	</ul>
 </div>
-
-<style>
-	.theme-switcher {
-		/* height: 12px !important;
-		padding: 0 !important; */
-	}
-</style>
