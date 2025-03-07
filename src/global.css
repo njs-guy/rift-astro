@@ -4,11 +4,27 @@ layer(base);
 /* TODO: Self-host fonts */
 
 @import "tailwindcss";
-@plugin "daisyui" {
-	themes:
-		light --default,
-		dark --prefersdark,
-		cupcake;
+@plugin "@tailwindcss/typography";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+	name: "dark";
+	default: true;
+	prefersdark: true;
+	color-scheme: dark;
+	--color-base-100: var(--base-100-dark);
+	--color-base-200: var(--base-200-dark);
+	--color-base-300: var(--base-300-dark);
+	--color-base-content: var(--normal-text-dark);
+	--color-primary: var(--primary-dark);
+	--color-secondary: var(--secondary-dark);
+	--color-accent: var(--accent-dark);
+	--color-neutral: var(--neutral-dark);
+	--color-neutral-content: var(--normal-text-dark);
+	--color-info: var(--info-dark);
+	--color-success: var(--success-dark);
+	--color-warning: var(--warning-dark);
+	--color-error: var(--error-dark);
+	--radius-box: 0.5rem;
 }
 
 /*
@@ -35,6 +51,43 @@ layer(base);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
+
+	/* variables */
+
+	/* fonts */
+	--base-font-family: "Inter", Helvetica, Arial, sans-serif;
+	--heading-font-family: "Cabin", Helvetica, Arial, sans-serif;
+	--mono-font-family: "JetBrains Mono", Consolas, monospace;
+
+	/* light colors */
+	--base-100-light: #f0f0f0;
+	--base-200-light: #e6e6e6;
+	--base-300-light: #dcdcdc;
+	--normal-text-light: #101012;
+	--dim-text-light: #818387;
+	--primary-light: #4fa6ed;
+	--secondary-light: #fafdff;
+	--accent-light: #14b8a6;
+	--neutral-light: var(--base-300-light);
+	--info-light: #4fa6ed;
+	--success-light: #8ebd6b;
+	--warning-light: #9a6b16;
+	--error-light: #e45649;
+
+	/* dark colors */
+	--base-100-dark: #1f2329;
+	--base-200-dark: #282c34;
+	--base-300-dark: #30363f;
+	--normal-text-dark: #d6d6d6;
+	--dim-text-dark: #7a818e;
+	--primary-dark: #c678dd;
+	--secondary-dark: #e2b86b;
+	--accent-dark: #14b8a6;
+	--neutral-dark: var(--base-300-dark);
+	--info-dark: #1479cc;
+	--success-dark: #8ebd6b;
+	--warning-dark: #9a6b16;
+	--error-dark: #993939;
 }
 
 html {
@@ -45,6 +98,7 @@ html {
 
 body {
 	@reference text-lg;
+	font-family: var(--base-font-family);
 }
 
 code {
