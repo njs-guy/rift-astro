@@ -7,8 +7,30 @@ layer(base);
 @plugin "@tailwindcss/typography";
 @plugin "daisyui";
 @plugin "daisyui/theme" {
-	name: "dark";
+	name: "light";
 	default: true;
+	prefersdark: false;
+	color-scheme: dark;
+	--color-base-100: var(--base-100-light);
+	--color-base-200: var(--base-200-light);
+	--color-base-300: var(--base-300-light);
+	--color-base-content: var(--normal-text-light);
+	--color-primary: var(--primary-light);
+	--color-secondary: var(--secondary-light);
+	--color-accent: var(--accent-light);
+	--color-neutral: var(--neutral-light);
+	--color-neutral-content: var(--normal-text-light);
+	--color-info: var(--info-light);
+	--color-success: var(--success-light);
+	--color-warning: var(--warning-light);
+	--color-error: var(--error-light);
+	--radius-box: 0.5rem;
+
+	/* TODO: Theme switching is broken lol */
+}
+@plugin "daisyui/theme" {
+	name: "dark";
+	default: false;
 	prefersdark: true;
 	color-scheme: dark;
 	--color-base-100: var(--base-100-dark);
