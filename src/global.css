@@ -44,12 +44,12 @@ html {
 }
 
 body {
-	@apply text-lg;
+	@reference text-lg;
 }
 
 code {
-	@apply bg-base-300;
-	@apply rounded-box!;
+	@reference bg-base-300;
+	@reference rounded-box!;
 }
 
 h1,
@@ -58,7 +58,7 @@ h3,
 h4,
 h5,
 h6 {
-	@apply heading-font;
+	@reference heading-font;
 }
 
 .heading-font {
@@ -66,61 +66,61 @@ h6 {
 }
 
 .heading-title {
-	@apply text-6xl font-bold;
+	@reference text-6xl font-bold;
 }
 
 /* TODO: Make headings use these by default. */
 .heading1 {
-	@apply text-4xl font-bold;
+	@reference text-4xl font-bold;
 }
 
 .heading2 {
-	@apply text-3xl font-bold;
+	@reference text-3xl font-bold;
 }
 
 .heading3 {
-	@apply text-2xl font-bold;
+	@reference text-2xl font-bold;
 }
 
 .heading4 {
-	@apply text-xl font-bold;
+	@reference text-xl font-bold;
 }
 
 .heading5 {
-	@apply text-lg font-bold;
+	@reference text-lg font-bold;
 }
 
 .heading6 {
-	@apply text-base font-bold;
+	@reference text-base font-bold;
 }
 
 .main-content {
-	@apply max-width mx-auto flex flex-col m-0 p-0 min-h-screen;
+	@reference max-width mx-auto flex flex-col m-0 p-0 min-h-screen;
 }
 
 .md-content {
-	@apply prose prose-headings:font-bold prose-img:rounded-box prose-code:rounded-box;
-	@apply prose-p:text-base-content prose-ul:text-base-content prose-ol:text-base-content prose-headings:text-base-content prose-table:text-base-content;
-	@apply prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-h5:text-lg prose-h6:text-base;
+	@reference prose prose-headings:font-bold prose-img:rounded-box prose-code:rounded-box;
+	@reference prose-p:text-base-content prose-ul:text-base-content prose-ol:text-base-content prose-headings:text-base-content prose-table:text-base-content;
+	@reference prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-h5:text-lg prose-h6:text-base;
 
 	line-height: 1.6rem;
 }
 
 .doc-summary {
-	@apply text-base-content rounded-box p-2;
+	@reference text-base-content rounded-box p-2;
 	min-width: 200px;
 }
 
 .doc-summary h1 {
-	@apply font-bold;
+	@reference font-bold;
 }
 
 .active-page {
-	@apply text-primary;
+	@reference text-primary;
 }
 
 .doc-summary-active {
-	@apply text-primary font-bold;
+	@reference text-primary font-bold;
 }
 
 .task-list-item {
@@ -144,7 +144,7 @@ h6 {
 }
 
 .doc-content {
-	@apply w-full;
+	@reference w-full;
 }
 
 .doc-content h2,
@@ -159,7 +159,7 @@ h6 {
 }
 
 .doc-content section pre {
-	@apply w-full;
+	@reference w-full;
 	margin: 0px !important;
 }
 
@@ -171,12 +171,12 @@ h6 {
 .md-content .astro-code,
 .md-content code,
 .doc-content code {
-	@apply mono-font rounded-box;
+	@reference mono-font rounded-box;
 }
 
 .md-content code,
 .doc-content code {
-	@apply bg-base-200 text-base-content;
+	@reference bg-base-200 text-base-content;
 }
 
 /* Removes the background from above in fenced code blocks. */
@@ -187,15 +187,15 @@ because it should use the color theme from Shiki.  */
 }
 
 .rift-code-group {
-	@apply tabs tabs-bordered;
+	@reference tabs tabs-bordered;
 }
 
 .rift-grid {
-	@apply grid gap-2 w-full;
+	@reference grid gap-2 w-full;
 }
 
 .rift-info-box {
-	@apply rounded-box mb-5;
+	@reference rounded-box mb-5;
 }
 
 .rift-info-box p,
@@ -207,39 +207,39 @@ because it should use the color theme from Shiki.  */
 .rift-info-box h4,
 .rift-info-box h5,
 .rift-info-box h6 {
-	@apply mb-0;
+	@reference mb-0;
 }
 
 .rift-info-box-bg {
-	@apply bg-neutral;
+	@reference bg-neutral;
 }
 
 .rift-link-box {
-	@apply rift-info-box-bg;
+	@reference rift-info-box-bg;
 }
 
 .rift-info-box.bg-neutral p {
-	@apply text-neutral-content;
+	@reference text-neutral-content;
 }
 
 .rift-info-box.bg-info p,
 .rift-info-box.bg-info .theme-icon {
-	@apply text-info-content fill-info-content;
-	/* @apply text-red-500; */
+	@reference text-info-content fill-info-content;
+	/* @reference text-red-500; */
 }
 
 .rift-info-box.bg-warning p,
 .rift-info-box.bg-warning .theme-icon {
-	@apply text-warning-content;
+	@reference text-warning-content;
 }
 
 .rift-info-box.bg-error p,
 .rift-info-box.bg-error .theme-icon {
-	@apply text-error-content;
+	@reference text-error-content;
 }
 
 .tab-active {
-	@apply text-primary;
+	@reference text-primary;
 }
 
 .tab-content hidden {
@@ -247,47 +247,47 @@ because it should use the color theme from Shiki.  */
 }
 
 .max-width {
-	@apply max-w-5xl;
+	@reference max-w-5xl;
 }
 
 .dim-text {
 	/* color: var(--dim-text); */
 	/* TODO: Override using the variable, but default to this. */
-	@apply opacity-60;
+	@reference opacity-60;
 }
 
 .icon {
-	@apply fill-base-content;
+	@reference fill-base-content;
 }
 
 .theme-icon {
-	@apply h-4 w-4;
+	@reference h-4 w-4;
 }
 
 .page-nav-icon {
-	@apply h-8;
+	@reference h-8;
 }
 
 .theme-icon-lg {
-	@apply h-6 w-6;
+	@reference h-6 w-6;
 }
 
 .social-icon {
-	@apply w-8 h-8;
+	@reference w-8 h-8;
 }
 
 /* Inactive tab */
 .tab:not(input:checked) {
-	@apply dim-text;
+	@reference dim-text;
 }
 
 /* Active tab */
 .tab:is(input:checked) {
-	@apply border-primary;
+	@reference border-primary;
 }
 
 .rift-info-box-summary-content > p {
-	@apply pt-2;
+	@reference pt-2;
 }
 
 /* Dark mode code filter */
