@@ -10,6 +10,9 @@ import OneLight from "./shiki-themes/OneLight.json";
 // https://astro.build/config
 export default defineConfig({
 	integrations: [mdx(), sitemap()],
+	vite: {
+		plugins: [tailwindcss()],
+	},
 	output: "static",
 	markdown: {
 		shikiConfig: {
@@ -24,7 +27,4 @@ export default defineConfig({
 		remarkPlugins: [remarkToc],
 	},
 	redirects: { "/docs": "/docs/rift-for-astro" },
-	vite: {
-		plugins: [tailwindcss()],
-	},
 });

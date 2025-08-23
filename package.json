@@ -2,19 +2,23 @@
 	"name": "rift-astro",
 	"version": "0.1.0",
 	"type": "module",
-	"packageManager": "yarn@4.9.2",
+	"private": "true",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"format": "prettier --write . --plugin=prettier-plugin-astro",
-		"lint": "prettier --write . --plugin=prettier-plugin-astro && eslint ."
+		"fmt": "prettier --write .",
+		"lint": "prettier --check . && eslint ."
 	},
 	"devDependencies": {
 		"@astrojs/mdx": "4.3.4",
 		"@astrojs/sitemap": "3.5.0",
+		"@eslint/css": "^0.10.0",
+		"@eslint/js": "^9.34.0",
+		"@eslint/json": "^0.13.1",
+		"@eslint/markdown": "^7.2.0",
 		"@tailwindcss/typography": "^0.5.16",
 		"@tailwindcss/vite": "^4.1.12",
 		"@types/node": "^20.19.11",
@@ -23,13 +27,15 @@
 		"astro": "5.13.2",
 		"autoprefixer": "^10.4.21",
 		"daisyui": "^5.0.50",
-		"eslint": "^9.33.0",
+		"eslint": "^9.34.0",
 		"eslint-plugin-astro": "^1.3.1",
+		"globals": "^16.3.0",
 		"prettier": "^3.6.2",
 		"prettier-plugin-astro": "^0.14.1",
 		"remark-toc": "^9.0.0",
 		"tailwindcss": "^4.1.12",
-		"typescript": "^5.9.2"
+		"typescript": "^5.9.2",
+		"typescript-eslint": "^8.40.0"
 	},
 	"dependencies": {
 		"cross-spawn": "^7.0.6"
