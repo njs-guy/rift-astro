@@ -6,11 +6,23 @@ layer(base);
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui";
+
+/* Manual theme change for testing */
+
+/*
+@plugin "daisyui" {
+
+	themes: dark --default;
+}
+*/
+
+/* TODO: Theme switching is broken lol */
+
 @plugin "daisyui/theme" {
 	name: "light";
 	default: true;
 	prefersdark: false;
-	color-scheme: dark;
+	color-scheme: light;
 	--color-base-100: var(--base-100-light);
 	--color-base-200: var(--base-200-light);
 	--color-base-300: var(--base-300-light);
@@ -25,9 +37,9 @@ layer(base);
 	--color-warning: var(--warning-light);
 	--color-error: var(--error-light);
 	--radius-box: 0.5rem;
-
-	/* TODO: Theme switching is broken lol */
+	--depth: 0;
 }
+
 @plugin "daisyui/theme" {
 	name: "dark";
 	default: false;
@@ -47,24 +59,7 @@ layer(base);
 	--color-warning: var(--warning-dark);
 	--color-error: var(--error-dark);
 	--radius-box: 0.5rem;
-}
-
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-	*,
-	::after,
-	::before,
-	::backdrop,
-	::file-selector-button {
-		border-color: var(--color-gray-200, currentColor);
-	}
+	--depth: 0;
 }
 
 :root {
@@ -115,7 +110,7 @@ layer(base);
 html {
 	margin: 0;
 	padding: 0;
-	background-color: #1e1e1e;
+	@apply bg-base-100;
 }
 
 body {
@@ -171,7 +166,7 @@ h6 {
 }
 
 .main-content {
-	@reference max-width mx-auto flex flex-col m-0 p-0 min-h-screen;
+	@apply max-w-7xl mx-auto flex flex-col m-0 p-0 min-h-screen;
 }
 
 .md-content {
