@@ -58,6 +58,8 @@ switch (infoType) {
 // </InfoBox>
 
 // Who knows why this happens
+
+// TODO: Different icon for tip, warning, and danger.
 ---
 
 {
@@ -67,6 +69,7 @@ switch (infoType) {
 	// Link box ignores bgColorClass
 
 	// BOTTOM: Normal info box
+
 	moreInfo ? (
 		<details class="rift-info-box rift-info-box-bg p-3">
 			<summary class=" font-bold text-neutral-content  p-0 min-h-0">{title}</summary>
@@ -80,7 +83,7 @@ switch (infoType) {
 			target="_blank"
 			style="text-decoration: none;"
 		>
-			<div class="rift-info-box rift-link-box flex flex-col gap-2 p-3 hover:outline hover:outline-2 hover:outline-primary">
+			<div class="rift-info-box rift-link-box flex flex-col gap-2 p-3 hover:outline-2 hover:outline-primary">
 				<div class="flex flex-row gap-2 items-center">
 					<LinkIcon />
 					<p class="font-bold">{title}</p>

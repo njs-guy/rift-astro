@@ -54,9 +54,12 @@ layer(base);
 	--color-neutral: var(--neutral-dark);
 	--color-neutral-content: var(--normal-text-dark);
 	--color-info: var(--info-dark);
+	--color-info-content: var(--normal-text-light);
 	--color-success: var(--success-dark);
 	--color-warning: var(--warning-dark);
+	--color-warning-content: var(--normal-text-light);
 	--color-error: var(--error-dark);
+	--color-error-content: var(--normal-text-light);
 	--radius-box: 0.5rem;
 	--depth: 0;
 }
@@ -280,32 +283,31 @@ because it should use the color theme from Shiki.  */
 	@apply mb-0;
 }
 
-.rift-info-box-bg {
-	@apply bg-neutral;
-}
-
+.rift-info-box-bg,
 .rift-link-box {
-	@reference rift-info-box-bg;
+	@apply bg-neutral;
 }
 
 .rift-info-box.bg-neutral p {
 	@apply text-neutral-content;
+	@apply text-red-500;
 }
 
 .rift-info-box.bg-info p,
 .rift-info-box.bg-info .theme-icon {
 	@apply text-info-content fill-info-content;
-	/* @apply text-red-500; */
 }
 
 .rift-info-box.bg-warning p,
 .rift-info-box.bg-warning .theme-icon {
 	@apply text-warning-content;
+	@apply fill-warning-content;
 }
 
 .rift-info-box.bg-error p,
 .rift-info-box.bg-error .theme-icon {
 	@apply text-error-content;
+	@apply fill-error-content;
 }
 
 .tab-active {
