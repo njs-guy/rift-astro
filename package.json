@@ -39,5 +39,6 @@
 	},
 	"dependencies": {
 		"cross-spawn": "^7.0.6"
-	}
+	},
+	"packageManager": "pnpm@10.15.0"
 }
