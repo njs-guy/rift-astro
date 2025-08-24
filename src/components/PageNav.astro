@@ -1,4 +1,6 @@
 ---
+// The next/previous page buttons at the bottom of a doc page.
+
 import ArrowIconRight from "./icons/ArrowIconRight.astro";
 import ArrowIconLeft from "./icons/ArrowIconLeft.astro";
 
@@ -22,7 +24,7 @@ const {
 		previous ? (
 			<a
 				href={previous}
-				class="btn btn-block no-animation shrink no-underline-important"
+				class="btn btn-neutral btn-block no-animation shrink no-underline-important p-7 pl-1.5"
 			>
 				<div class="flex flex-row w-full gap-2">
 					<ArrowIconLeft />
@@ -40,10 +42,10 @@ const {
 		next ? (
 			<a
 				href={next}
-				class="btn btn-block no-animation shrink no-underline-important"
+				class="btn btn-neutral btn-block no-animation shrink no-underline-important p-7 pr-1.5"
 			>
-				<div class="flex flex-row w-full gap-2">
-					<div class="flex flex-col items-end w-full">
+				<div class="flex flex-row w-full gap-2 mr-0">
+					<div class="flex flex-col items-end w-full ">
 						<span class="text-xs dim-text">Next</span>
 						<span class="text-sm">{nextLabel}</span>
 					</div>
@@ -57,7 +59,14 @@ const {
 </div>
 
 <style>
+	@reference "../global.css";
+
+	/* For some reason, applying no-underline gets rid of the text underline. */
+	/* Putting no-underline in the regular classes doesn't work. */
+	/* Why does this work? I don't know. */
+	/* CSS is very funny. */
+
 	.no-underline-important {
-		@reference no-underline !important;
+		@apply no-underline;
 	}
 </style>

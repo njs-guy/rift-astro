@@ -11,7 +11,6 @@ layer(base);
 
 /*
 @plugin "daisyui" {
-
 	themes: dark --default;
 }
 */
@@ -336,7 +335,7 @@ because it should use the color theme from Shiki.  */
 }
 
 .page-nav-icon {
-	@apply h-8;
+	@apply h-8 fill-neutral-content;
 }
 
 .theme-icon-lg {
