@@ -1,7 +1,7 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
 import js from "@eslint/js";
-import css from "@eslint/css";
+// import css from "@eslint/css";
 import json from "@eslint/json";
 import markdown from "@eslint/markdown";
 import tseslint from "typescript-eslint";
@@ -22,6 +22,8 @@ export default defineConfig([
 		"yarn.lock",
 		"**/dist/",
 		".astro/",
+		"./**/env.d.ts",
+		"./**/md-preview.md",
 	]),
 	{
 		files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
@@ -53,16 +55,18 @@ export default defineConfig([
 		language: "markdown/gfm",
 		extends: ["markdown/recommended"],
 	},
-	{
-		files: ["**/*.css"],
-		plugins: { css },
-		language: "css/css",
-		extends: ["css/recommended"],
-		rules: {
-			// This rule just causes a lot of problems with Tailwind.
-			"css/no-invalid-at-rules": "off",
-		},
-	},
+	// Too much stuff conflicted with Tailwind.
+	// Easier to just ignore css for now.
+	// {
+	// 	files: ["**/*.css"],
+	// 	plugins: { css },
+	// 	language: "css/css",
+	// 	extends: ["css/recommended"],
+	// 	rules: {
+	// 		// This rule just causes a lot of problems with Tailwind.
+	// 		"css/no-invalid-at-rules": "off",
+	// 	},
+	// },
 	tseslint.configs.recommended,
 
 	// The new stupid eslint config format broke the astro eslint plugin
