@@ -9,11 +9,9 @@ layer(base);
 
 /* Manual theme change for testing */
 
-/*
 @plugin "daisyui" {
-	themes: dark --default;
+	themes: light, dark;
 }
-*/
 
 /* TODO: Theme switching is broken lol */
 
@@ -42,7 +40,9 @@ layer(base);
 @plugin "daisyui/theme" {
 	name: "dark";
 	default: false;
-	prefersdark: true;
+	/* The below setting makes daisyUI ONLY use this theme when dark mode is preferred. */
+	/* what */
+	/* prefersdark: true; */
 	color-scheme: dark;
 	--color-base-100: var(--base-100-dark);
 	--color-base-200: var(--base-200-dark);

@@ -2,6 +2,8 @@
 import AutoIcon from "./icons/AutoIcon.astro";
 import SunIcon from "./icons/SunIcon.astro";
 import MoonIcon from "./icons/MoonIcon.astro";
+
+// TODO: make this more consistent with how "Other pages" looks.
 ---
 
 <script>
@@ -28,18 +30,35 @@ import MoonIcon from "./icons/MoonIcon.astro";
 	}
 </script>
 
-<div class="dropdown dropdown-bottom">
-	<label
+<div class="dropdown">
+	<div
 		tabindex="0"
-		class="theme-switcher btn btn-ghost btn-sm h-9"
-		><MoonIcon />
-	</label>
+		role="button"
+		class="btn btn-ghost font-normal"
+	>
+		Theme
+		<svg
+			width="12px"
+			height="12px"
+			class="inline-block h-2 w-2 fill-current"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 2048 2048"
+		>
+			<path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+		</svg>
+	</div>
 	<ul
 		tabindex="0"
 		class="dropdown-content z-1 menu shadow-sm bg-base-300 rounded-box w-32"
 	>
-		<li id="btn-auto"><a><AutoIcon />Auto</a></li>
-		<li id="btn-light"><a><SunIcon />Light</a></li>
-		<li id="btn-dark"><a><MoonIcon />Dark</a></li>
+		<li id="btn-auto">
+			<btn data-set-theme="auto"><AutoIcon />Auto</btn>
+		</li>
+		<li id="btn-light">
+			<btn data-set-theme="light"><SunIcon />Light</btn>
+		</li>
+		<li id="btn-dark">
+			<btn data-set-theme="dark"><MoonIcon />Dark</btn>
+		</li>
 	</ul>
 </div>
