@@ -221,15 +221,12 @@ h6 {
 	margin: 0px !important;
 }
 
-.mono-font {
-	font-family: var(--mono-font-family);
-}
-
 .doc-content section pre,
 .md-content .astro-code,
 .md-content code,
 .doc-content code {
-	@reference mono-font rounded-box;
+	@apply rounded-box;
+	font-family: var(--mono-font-family);
 }
 
 .md-content code,
