@@ -23,7 +23,7 @@ const relativeUrl = new URL(Astro.url).pathname;
 ---
 
 <details open>
-	<summary>{section.title}</summary>
+	<summary class="text-sm">{section.title}</summary>
 	<ul>
 		{
 			section.subsections.map((sub) => (

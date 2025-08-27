@@ -63,8 +63,8 @@ layer(base);
 	/* variables */
 
 	/* fonts */
-	--base-font-family: "Inter", Helvetica, Arial, sans-serif;
-	--heading-font-family: "Cabin", Helvetica, Arial, sans-serif;
+	--base-font-family: "Inter", Arial, Helvetica, sans-serif;
+	--heading-font-family: "Cabin", "Inter", Arial, Helvetica, sans-serif;
 	--mono-font-family: "JetBrains Mono", Consolas, monospace;
 
 	/* light colors */
@@ -165,7 +165,7 @@ h6 {
 }
 
 .doc-summary {
-	@apply text-base-content rounded-box p-0;
+	@apply text-base-content rounded-box p-0 prose-a:text-sm;
 	min-width: 200px;
 }
 
@@ -178,7 +178,7 @@ h6 {
 }
 
 .doc-summary-active {
-	@apply text-primary font-bold;
+	@apply font-bold text-primary;
 }
 
 .task-list-item {
