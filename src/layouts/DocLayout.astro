@@ -16,8 +16,14 @@ const { title = "Rift Docs", summary } = Astro.props as Props;
 ---
 
 <script>
-	import { loadTheme } from "../scripts/changeTheme";
-	loadTheme();
+	// Smoother theme change on page load.
+	const theme = localStorage.getItem("theme");
+
+	if (theme === null) {
+		document.documentElement.setAttribute("data-theme", "light");
+	} else {
+		document.documentElement.setAttribute("data-theme", theme);
+	}
 </script>
 
 <html lang="en">
