@@ -120,10 +120,7 @@ h3,
 h4,
 h5,
 h6 {
-	@reference heading-font;
-}
-
-.heading-font {
+	@apply font-bold;
 	font-family: var(--heading-font-family);
 }
 
@@ -131,29 +128,28 @@ h6 {
 	@apply text-6xl font-bold;
 }
 
-/* TODO: Make headings use these by default. */
-.heading1 {
-	@apply text-4xl font-bold;
+h1 {
+	@apply text-4xl;
 }
 
-.heading2 {
-	@apply text-3xl font-bold;
+h2 {
+	@apply text-3xl;
 }
 
-.heading3 {
-	@apply text-2xl font-bold;
+h3 {
+	@apply text-2xl;
 }
 
-.heading4 {
-	@apply text-xl font-bold;
+h4 {
+	@apply text-xl;
 }
 
-.heading5 {
-	@apply text-lg font-bold;
+h5 {
+	@apply text-lg;
 }
 
-.heading6 {
-	@apply text-base font-bold;
+h6 {
+	@apply text-base;
 }
 
 .main-content {

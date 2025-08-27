@@ -8,14 +8,14 @@ const posts = await Astro.glob("../content/posts/*.md");
 
 <Layout title="Blog">
 	<div class="flex flex-col gap-6">
-		<h1 class="heading1">Blog</h1>
+		<h1>Blog</h1>
 		<p class="badge badge-lg badge-primary">Tags</p>
 		<div class="flex flex-col gap-6">
 			{
 				posts.map((post) => (
 					<a href={`/blog/${post.frontmatter.slug}`}>
 						<div>
-							<h2 class="heading2">{post.frontmatter.title}</h2>
+							<h2>{post.frontmatter.title}</h2>
 
 							<p class="dim-text">
 								<strong>{post.frontmatter.author}</strong> -
