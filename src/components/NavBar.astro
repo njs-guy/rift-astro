@@ -12,12 +12,12 @@ const config = getRiftConfig();
 <div class="navbar p-0 m-0">
 	<div class="flex-1 content-center justify-start">
 		<a
-			class="btn btn-ghost text-2xl"
+			class="btn btn-ghost text-2xl pl-0"
 			href="/"
 			>{config.siteTitle}</a
 		>
 	</div>
-	<ul class="menu menu-horizontal items-center">
+	<ul class="menu menu-horizontal items-center pr-0">
 		{!config.navbar.hideThemeSwitcher && <ThemeSwitcher />}
 		{
 			config.navbar.items && (

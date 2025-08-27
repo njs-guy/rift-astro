@@ -165,7 +165,7 @@ h6 {
 }
 
 .doc-summary {
-	@apply text-base-content rounded-box p-2;
+	@apply text-base-content rounded-box p-0;
 	min-width: 200px;
 }
 
