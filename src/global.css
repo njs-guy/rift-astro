@@ -249,7 +249,7 @@ because it should use the color theme from Shiki.  */
 }
 
 .rift-code-group {
-	@reference tabs tabs-bordered;
+	@apply tabs tabs-border;
 }
 
 .rift-grid {
