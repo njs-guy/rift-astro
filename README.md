@@ -5,9 +5,9 @@ An Astro theme built with Tailwind CSS and DaisyUI. We couldn't come up with a c
 ## Building
 
 1. Clone this repo. Usually with `git clone https://github.com/njs-guy/rift-astro.git`.
-2. Run `yarn` to install dependencies.
-3. Run `yarn dev` to start the development server.
-4. Run `yarn build` to export the site and run `yarn preview` to test the build.
+2. Run `pnpm i` to install dependencies.
+3. Run `pnpm dev` to start the development server.
+4. Run `pnpm build` to export the site and run `pnpm preview` to test the build.
 
 ## Roadmap
 
@@ -47,11 +47,6 @@ Fully feature complete for 1.0 but missing documentation.
 -   [ ] Customize most of the site through a config file.
 -   [ ] Customize colors/theme through Tailwind config.
 -   [ ] Search site. Possibly with either MiniSearch or FuseJS.
-
-### v1.1.0
-
-- [ ] Use the site through an NPM package instead of needing to clone the source.
-- [ ] Customize the rift-config and Tailwind config through your Astro config.
 
 ## Special Thanks
 
