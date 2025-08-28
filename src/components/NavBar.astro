@@ -2,17 +2,18 @@
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 import {
 	getRiftConfig,
+	type RiftConfig,
 	type RiftNavBarItem,
 	type RiftNavBarItemGroup,
 } from "../scripts/riftConfig";
 
-const config = getRiftConfig();
+const config: RiftConfig = getRiftConfig();
 ---
 
 <div class="navbar p-0 m-0">
 	<div class="flex-1 content-center justify-start">
 		<a
-			class="btn btn-ghost text-2xl pl-0"
+			class="font-bold text-3xl"
 			href="/"
 			>{config.siteTitle}</a
 		>
