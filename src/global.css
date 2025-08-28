@@ -295,6 +295,10 @@ because it should use the color theme from Shiki.  */
 	@apply text-primary;
 }
 
+.tab-content pre {
+	@apply mt-2 mb-2;
+}
+
 .tab-content hidden {
 	visibility: hidden;
 }
