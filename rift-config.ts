@@ -66,6 +66,7 @@ export const defineConfig: RiftConfig = {
 					{ text: "Rift for Astro", link: "/docs/rift-for-astro" },
 					{ text: "Project structure", link: "/docs/project-structure" },
 					{ text: "Tech stack", link: "/docs/tech-stack" },
+					{ text: "Example draft", link: "/docs/example-draft", draft: true },
 				],
 			},
 			{
