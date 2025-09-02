@@ -9,10 +9,10 @@ import { type DocSideBarSection } from "../scripts/riftConfig";
 
 interface Props {
 	title?: string;
-	summary?: DocSideBarSection[];
+	summarySection?: DocSideBarSection[];
 }
 
-const { title = "Rift Docs", summary } = Astro.props as Props;
+const { title = "Rift Docs", summarySection } = Astro.props as Props;
 ---
 
 <script>
@@ -52,7 +52,7 @@ const { title = "Rift Docs", summary } = Astro.props as Props;
 		<div class="main-content gap-2">
 			<NavBar />
 			<div class="flex flex-row gap-8 w-auto">
-				<DocSummary summary={summary} />
+				<DocSummary summary={summarySection} />
 				<slot />
 			</div>
 			<!-- Empty space to move footer to the bottom of the page -->

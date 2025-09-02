@@ -4,18 +4,17 @@ import { type DocSideBarSection } from "../scripts/riftConfig";
 import DocSummarySection from "./DocSummarySection.astro";
 
 interface Props {
-	collectionName?: string;
 	summary?: DocSideBarSection[];
 }
 
 const defaultSection: DocSideBarSection[] = [
 	{
 		title: "A section",
-		subsections: [{ text: "This is a link", link: "https://www.google.com" }],
+		subsections: [{ text: "This is a link", link: "https://www.google.com", draft: false }],
 	},
 ];
 
-const { collectionName = "docs", summary = defaultSection } = Astro.props as Props;
+const { summary = defaultSection } = Astro.props as Props;
 ---
 
 <ul class="menu menu-sm doc-summary h-full">

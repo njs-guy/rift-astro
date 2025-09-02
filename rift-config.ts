@@ -72,7 +72,7 @@ export const defineConfig: RiftConfig = {
 				title: "Getting Started",
 				subsections: [
 					{ text: "Quick start", link: "/docs/quick-start" },
-					{ text: "Configuration", link: "/docs/configuration" },
+					{ text: "Configuration", link: "/docs/configuration", draft: true },
 					{ text: "Documentation", link: "/docs/documentation" },
 					{ text: "Color schemes", link: "/docs/color-schemes" },
 					{ text: "Doc Markdown preview", link: "/docs/doc-md-preview" },

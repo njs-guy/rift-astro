@@ -17,6 +17,9 @@ function cleanRelativeUrl(relativeUrl: string) {
 	return relativeUrl;
 }
 
+const activeClass = "doc-summary-active";
+const draftClass = " doc-summary-draft";
+
 const { section } = Astro.props as Props;
 
 const relativeUrl = new URL(Astro.url).pathname;
@@ -31,8 +34,12 @@ const relativeUrl = new URL(Astro.url).pathname;
 					<a
 						class={
 							cleanRelativeUrl(relativeUrl) === cleanRelativeUrl(sub.link)
-								? "doc-summary-active"
-								: ""
+								? sub.draft === true
+									? activeClass + draftClass
+									: activeClass
+								: sub.draft === true
+									? "" + draftClass
+									: ""
 						}
 						href={sub.link}
 					>

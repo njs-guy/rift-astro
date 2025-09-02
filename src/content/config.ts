@@ -25,7 +25,6 @@ const docsCollection = defineCollection({
 		lastUpdated: z.string().optional(),
 		editLink: z.string().optional(),
 		editLinkText: z.string().optional(),
-		isDraft: z.boolean().default(false),
 	}),
 });
 

@@ -226,6 +226,8 @@ export interface DocSideBarItem {
 	 * The link to the page.
 	 */
 	link: string;
+
+	draft?: boolean;
 }
 
 export interface EditLink {

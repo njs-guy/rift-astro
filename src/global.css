@@ -6,6 +6,9 @@ layer(base);
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui";
+/* @plugin "daisyui" {
+	themes: cyberpunk --default;
+} */
 
 @plugin "daisyui/theme" {
 	name: "dark";
@@ -181,6 +184,10 @@ h6 {
 	@apply font-bold text-primary;
 }
 
+.doc-summary-draft {
+	opacity: 60%;
+}
+
 .task-list-item {
 	list-style: none;
 }
@@ -308,9 +315,7 @@ because it should use the color theme from Shiki.  */
 }
 
 .dim-text {
-	/* color: var(--dim-text); */
-	/* TODO: Override using the variable, but default to this. */
-	@apply opacity-60;
+	opacity: 60%;
 }
 
 .icon {
