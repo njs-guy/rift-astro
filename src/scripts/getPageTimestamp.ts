@@ -2,6 +2,7 @@
 
 import * as fs from "fs";
 import { spawn } from "cross-spawn";
+import { getRiftConfig } from "./riftConfig";
 
 export async function getPageTimestamp(filePath: string): Promise<string> {
 	// try to get the git timestamp.
@@ -74,7 +75,16 @@ async function fileStats(filePath: string): Promise<string> {
 }
 
 function formatDate(date: Date): string {
-	return date.toLocaleString();
+	const config = getRiftConfig();
+	let options: Intl.DateTimeFormatOptions = {
+		year: "numeric",
+		month: "short",
+		day: "numeric",
+		minute: "2-digit",
+		hour: "numeric",
+	};
+
+	return date.toLocaleString(config.timeLocale, options);
 }
 
 export async function getGitTimestamp(filePath: string): Promise<string> {

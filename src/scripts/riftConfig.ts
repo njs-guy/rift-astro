@@ -10,6 +10,7 @@ export interface RiftConfig {
 	 * What the tab title should say.
 	 */
 	siteTitle?: string;
+	timeLocale: string;
 	/**
 	 * Link to the site logo.
 	 */
